@@ -4,19 +4,24 @@ title: "GPU with Tensorflow"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-<!-- image: cards.jpg -->
+image: gpu.png
 ---
 
+
+![GPU](assets/img/gpu.png)
 
 # What is GPU? 
 ---
+
 Graphical Processing unit is a electronic circuit designed to perform rapidly executions than CPUs.Modern GPUs are very efficient at manipulating computer graphics and image processing, and their highly parallel structure makes them more efficient than general purpose CPUs for algorithms where the processing of large blocks of data is done in parallel. 
 
 
 # When to use GPU ?
 ---
-In general, if the step of the process can be described such as “do this mathematical operation thousands of times”, then send it to the GPU. Examples include matrix multiplication and computing the inverse of a matrix. In fact, many basic matrix operations are prime candidates for GPUs. As an overly broad and simple rule, other operations should be performed on the CPU.
-There is also a cost to changing devices and using GPUs. GPUs don’t have direct access to the rest of your computer (except, of course for the display). Due to this, if you are running a command on a GPU, you need to copy all of the data to the GPU first, then do the operation, then copy the result back to your computer’s main memory. TensorFlow handles this under the hood, so the code is simple, but the work still needs to be performed.
+
+If you are a Deep Learning Practitioner who use complex Neural Network Architecture which crunches huge datasets then all your Mathematical operation are computationally expensive and performs higher rate of executions per second.This higher rate cannot be handled by CPU, you need an advanced processing unit, which is 10X times faster than CPU.For such an application , you need GPU. 
+
+
 
 
 # GPU setting in tensorflow vs PyTorch
