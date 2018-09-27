@@ -1,21 +1,15 @@
 ---
 layout: post
-title: "Feed Forward Propagation"
+title: "Feed Forward Propagation from Andrew Ng Machine Learning Lecture"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-image: feed-forward-propagation.jpeg
+image: andrew-NG-ffp.png
 ---
 
 
 
 
-
-
-
-
-
-![fig (1) - Structured neurons from Andrew Ng's Machine Learning class.](../assets/img/andrew-NG-ffp.png)
 
 
 
