@@ -12,6 +12,13 @@ image: feed-forward-propagation.jpeg
 
 
 
+
+
+
+![fig (1) - Structured neurons from Andrew Ng's Machine Learning class.](../assets/img/andrew-NG-ffp.png)
+
+
+
 $$
 a^{(2)}_1 = g( \theta^{(1)}_{10} x_0  + \theta^{(1)}_{11} x_1 + \theta^{(1)}_{12} x_2 + \theta^{(1)}_{13} x_3)
 $$
