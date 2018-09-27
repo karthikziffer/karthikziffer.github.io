@@ -38,7 +38,7 @@ $$
 
 
 $$
-a = g( \theta^T * x )
+a = g( \theta^T * x ) \\
 $$
 g is the activation function . x is the input vector . a is the activation output.
 
@@ -68,7 +68,9 @@ T = 3 ( Discarding the Bias activation Unit )
 
 The Dimension is given by  ( S *  T+1 ).
 
-The Dimension of weight matrix is 3 * 4
+The Dimension of weight matrix is 3 * 4 
+
+<br>
 $$
 \begin{bmatrix}
 \theta^{(1)}_{10} & \theta^{(1)}_{11} & \theta^{(1)}_{12} & \theta^{(1)}_{13} \\
@@ -93,7 +95,7 @@ $$
 
 
 
-### Then ,
+### The final Equation,
 
 $$
 a_1^{(2)} = g(z_1^{(2)})
