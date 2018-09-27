@@ -1,4 +1,13 @@
-# Feed Forward Propagation
+---
+layout: post
+title: "Feed Forward Propagation"
+author: "Karthik"
+categories: journal
+tags: [documentation,sample]
+<!-- image: cards.jpg -->
+---
+
+
 
 
 
