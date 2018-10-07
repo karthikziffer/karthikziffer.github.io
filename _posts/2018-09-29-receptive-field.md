@@ -1,10 +1,13 @@
+
+---
 layout: post
 title: "Intro to Receptive field from a Research Paper"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-
 ---
+
+
 
 
 
