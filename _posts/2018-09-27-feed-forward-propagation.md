@@ -73,6 +73,33 @@ $$
 \end{bmatrix}
 $$
 
+$$
+\begin{bmatrix}
+a_1 \\
+a_2 \\
+\vdots \\
+\end{bmatrix}
+= \sigma \begin{pmatrix}
+\begin{bmatrix}
+\theta^{(1)}_{10} & \theta^{(1)}_{11} & \theta^{(1)}_{12} & \theta^{(1)}_{13} \\
+\theta^{(1)}_{20} & \theta^{(1)}_{21} & \theta^{(1)}_{22} & \theta^{(1)}_{23} \\
+\theta^{(1)}_{30} & \theta^{(1)}_{31} & \theta^{(1)}_{32} & \theta^{(1)}_{33} \\
+\end{bmatrix} * 
+\begin{bmatrix}
+x_0 \\
+x_1 \\
+\vdots \\
+\end{bmatrix} + 
+\begin{bmatrix}
+b_o \\
+b_1 \\
+\vdots \\
+\end{bmatrix}
+\end{pmatrix}
+$$
+
+
+
 ## The hypothesis function is given by,
 
 $$
