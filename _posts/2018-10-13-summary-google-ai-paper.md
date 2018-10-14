@@ -72,7 +72,7 @@ COG Dataset
 
 General network setup
 
-The Network consists of four major syatems.
+The Network consists of four major systems.
 
 ![Network Major Systems](../assets/img/network-major-systems.png)
 
