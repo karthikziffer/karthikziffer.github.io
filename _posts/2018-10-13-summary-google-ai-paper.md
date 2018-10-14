@@ -5,7 +5,6 @@ title: "Summary - A Dataset and Architecture for Visual Reasoning with a Working
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-<!-- image: gpu.png -->
 ---
 
 
