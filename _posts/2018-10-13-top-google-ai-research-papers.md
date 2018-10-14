@@ -5,16 +5,16 @@ title: "Summary - A Dataset and Architecture for Visual Reasoning with a Working
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-image: gpu.png
+<!-- image: gpu.png -->
 ---
 
 
 
 <!-- #### A Dataset and Architecture for Visual Reasoning with a Working Memory   -->
 
-##### Link: https://ai.google/research/pubs/pub47145
+##### Link: [Google AI](https://ai.google/research/pubs/pub47145)
 
-##### Paper: https://arxiv.org/pdf/1803.06092.pdf
+##### Paper: [Available here](https://arxiv.org/pdf/1803.06092.pdf)
 
 ---
 
