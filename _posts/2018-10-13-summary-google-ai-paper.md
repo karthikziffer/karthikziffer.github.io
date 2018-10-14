@@ -8,7 +8,7 @@ tags: [documentation,sample]
 ---
 
 
-
+---
 <!-- #### A Dataset and Architecture for Visual Reasoning with a Working Memory   -->
 
 ##### Link: [Google AI](https://ai.google/research/pubs/pub47145)
