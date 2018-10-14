@@ -1,7 +1,7 @@
 
 ---
 layout: post
-title: "Summary - A Dataset and Architecture for Visual Reasoning with a Working MemorySummary - A Dataset and Architecture for Visual Reasoning with a Working Memory"
+title: "Summary - A Dataset and Architecture for Visual Reasoning with a Working MemorySummary"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
