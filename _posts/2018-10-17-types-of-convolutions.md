@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Different Convolutions"
-author: "Paul Le"
+author: "karthik"
 categories: journal
 tags: [documentation,sample]
 ---
+
 
 
 ### Pointwise Convolution or 1x1 convolution
@@ -79,5 +80,5 @@ From the paper [Deconvolution Networks](http://www.matthewzeiler.com/wp-content/
 
 
 
-#### 
+
 
