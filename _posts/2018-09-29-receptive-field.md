@@ -1,14 +1,13 @@
-
-<!-- ---
+---
 layout: post
 title: "Intro to Receptive field from a Research Paper"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
 ---
- -->
+ 
 
-# Intro to Receptive field from a Research Paper
+<!-- # Intro to Receptive field from a Research Paper -->
 
 
 
@@ -29,5 +28,5 @@ tags: [documentation,sample]
 - Intuitively it is easy to see that pixels at the center of a receptive field have a much larger impact on an output. In the forward pass, central pixels can propagate information to the output through many different paths, while the pixels in the outer area of the receptive field have very few paths to propagate its impact. In the backward pass, gradients from an output unit are propagated across all the paths, and **therefore the central pixels have a much larger magnitude for the gradient from that output.**
 - There's an intriguing findings, in particular that the effective area in the receptive field, which we call the effective receptive field, only occupies a fraction of the theoretical receptive field, since Gaussian distribution generally decay quickly from the center.
 
-`
+
 
