@@ -13,7 +13,7 @@ tags: [documentation,sample]
 
 It is a 1x1 convolution kernel. This helps in acquiring pixel by pixel level feature extraction. But the main purpose is, 
 
-![1x1 convolution](file:///home/karthik/inkers_assignment/session3/Session%203/Session%203/Session%203_files/1x1.gif)
+![1x1 convolution](https://raw.githubusercontent.com/iamaaditya/iamaaditya.github.io/master/images/conv_arithmetic/full_padding_no_strides_transposed_small.gif)
 
 
 
@@ -34,7 +34,7 @@ It is a 1x1 convolution kernel. This helps in acquiring pixel by pixel level fea
 
 
 
-![dilated convolution](file:///home/karthik/inkers_assignment/session3/Session%203/Session%203/Session%203_files/dilated.gif)
+![dilated convolution](https://i.stack.imgur.com/qA0Kx.gif)
 
 
 
