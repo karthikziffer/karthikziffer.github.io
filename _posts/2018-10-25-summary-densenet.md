@@ -20,7 +20,7 @@ In convolution neural network architectures we have seen networks stacked up wit
 
 >Crucially, in contrast to ResNets, we never combine features through summation before they are passed into a layer; instead, we combine features by concatenating them.
 
-In RESNET, the skip connection are summed up with the present layer. The summation is an element wise operation, hence the shape of two elements should be same. The summation output will have same shape. Where as in DENSENET, the skip connections are concatenated.There is not contrain that both layers output should be of same shape for concatenating.
+In RESNET, the skip connection are summed up with the present layer. The summation is an element wise operation, hence the shape of two elements should be same. The summation output will have same shape. Where as in DENSENET, the skip connections are concatenated.There is no constrain that both layers output should be of same shape for concatenating.
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*_Y7-f9GpV7F93siM1js0cg.jpeg)
