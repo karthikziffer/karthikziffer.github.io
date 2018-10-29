@@ -45,7 +45,7 @@ tags: [documentation,sample]
 - RAISR Rapid and Accurate Image Super Resolution (RAISR), which is a shallow and faster learning-based method. It classifies input image patches according to the patch’s angle, strength and coherence and then learn maps from LR image to HR image among the clustered patches.
 
 
-:bulb:
+
 >> RAISR and FRSCNN’s processing speeds are 10 to 100 times faster than other state-of-the-art Deep Learning based methods. However, their performance is not as high as other deeply convolutional methods, like DRCN, VDSR or RED.
 
 #### Proposed method
@@ -86,7 +86,7 @@ tags: [documentation,sample]
 2. The final HR image is reconstructed in the last half of the model and the network structure is like in the Network in Network [2]. Because of all of the features are concatenated at the input layer of the reconstruction network, the dimension of input data is rather large. So we use 1x1 CNNs to reduce the input dimension before generating the HR pixels.
 
 
-#### :star2: Numerical Explanation:
+#### Numerical Explanation:
 
 ![DCSCN](https://raw.githubusercontent.com/jiny2001/dcscn-super-resolution/master/documents/figure1_v2.png)
 
