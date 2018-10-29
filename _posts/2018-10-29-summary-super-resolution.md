@@ -67,7 +67,7 @@ tags: [documentation,sample]
 
 
 
-:bulb:
+
 >> In the previous studies, an up-sampled image was often used as their input for the Deep Learning-based architecture. In these models, the SISR networks will be pixelwise. However, 20-30 CNN layers are necessary for each up-sampled pixel and heavy computation (up to 4x, 9x and 16x) is required, as shown in Figure 2. It also seems inefficient to extract a feature from an up-sampled image rather than from the original image, even from the perspective of the reconstruction process.
 
 
