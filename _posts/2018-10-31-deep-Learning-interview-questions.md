@@ -50,7 +50,7 @@ Back propagation is used for multi layer neural network. In this method, we move
 
    ---
 
-   ### Resources: 
+### Resources: 
 
    1. [3Blue1Brown](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
    2. [Springboard Blog](https://www.springboard.com/blog/machine-learning-interview-questions/)
