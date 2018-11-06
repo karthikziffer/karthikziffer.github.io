@@ -71,11 +71,10 @@ BERT's Contribution:
 
 ![Comparision of BERT , OpenAI GPT , ELMo](https://pli.io/2MkbnZ.png)
 
----
+## BERT Architecture
 
-### BERT Architecture
+### Model Architecture.
 
-1. Model Architecture.
 >In this work, we denote the number of layers (i.e., Transformer blocks) as L, the hidden size as H, and the number of self-attention heads as A. In all cases we set the feed-forward/filter size to be 4H, i.e., 3072 for the H = 768 and 4096 for the H = 1024. We primarily report results on two model sizes:
 
 L - Number of Layers
@@ -93,8 +92,8 @@ $$ BERT_{LARGE}: L=24, H=1024, A=16,\\  Total Parameters=340M$$
 ---
 >Transformer is often referred to as a “Transformer encoder” while the left-context-only version is referred to as a “Transformer decoder” since it can be used for text generation.
 
+### Input Representation.
 
-2. Input Representation.
 >Our input representation is able to unambiguously represent both a single text sentence or a pair of text sentences (e.g., [Question, Answer]) in one token sequence. For a given token, its input representation is constructed by summing the corresponding token, segment and position embeddings. A visual representation is given below.
 
 ![Input representation](https://pli.io/2X0aoQ.png)
@@ -106,8 +105,8 @@ The Specifics:
 - Sentence pairs are packed together into a single sequence. We differentiate the sentences in two ways. First, we separate them with a special token ([SEP]). Second, we add a learned sentence A embedding to every token of the first sentence and a sentence B embedding to every token of the second sentence
 - For single-sentence inputs we only use the sentence A embeddings
 
+### Pre-training Tasks.
 
-3. Pre-training Tasks.
 >Unlike Peters et al. (2018) and Radford et al. (2018), we do not use traditional left-to-right or right-to-left language models to pre-train BERT. Instead, we pre-train BERT using two novel unsupervised prediction tasks, described in this section.
 
 ![BERT pre-trained objective](https://pli.io/2Mk6WH.png)
@@ -124,23 +123,25 @@ The Specifics:
 + **Next Sentence Prediction**
 > Many important downstream tasks such as Question Answering (QA) and Natural Language Inference (NLI) are based on understanding the relationship between two text sentences, which is not directly captured by language modeling. In order to train a model that understands sentence relationships, we pre-train a binarized next sentence prediction task that can be trivially generated from any monolingual corpus. Specifically, when choosing the sentences A and B for each pretraining example, 50% of the time B is the actual next sentence that follows A, and 50% of the time it is a random sentence from the corpus.
 
-5. Pre-training Procedure
+### Pre-training Procedure
 
-Training Data
+#### Training Data
+
 > For the pre-training corpus we use the concatenation of BooksCorpus (800M words) (Zhu et al., 2015) and English Wikipedia (2,500M words). For Wikipedia we extract only the text passages and ignore lists, tables, and headers. It is critical to use a document-level corpus rather than a shuffled sentence-level corpus such as the Billion Word Benchmark (Chelba et al., 2013) in order to extract long contiguous sequences.
 
-Training Procedure
+#### Training Procedure
+
 > To generate each training input sequence, we sample two spans of text from the corpus, which we refer to as “sentences” even though they are typically much longer than single sentences (but can be shorter also). The first sentence receives the A embedding and the second receives the B embedding. 50% of the time B is the actual next sentence that follows A and 50% of the time it is a random sentence, which is done for the “next sentence prediction” task. They are sampled such that the combined length is ≤ 512 tokens.
 
 > The LM masking is applied after WordPiece tokenization with a uniform masking rate of 15%, and no special consideration given to partial word pieces.
 
 > We train with batch size of 256 sequences (256 sequences * 512 tokens = 128,000 tokens/batch) for 1,000,000 steps, which is approximately 40 epochs over the 3.3 billion word corpus. We use Adam with learning rate of 1e-4, β1 = 0.9, β2 = 0.999, L2 weight decay of 0.01, learning rate warmup over the first 10,000 steps, and linear decay of the learning rate. We use a dropout probability of 0.1 on all layers. We use a **gelu** activation (Hendrycks and Gimpel, 2016) rather than the standard relu, following OpenAI GPT. The training loss is the sum of the mean masked LM likelihood and mean next sentence prediction likelihood
 
-Training Resources
+#### Training Resources
+
 >Training of BERTBASE was performed on 4 Cloud TPUs in Pod configuration (16 TPU chips total).5 Training of BERTLARGE was performed on 16 Cloud TPUs (64 TPU chips total). Each pretraining took 4 days to complete.
 
-
-7. Fine tuning procedures.
+### Fine tuning procedures.
 
 > For sequence-level classification tasks, BERT fine-tuning is straightforward. In order to obtain a fixed-dimensional pooled representation of the input sequence, we take the final hidden state (i.e., the output of the Transformer) for the first token in the input, which by construction corresponds to the the special [CLS] word embedding. We denote this vector as C ∈ R H. The only new parameters added during fine-tuning are for a classification layer W ∈ R K×H, where K is the number of classifier labels. The label probabilities P ∈ R K are computed with a standard softmax, P = softmax(CWT ). All of the parameters of BERT and W are fine-tuned jointly to maximize the log-probability of the correct label. For spanlevel and token-level prediction tasks, the above procedure must be modified slightly in a taskspecific manner.
 
