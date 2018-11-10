@@ -9,11 +9,13 @@ image:
 
 
 [MASK R-CNN](https://arxiv.org/pdf/1703.06870.pdf)
+<br>
 Facebook AI Research (FAIR)
 - Kaiming He 
 - Georgia Gkioxari 
 - Piotr Dollar 
-- Ross Girshick ´ 
+- Ross Girshick 
+
 ---
 
 
