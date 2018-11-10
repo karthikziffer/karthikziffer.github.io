@@ -34,6 +34,8 @@ Where can I find Mask R-CNN code
 1. Object Detection - Detection of object via bounding boxes.
 2. Semantic Segmentation - Denotes per-pixel classification without differentiating instances.
 3. Instance Segmentation - Combination of both Object Detection and Semantic Segmentation with instance object masking.
+
+
 --- 
 How Mask R-CNN extends from Faster R-CNN
 
