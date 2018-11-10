@@ -8,11 +8,6 @@ image:
 ---
 
 <br>
-<br>
-<br>
-
-
-
 
 #### Project Frigatebird.
 
