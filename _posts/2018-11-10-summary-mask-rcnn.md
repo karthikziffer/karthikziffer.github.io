@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Summary - Mask R-CNN"
+title: "Summary - Mask RCNN"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
