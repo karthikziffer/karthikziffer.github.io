@@ -34,11 +34,12 @@ The graph of loss function across weights/parameters in the network being a non-
 
 1. One of the mysteries in deep learning is random initialized first order methods like gradient
 descent achieve zero training loss, even if the labels are arbitrary [Zhang et al., 2016].
-
+<br>
 2. Overparameterization is widely believed to be the main reason for this phenomenon as only if the neural network has a sufficiently large capacity, it is possible for this neural network to fit all the training data. 
-
-
+<br>
 3. The second mysterious phenomenon in training deep neural networks is “deeper networks are harder to train.” To solve this problem, He et al. [2016] proposed the deep residual network (ResNet) architecture which enables randomly initialized first order method to train neural networks with an order of magnitude more layers. Theoretically, Hardt and Ma [2016] showed that residual links in linear networks prevent gradient vanishing in a large neighborhood of zero, but for neural networks with non-linear activations, the advantages of using residual connections are not well understood.
+
+
 ---
 
 ##### In this paper, we demystify these two mysterious phenomena.
