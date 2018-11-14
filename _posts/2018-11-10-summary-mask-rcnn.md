@@ -161,5 +161,5 @@ $$L = L_{cls} + L_{box} + L_{mask}$$ The classification loss Lcls and bounding-b
 
 ---
 ### Resources:
-1. [Ferature Pyramid Network](https://arxiv.org/pdf/1612.03144.pdf)
+1. [Feature Pyramid Network](https://arxiv.org/pdf/1612.03144.pdf)
 
