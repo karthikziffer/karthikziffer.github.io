@@ -87,9 +87,9 @@ neural network architecture. Our paper also belongs to this category.
 > More recently, Allen-Zhu et al. [2018] generalizes ideas from Li and Liang [2018] to derive convergence rates of training recurrent neural networks.
 
 > Our work extends these previous results in several ways: 
-	>>	1. we consider deep networks.
-	>>	2. we generalize to ResNet architectures.
-	>>	3. we generaliez to convolutional networks.
+	1. we consider deep networks.
+	2. we generalize to ResNet architectures.
+	3. we generaliez to convolutional networks.
 
 
 > Chizat and Bach [2018], Wei et al. [2018], Mei et al. [2018] used optimal transport theory to analyze gradient descent on over-parameterized models. However, their results are limited to twolayer neural networks and may require an exponential amount of over-parametrization.
