@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-title: "Summary - Gradient Descent Finds Glabal Minimum"
+title: "Summary - Gradient Descent Finds Global Minimum"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
