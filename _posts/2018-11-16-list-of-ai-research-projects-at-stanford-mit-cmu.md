@@ -4,6 +4,7 @@ title: "List of AI Research Projects at Stanford.MIT.CMU"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
+image: list-of-ai-research-projects-in-stanford-mit-cmu.png
 ---
 
 
