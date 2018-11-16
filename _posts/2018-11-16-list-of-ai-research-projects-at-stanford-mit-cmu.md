@@ -4,7 +4,6 @@ title: "List of AI Research Projects at Stanford , MIT , CMU"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-image: andrew-NG-ffp.png
 ---
 
 
