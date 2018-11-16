@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "List of AI Research Projects at Stanford , MIT , CMU"
+title: "List of AI Research Projects at Stanford.MIT.CMU"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
