@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI at Cornell"
+title: "AI @ Cornell"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
