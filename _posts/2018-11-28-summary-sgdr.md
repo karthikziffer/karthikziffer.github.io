@@ -66,8 +66,8 @@ $$η_t = η ^i_ {min} + \frac{1}{2} (η ^i_{ max} − η ^i_{ min})(1 + cos(\fra
 ---
 Understanding $η_t$:
 
--    $$η_t = η^i_{max}   \ \ when   \ \  t = 0 \  \ and  \   \ T_{cur} = 0$$
--    $$η_t = η^i_{min}  \ \  when  \ \  T_{cur} =  T_i , \ \ cos{\pi} = (-1)$$
+   $$η_t = η^i_{max}   \ \ when   \ \  t = 0 \  \ and  \   \ T_{cur} = 0$$
+   $$η_t = η^i_{min}  \ \  when  \ \  T_{cur} =  T_i , \ \ cos{\pi} = (-1)$$
 
 ---
 ---
