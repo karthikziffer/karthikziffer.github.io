@@ -65,7 +65,7 @@ $$η_t = η ^i_ {min} + \frac{1}{2} (η ^i_{ max} − η ^i_{ min})(1 + cos(\fra
 
 ---
 ---
-Understanding $η_t$:
+Understanding $$η_t$$:
 
    $$η_t = η^i_{max}   \ \ when   \ \  t = 0 \  \ and  \   \ T_{cur} = 0$$
    $$η_t = η^i_{min}  \ \  when  \ \  T_{cur} =  T_i , \ \ cos{\pi} = (-1)$$
@@ -77,3 +77,8 @@ Understanding $η_t$:
 > . It might be of great interest to decrease $$η^i_{max}$$ and $$η^i_{min}$$ at every new restart. However, for the sake of simplicity, here, we keep $$η^i_{max}$$ and $$η^i_{min}$$ the same for every **i** to reduce the number of hyperparameters involved.
 
 >Since our simulated warm restarts (the increase of the learning rate) often temporarily worsen performance, we do not always use the last $x_t$ as our recommendation for the best solution (also called the **incumbent solution**).
+
+
+Conclusion 
+
+During initial phase of network training the learning rate should be high , As the training continues, the learning rate should be reduced to avoid over shooting away from global minima. SGDR reduces the learning rate as the training persists. Restarting feature in SGDR saves the network from getting struck at local minima. 
