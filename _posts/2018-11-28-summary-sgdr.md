@@ -28,6 +28,7 @@ GSD with momentum is most widely used.
 
 
 $$v_{i+1} = \mu_t v_t - \nabla f_t(x_t)$$
+<br>
 $$x_{t+1} = x_t + v_{t+1}$$
 
 
