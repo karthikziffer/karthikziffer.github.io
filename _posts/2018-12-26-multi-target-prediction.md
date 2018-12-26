@@ -79,7 +79,6 @@ $$
    \widehat{Y_1} , \widehat{Y_2} , \widehat{Y_3}  ......\widehat{Y_m}
 $$
 
-
 4. The second training stage takes 
 
 $$
@@ -91,14 +90,15 @@ $$
 
 
 5. On the Prediction side, The prediction function is deduced from the first training stage. 
-   $$
-   {h_1 , h_2 , h_3 , h_4 .......h_m } \\
-   $$
-   Our Prediction input is 
-   $$
-   X_q. \\
-   Then \  h_1(X_q) --> \widehat{y^q_1} \\
-   $$
+
+$$
+{h_1 , h_2 , h_3 , h_4 .......h_m } \\
+$$
+Our Prediction input is 
+$$
+X_q. \\
+Then \  h_1(X_q) --> \widehat{y^q_1} \\
+$$
 
 6. The number of first prediction stage output will be same as the number of multi target vector.
 
@@ -109,12 +109,12 @@ $$
 
 
 7. The final predictions will be 
-   $$
-   X_q * \ \widehat{y^q_1} * ...... \widehat{y^q_m} \ as \ Input \\
-   \widehat{y^q_1} .......\widehat{y^q_m} \ as \ output \\
-   h^{'}_1 .....  h^{'}_m \ as \ Prediction \ function.
-   $$
 
+$$
+X_q * \ \widehat{y^q_1} * ...... \widehat{y^q_m} \ as \ Input \\
+\widehat{y^q_1} .......\widehat{y^q_m} \ as \ output \\
+h^{'}_1 .....  h^{'}_m \ as \ Prediction \ function.
+$$
 
 
 
