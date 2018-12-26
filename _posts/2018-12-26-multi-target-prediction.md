@@ -75,10 +75,10 @@ $$
 3. Next stage is the meta - variable generation, The input X is passed to the predictor function, which predicts an intermediate value i.e 
 
 
-   $$
+$$
    \widehat{Y_1} , \widehat{Y_2} , \widehat{Y_3}  ......\widehat{Y_m}
-   $$
-    
+$$
+
 
 4. The second training stage takes 
 
@@ -132,7 +132,7 @@ The name suggests, there is a chain pattern in predicting the multi target varia
 
 ![](../assets/img/Screenshot from 2018-12-26 13-45-20.png)
 
-​				Image from Springer Article by Grigorios Tsoumakas , William Groves , Ioannis Vlahavas 
+######				Image from Springer Article by Grigorios Tsoumakas , William Groves , Ioannis Vlahavas 
 
 <br>
 
@@ -145,17 +145,13 @@ The name suggests, there is a chain pattern in predicting the multi target varia
    h_1 \ Prediction \ function \ for \ Y_1 \\ 
    $$
 
-2. 
+2. Each target in Multi target array, produce respective prediction function
 
 $$
 X \ * \ Y_1 \ Input \ Feature \\
 Y_2 \ Target \ Feature \\
 h2 \ Prediction \ function \ for \  Y_2 \\
 $$
-
-
-
-
 
 3. On the Prediction side, 
    $$
@@ -166,6 +162,7 @@ $$
    \{ h_1 , h_2 ......h_m\} \\ 
    we \ predict \    \{ \widehat{y^q_1} , \widehat{y^q_2} .......\widehat{y^q_m} \}
    $$
+
 
 
 
