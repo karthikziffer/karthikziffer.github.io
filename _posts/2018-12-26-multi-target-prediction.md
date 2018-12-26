@@ -68,18 +68,18 @@ $$
 
 
 
-1. The input variable is trained to predict the first variable Y1 from the Target variable array. This creates a predictor output function h1. 
+- The input variable is trained to predict the first variable Y1 from the Target variable array. This creates a predictor output function h1. 
 
-2. This procedure is carried out on every variable from the target variable array. Their corresponding predictor output functions h1 , h2 ....hm. 
+- This procedure is carried out on every variable from the target variable array. Their corresponding predictor output functions h1 , h2 ....hm. 
 
-3. Next stage is the meta - variable generation, The input X is passed to the predictor function, which predicts an intermediate value i.e 
+- Next stage is the meta - variable generation, The input X is passed to the predictor function, which predicts an intermediate value i.e 
 
 
 $$
    \widehat{Y_1} , \widehat{Y_2} , \widehat{Y_3}  ......\widehat{Y_m}
 $$
 
-4. The second training stage takes 
+- The second training stage takes 
 
 $$
 X * \widehat{Y_1} * .....\widehat{Y_m} \ as \  Input \\
@@ -91,7 +91,7 @@ $$
 
 <br>
 
-5. On the Prediction side, The prediction function is deduced from the first training stage. 
+- On the Prediction side, The prediction function is deduced from the first training stage. 
 
 $$
 {h_1 , h_2 , h_3 , h_4 .......h_m } \\
@@ -105,7 +105,7 @@ $$
 
 <br>
 
-6. The number of first prediction stage output will be same as the number of multi target vector.
+- The number of first prediction stage output will be same as the number of multi target vector.
 
 $$
 \{ \widehat{y^q_1} ,\  \widehat{y^q_2} , \  \widehat{y^q_3} , \  \widehat{y^q_4} .....\widehat{y^q_m} \}
@@ -113,7 +113,7 @@ $$
 
 <br>
 
-7. The final predictions will be 
+- The final predictions will be 
 
 $$
 X_q * \ \widehat{y^q_1} * ...... \widehat{y^q_m} \ as \ Input \\
@@ -143,15 +143,17 @@ The name suggests, there is a chain pattern in predicting the multi target varia
 
 
 
-1. The input features and first target from the multi target array is used as label. The output will be a predictor function.
-   $$
-   X \ Input \ Feature \\
-   Y_1 \ Target \ Variable \\
-   h_1 \ Prediction \ function \ for \ Y_1 \\
-   $$
-   <br>
+- The input features and first target from the multi target array is used as label. The output will be a predictor function.
 
-2. Each target in Multi target array, produce respective prediction function
+$$
+X \ Input \ Feature \\
+Y_1 \ Target \ Variable \\
+h_1 \ Prediction \ function \ for \ Y_1 \\
+$$
+
+<br>
+
+- Each target in Multi target array, produce respective prediction function
 
 $$
 X \ * \ Y_1 \ Input \ Feature \\
@@ -161,17 +163,16 @@ h2 \ Prediction \ function \ for \  Y_2 \\
 \\
 $$
 
-3. On the Prediction side, 
-   $$
-   x^q \ is \  the \ input \  feature \  during  \ Prediction.
-   $$
+- On the Prediction side, 
 
-   $$
-   Now, \ with \  respctive \ Prediction  \ function \ i.e  \{ h_1 , h_2 ......h_m\} \\ 
-   we \ predict \    \{ \widehat{y^q_1} , \widehat{y^q_2} .......\widehat{y^q_m} \}
-   $$
+$$
+x^q \ is \  the \ input \  feature \  during  \ Prediction.
+$$
 
-
+$$
+Now, \ with \  respctive \ Prediction  \ function \ i.e  \{ h_1 , h_2 ......h_m\} \\ 
+we \ predict \    \{ \widehat{y^q_1} , \widehat{y^q_2} .......\widehat{y^q_m} \}
+$$
 
 
 
