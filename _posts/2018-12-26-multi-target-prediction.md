@@ -89,16 +89,21 @@ $$
 
 
 
+<br>
+
 5. On the Prediction side, The prediction function is deduced from the first training stage. 
 
 $$
 {h_1 , h_2 , h_3 , h_4 .......h_m } \\
 $$
-Our Prediction input is 
 $$
-X_q. \\
-Then \  h_1(X_q) --> \widehat{y^q_1} \\
+Prediction \ Input \ \  = X_q. \\
+Then \  h_1(X_q) \ Outputs \ \  \widehat{y^q_1} \\
+\\
+\\
 $$
+
+<br>
 
 6. The number of first prediction stage output will be same as the number of multi target vector.
 
@@ -106,7 +111,7 @@ $$
 \{ \widehat{y^q_1} ,\  \widehat{y^q_2} , \  \widehat{y^q_3} , \  \widehat{y^q_4} .....\widehat{y^q_m} \}
 $$
 
-
+<br>
 
 7. The final predictions will be 
 
@@ -142,8 +147,9 @@ The name suggests, there is a chain pattern in predicting the multi target varia
    $$
    X \ Input \ Feature \\
    Y_1 \ Target \ Variable \\
-   h_1 \ Prediction \ function \ for \ Y_1 \\ 
+   h_1 \ Prediction \ function \ for \ Y_1 \\
    $$
+   <br>
 
 2. Each target in Multi target array, produce respective prediction function
 
@@ -151,15 +157,17 @@ $$
 X \ * \ Y_1 \ Input \ Feature \\
 Y_2 \ Target \ Feature \\
 h2 \ Prediction \ function \ for \  Y_2 \\
+\\
+\\
 $$
 
 3. On the Prediction side, 
    $$
    x^q \ is \  the \ input \  feature \  during  \ Prediction.
    $$
-   Now, with respctive Prediction function i.e 
+
    $$
-   \{ h_1 , h_2 ......h_m\} \\ 
+   Now, \ with \  respctive \ Prediction  \ function \ i.e  \{ h_1 , h_2 ......h_m\} \\ 
    we \ predict \    \{ \widehat{y^q_1} , \widehat{y^q_2} .......\widehat{y^q_m} \}
    $$
 
