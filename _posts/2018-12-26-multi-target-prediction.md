@@ -91,16 +91,12 @@ $$
 
 <br>
 
-- On the Prediction side, The prediction function is deduced from the first training stage. 
+- On the Prediction side, The prediction function is deduced from the first training stage
 
 $$
 {h_1 , h_2 , h_3 , h_4 .......h_m } \\
-$$
-$$
 Prediction \ Input \ \  = X_q. \\
 Then \  h_1(X_q) \ Outputs \ \  \widehat{y^q_1} \\
-\\
-\\
 $$
 
 <br>
@@ -163,6 +159,8 @@ h2 \ Prediction \ function \ for \  Y_2 \\
 \\
 $$
 
+<br>
+
 - On the Prediction side, 
 
 $$
@@ -176,7 +174,7 @@ $$
 
 
 
-
+<br>
 
 We have unwraped the working of Multi Target Prediction in Machine Learning. Please find the resources below for additive information.
 
@@ -184,7 +182,7 @@ We have unwraped the working of Multi Target Prediction in Machine Learning. Ple
 
 
 
-Resources:
+### Resources:
 
 1. [Slides by Krzysztof Dembczy´nski](http://www.cs.put.poznan.pl/kdembczynski/pdf/multi-target_prediction.pdf)
 2. [Springer Post](https://link.springer.com/article/10.1007/s10994-016-5546-z)
