@@ -68,8 +68,8 @@ Authors:
 
 **There are two settings for feature learning on graphs:**
 
-- [ ] Learning a representation of the input graph. 
-- [ ] Learning representations of the internal state during the process of producing a sequence of outputs.
+- [x] Learning a representation of the input graph. 
+- [x] Learning representations of the internal state during the process of producing a sequence of outputs.
 
 
 
@@ -116,7 +116,9 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
 #### Graph Neural Networks:
 
 - GNNs are a general neural network architecture defined according to a graph structure G = (V, E) .  V - Nodes , E - Edges
+
 - GNNs have nodes , edges. The edges are pairs. This work is focused on directed graphs. But this framework can be adapted to undirected graphs too.
+
 - Each node has a node vector/representation/embedding.
 - Graphs contain node labels for each node and edge labels for each edge.
 - Set of predecessor nodes and set of successor nodes with edges is obtained from dedicated function.
@@ -126,12 +128,15 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
   - Second, an **output model** maps from node representations
     and corresponding labels to an output.
 
-
+<br>
 
 ##### Propagation Model 
 
 - In this model, An iterative procedure propagates node representations.
+
 - Initial node representations are set to arbitrary values, then each node representation is updated following the recurrence until convergence.
+
+  <br>
 
 ##### Output Model and Learning
 
@@ -160,7 +165,7 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
 - The biggest modification of GNNs is that we use *Gated Recurrent Units (Cho et al., 2014)* and unroll the recurrence for a fixed number of steps **T** and use backpropagation through time in order to compute gradients.
 - This requires more memory than the *Almeida-Pineda algorithm*, but it removes the need to constrain parameters to ensure convergence. We also extend the underlying representations and output model.
 
-
+<br>
 
 ##### Node Annotations.
 
@@ -168,7 +173,7 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
 - This is no longer the case with GG-NNs, which lets us incorporate node labels as additional inputs.
 - To distinguish these node labels used as inputs from the ones introduced before, we call them **Node Annotations**, and use vector **x** to denote these annotations.
 
-
+<br>
 
 ##### Propagation Model
 
