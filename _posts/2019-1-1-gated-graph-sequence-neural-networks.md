@@ -80,7 +80,7 @@ tags: [documentation,sample]
 
 - **Learning a representation of the input graph** is mostly achieved by previous work on *Graph Neural Networks (Scarselli et al., 2009)*. we make several minor adaptations of this framework, including changing it to use modern practices around Recurrent Neural Networks. 
 
-- **Learning representations of the internal state during the process of producing a sequence of outputs** is important because we desire outputs from graphstructured problems that are not solely individual classifications. 
+- **Learning representations of the internal state during the process of producing a sequence of outputs** is important because we desire outputs from graph structured problems that are not solely individual classifications. 
 
 - In these cases, the challenge is how to learn features on the graph that encode the partial output sequence that has already been produced (e.g., the path so far if outputting a path) and that still needs to be produced (e.g., the remaining path). We will show how the GNN framework can be adapted to these settings, leading to a novel graph-based neural network model that we call Gated Graph Sequence Neural Networks (GGS-NNs).
 
