@@ -68,8 +68,9 @@ Authors:
 
 **There are two settings for feature learning on graphs:**
 
-- [x] Learning a representation of the input graph. 
-- [x] Learning representations of the internal state during the process of producing a sequence of outputs.
+1. Learning a representation of the input graph. 
+
+2. Learning representations of the internal state during the process of producing a sequence of outputs.
 
 
 
