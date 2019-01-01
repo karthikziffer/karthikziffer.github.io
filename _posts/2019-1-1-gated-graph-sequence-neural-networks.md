@@ -19,7 +19,7 @@ tags: [documentation,sample]
 
 <br>
 
-Authors: 
+#### Authors: 
 
 - Yujia Li & Richard Zemel 
   * Department of Computer Science, University of Toronto 
