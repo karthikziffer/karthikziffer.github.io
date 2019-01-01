@@ -52,14 +52,14 @@ Authors:
 
 <br>
 
-
-
 #### Introduction
 
 - Our main contribution is an extension of Graph Neural Networks that outputs sequences. Previous work on feature learning for graph-structured inputs has focused on models that produce single outputs such as graph-level classifications, but many problems with graph inputs require outputting sequences.
 
 - Examples include paths on a graph, enumerations of graph nodes with desirable properties, or sequences of global classifications mixed with, for example, a start and end node. We are not aware of existing graph feature learning work suitable for this problem. 
+
 - Our motivating application comes from program verification and requires outputting logical formulas, which we formulate as a sequential output problem. 
+
 - A secondary contribution is highlighting that Graph Neural Networks (and further extensions we develop here) are a broadly useful class of neural network model that is applicable to many problems currently facing the field.
 
 <br>
@@ -78,7 +78,9 @@ Authors:
 <br>
 
 - **Learning a representation of the input graph** is mostly achieved by previous work on *Graph Neural Networks (Scarselli et al., 2009)*. we make several minor adaptations of this framework, including changing it to use modern practices around Recurrent Neural Networks. 
+
 - **Learning representations of the internal state during the process of producing a sequence of outputs** is important because we desire outputs from graphstructured problems that are not solely individual classifications. 
+
 - In these cases, the challenge is how to learn features on the graph that encode the partial output sequence that has already been produced (e.g., the path so far if outputting a path) and that still needs to be produced (e.g., the remaining path). We will show how the GNN framework can be adapted to these settings, leading to a novel graph-based neural network model that we call Gated Graph Sequence Neural Networks (GGS-NNs).
 
 
@@ -144,7 +146,7 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
 
 
 
-
+<br>
 
 ---
 
@@ -205,7 +207,7 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
 - There are several types of one-step outputs that we would like to produce in different situations. First, GG-NNs support node selection tasks for each node and output node scores and applying a softmax over node scores.
 - Second for graph level outputs , we define a graph level representation vector.
 
-
+<br>
 
 
 
@@ -230,7 +232,7 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
 
 
 
-
+<br>
 
 ---
 
@@ -251,6 +253,8 @@ Following *Brockschmidt et al. (2015)*, we have phrased this as a machine learni
   > > GGS-NNs are motivated by a practical application in program verification. A crucial step in automatic program verification is the inference of program invariants, which approximate the set of program states reachable in an execution. Finding invariants about data structures is an open problem.
 
 
+
+<br>
 
 
 
