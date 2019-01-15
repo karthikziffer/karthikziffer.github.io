@@ -36,7 +36,7 @@ The node in graphical model represent a feature part pattern.  Edges encodes co-
 
 A pre-trained CNN model is considered for Experiment. The location of each pattern is not fixed to a specific neural activation unit during the inference process. Instead given different input images , a part pattern may appear on various locations of a filter's feature map. But they are co-activated and keep certain spatial relationships.
 
-Given a testing image to the CNN , the exploratory grap-h developed in this paper can infer 
+Given a testing image to the CNN , the exploratory graph developed in this paper can infer 
 
  - Which nodes are responsible for neural activations of a filter.
  - Locations of the corresponding parts on the feature map.
