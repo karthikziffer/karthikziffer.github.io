@@ -86,7 +86,7 @@ Input Sequence can be a sequence data vector. The input english sentence incase 
 
 
 <br>
-$$ {center}
+$$
 (x_1 ,x_2 , ...x_n)
 $$
 
