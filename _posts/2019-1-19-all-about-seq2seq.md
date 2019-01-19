@@ -83,14 +83,12 @@ Input Sequence can be a sequence data vector. The input english sentence incase 
 
 
 
-```tex
-\[
-  \makebox[\linewidth]{$(x_1 ,x_2 , ...x_n)$}
-\]
-```
+
 
 <br>
-
+$$
+(x_1 ,x_2 , ...x_n)
+$$
 
 
 <br>
