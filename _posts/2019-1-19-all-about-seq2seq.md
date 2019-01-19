@@ -56,16 +56,21 @@ The input sequence to the RNN which computes the output sequence. RNN maps the i
 
 
 Input Sequence can be a sequence data vector. The input english sentence incase of English to French Machine translation application. 
+
+<br>
 $$
 (x_1 ,x_2 , ...x_n)
 $$
 Output Sequence can be the translated french sentence 
+
+<br>
 $$
 (y_1 , y_2 ,...y_n)
 $$
 
-
 The hidden states in the RNN are computed by the sigmoid activation on the weighted sum of current input and previous hidden state.
+
+<br>
 $$
 h_t = \sigma (W^{hx}.x_t + W^{hh}.h_{t-1})
 $$
@@ -75,6 +80,10 @@ y_t = W^{yh}.h_t
 $$
 
 
+
+
+
+<br>
 
 Since the input sentence can be long, it is challenging to map longer dependencies present in the input sentence. The depencies can be singluar/plural grammatical behaviour present in the input sentence. 
 
@@ -86,6 +95,8 @@ Since the input sentence can be long, it is challenging to map longer dependenci
 
 
 The goal of LSTM is to estimate the conditional probability :
+
+<br>
 $$
 P(y_1....y_{T'} | x_1 ....x_T)
 $$
@@ -108,13 +119,15 @@ The encoder network takes the input sequence and returns a fixed dimensional vec
 >LSTM, and then computing the probability of y1, . . . , yT′ with a standard LSTM-LM formulation
 >whose initial hidden state is set to the representation v of x1, . . . , xT.
 
+<br>
 
 $$
 P(y_1, ... , y_{T'}) =  \  \Pi^{T'}_{t =1} \ \  P(y_t | v , y_1 , ....,y_{t-1})
 $$
 
-
 The below mentioned Probablity distribution is represented with a softmax over all words in the vocabulary. 
+
+<br>
 $$
 P(y_t | v , y_1 , ....,y_{t-1})
 $$
@@ -124,7 +137,7 @@ $$
 
 
 
-
+<br>
 
 ### Decoding and Rescoring
 
@@ -134,6 +147,7 @@ The LSTM is trained on many sentences. We train the LSTM to provide maximum of c
 
 The training objective is given by,
 
+<br>
 
 $$
 1/|S| . \sum_{(T,S)  \epsilon  \delta }  \log{p(T|S)}
@@ -145,6 +159,7 @@ $$
 
 Once training is complete , we produce translations by finding the most likely translation according to the LSTM.
 
+<br>
 
 $$
 \widehat{T} = arg \ max_T \ p(T|S)
@@ -189,7 +204,7 @@ $$
 
 In the paper, Sequence to sequence models are used for Speech Recognition Task.  An Attention based encoder-decoder architecture with LAS (Listen , Attend , Spell) capability in single neural architecture. LAS features can be further employed for decoding acoustic , pronunciation , language model components.
 
-
+<br>
 
 #### Model Architecture
 
@@ -208,10 +223,11 @@ In the paper, Sequence to sequence models are used for Speech Recognition Task. 
 The Encoder maps the input sequence to a high level feature representations (h enc).  This representations are fed to the attention module , which determines which encoder features in **h enc** should be attended to in order to predict the next output **yi**. Finally the output of the attention module is passed to the decoder which takes the attention context **Ci** as well as the embedding of the previous prediction **yi-1** .
 
  The decoder produces a probability distribution.
+
+<br>
 $$
 P(y_i | y_{i-1} , ....., y_0 , x)
 $$
-
 
 
 
@@ -229,11 +245,11 @@ $$
 
 
 
-Other Similar Applications:
+### Other Similar Applications:
 
 
 
-1. [Generalization without Systematicity: On the Compositional Skills of Sequence-to-Sequence Recurrent Networks](http://proceedings.mlr.press/v80/lake18a/lake18a.pdf)
+1. [GENERALIZATION WITHOUT SYSTEMATICITY: ON THE COMPOSITIONAL SKILLS OF SEQUENCE -TO-SEQUENCE RECURRENT NETWORKS](http://proceedings.mlr.press/v80/lake18a/lake18a.pdf)
 2. [SCALABLE SENTIMENT FOR SEQUENCE-TO-SEQUENCE CHATBOT RESPONSE WITH PERFORMANCE ANALYSIS](https://arxiv.org/pdf/1804.02504.pdf)
 3. [MULTI-DIALECT SPEECH RECOGNITION WITH A SINGLE SEQUENCE-TO-SEQUENCE MODEL](https://arxiv.org/pdf/1712.01541.pdf)
 
