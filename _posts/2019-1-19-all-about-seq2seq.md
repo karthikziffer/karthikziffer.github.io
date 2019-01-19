@@ -87,6 +87,8 @@ Input Sequence can be a sequence data vector. The input english sentence incase 
 $$
 (x_1 ,x_2 , ...x_n)
 $$
+<br>
+
 Output Sequence can be the translated french sentence 
 
 <br>
