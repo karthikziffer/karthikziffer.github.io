@@ -192,6 +192,8 @@ The LSTM is trained on many sentences. We train the LSTM to provide maximum of c
 The training objective is given by,
 
 <br>
+
+
 $$
 1/|S| . \sum_{(T,S)  \epsilon  \delta }  \log{p(T|S)}
 $$
@@ -199,6 +201,10 @@ $$
 $$
 ^\star \ \delta \ is \ the \ training \ set.
 $$
+
+
+
+<br>
 
 Once training is complete , we produce translations by finding the most likely translation according to the LSTM.
 
