@@ -81,7 +81,9 @@ Input Sequence can be a sequence data vector. The input english sentence incase 
 
 <br>
 $$
+\begin{align*}
 (x_1 ,x_2 , ...x_n)
+\end{align*}
 $$
 <br>
 
