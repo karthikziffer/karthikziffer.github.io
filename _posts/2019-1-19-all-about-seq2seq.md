@@ -82,10 +82,14 @@ Input Sequence can be a sequence data vector. The input english sentence incase 
 Output Sequence can be the translated french sentence 
 
 <br>
+
+
 $$
 (x_1 ,x_2 , ...x_n) \\
 (y_1 , y_2 ,...y_n)\\
 $$
+
+
 
 <br>
 
@@ -120,9 +124,13 @@ Since the input sentence can be long, it is challenging to map longer dependenci
 The goal of LSTM is to estimate the conditional probability :
 
 <br>
+
+
 $$
 P(y_1....y_{T'} | x_1 ....x_T)
 $$
+
+
 <br>
 
 Input sequence length is **T** and output sequence length is **T'** . The input sequence length may differ from that of output sequence.
@@ -146,18 +154,25 @@ The encoder network takes the input sequence and returns a fixed dimensional vec
 
 <br>
 
+
 $$
 P(y_1, ... , y_{T'}) =  \  \Pi^{T'}_{t =1} \ \  P(y_t | v , y_1 , ....,y_{t-1})
 $$
+
+
 
 <br>
 
 The below mentioned Probablity distribution is represented with a softmax over all words in the vocabulary. 
 
 <br>
+
+
 $$
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P(y_t | v , y_1 , ....,y_{t-1})
+ P(y_t | v , y_1 , ....,y_{t-1})
 $$
+
+
 
 <br>
 
@@ -177,7 +192,6 @@ The LSTM is trained on many sentences. We train the LSTM to provide maximum of c
 The training objective is given by,
 
 <br>
-
 $$
 1/|S| . \sum_{(T,S)  \epsilon  \delta }  \log{p(T|S)}
 $$
@@ -189,6 +203,7 @@ $$
 Once training is complete , we produce translations by finding the most likely translation according to the LSTM.
 
 <br>
+
 
 $$
 \widehat{T} = arg \ max_T \ p(T|S)
@@ -259,15 +274,11 @@ The Encoder maps the input sequence to a high level feature representations (h e
  The decoder produces a probability distribution.
 
 <br>
+
+
 $$
 P(y_i | y_{i-1} , ....., y_0 , x)
 $$
-
-
-
-
-
-
 
 
 
