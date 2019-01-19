@@ -104,16 +104,17 @@ $$
 
 
 
-
-
-
-
 <br>
 
 Since the input sentence can be long, it is challenging to map longer dependencies present in the input sentence. The depencies can be singluar/plural grammatical behaviour present in the input sentence. 
 
+<br>
+
 - **Attention Networks** perform well in capturing long sentence dependencies in the sentence. 
+
 - LSTM has **forget gate** and **output gate** which captures this long term dependency information. 
+
+  <br>
 
 >It would be difficult to train the RNNs due to the resulting long term dependencies. However, the Long Short-Term Memory (LSTM) is known to learn problems with long range temporal dependencies, so an LSTM may succeed in this setting.
 
