@@ -79,12 +79,20 @@ The input sequence to the RNN which computes the output sequence. RNN maps the i
 
 Input Sequence can be a sequence data vector. The input english sentence incase of English to French Machine translation application. 
 
+
+
+
+
+```tex
+\[
+  \makebox[\linewidth]{$(x_1 ,x_2 , ...x_n)$}
+\]
+```
+
 <br>
-$$
-\begin{align*}
-(x_1 ,x_2 , ...x_n)
-\end{align*}
-$$
+
+
+
 <br>
 
 Output Sequence can be the translated french sentence 
