@@ -79,25 +79,17 @@ The input sequence to the RNN which computes the output sequence. RNN maps the i
 
 Input Sequence can be a sequence data vector. The input english sentence incase of English to French Machine translation application. 
 
-
-
-
-
-
-
-<br>
-$$
-(x_1 ,x_2 , ...x_n)
-$$
-
-<br>
-
 Output Sequence can be the translated french sentence 
 
 <br>
 $$
-(y_1 , y_2 ,...y_n)
+\\
+(x_1 ,x_2 , ...x_n) \\
+
+\\ (y_1 , y_2 ,...y_n)\\
 $$
+
+<br>
 
 The hidden states in the RNN are computed by the sigmoid activation on the weighted sum of current input and previous hidden state.
 
