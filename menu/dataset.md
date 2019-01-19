@@ -1,1 +1,6 @@
+---
+layout: page
+title: Dataset
+---
+
 - [NIPS 2018 Paper title with Abstract Dataset ](https://github.com/karthikziffer/karthikziffer.github.io/blob/master/assets/files/NIPS2018.csv)
