@@ -83,10 +83,8 @@ Output Sequence can be the translated french sentence
 
 <br>
 $$
-\\
 (x_1 ,x_2 , ...x_n) \\
-
-\\ (y_1 , y_2 ,...y_n)\\
+(y_1 , y_2 ,...y_n)\\
 $$
 
 <br>
