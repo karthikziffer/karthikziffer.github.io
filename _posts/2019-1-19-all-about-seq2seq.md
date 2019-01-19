@@ -10,6 +10,20 @@ tags: [documentation,sample]
 
 
 
+<br>
+
+<br>
+
+<br>
+
+---
+
+
+
+
+
+<br>
+
 
 
 ## [Sequence to Sequence Learning](https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf)
@@ -39,7 +53,7 @@ Seq2seq networks find application in Machine Translation , Speech Recognition , 
 
 
 
-
+<br>
 
 ### The Model
 
@@ -47,7 +61,7 @@ Seq2seq networks find application in Machine Translation , Speech Recognition , 
 
 ![Model](https://www.lucidchart.com/publicSegments/view/01a871b6-4d49-4b73-929d-1dbd57de301c/image.png)
 
-
+<br>
 
 The input sequence to the RNN which computes the output sequence. RNN maps the input sequence to the output sequence. There are two scenarios, when sequence are of fixed sequence length and variable length. Variable length sequences are not addressed in this paper. 
 
