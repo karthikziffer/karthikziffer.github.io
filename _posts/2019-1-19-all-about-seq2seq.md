@@ -63,6 +63,18 @@ Seq2seq networks find application in Machine Translation , Speech Recognition , 
 
 <br>
 
+
+
+![Full Model Arch](https://www.lucidchart.com/publicSegments/view/3b4d97a4-3752-4698-b650-69098dddc761/image.png)
+
+
+
+<br>
+
+<br>
+
+
+
 The input sequence to the RNN which computes the output sequence. RNN maps the input sequence to the output sequence. There are two scenarios, when sequence are of fixed sequence length and variable length. Variable length sequences are not addressed in this paper. 
 
 >However, it is not clear how to apply an RNN to problems whose input and the output sequences have different lengths with complicated and non-monotonic relationships.
