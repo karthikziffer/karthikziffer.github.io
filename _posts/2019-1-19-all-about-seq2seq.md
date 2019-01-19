@@ -65,7 +65,7 @@ Seq2seq networks find application in Machine Translation , Speech Recognition , 
 
 
 
-![Full Model Arch](https://www.lucidchart.com/publicSegments/view/3b4d97a4-3752-4698-b650-69098dddc761/image.png)
+![Full Model Arch](https://www.lucidchart.com/publicSegments/view/d941b3c0-66b6-49e9-8a9f-4c5dab1cac93/image.png)
 
 
 
