@@ -92,6 +92,8 @@ $$
 The hidden states in the RNN are computed by the sigmoid activation on the weighted sum of current input and previous hidden state.
 
 <br>
+
+
 $$
 h_t = \sigma (W^{hx}.x_t + W^{hh}.h_{t-1}) \\
 y_t = W^{yh}.h_t
