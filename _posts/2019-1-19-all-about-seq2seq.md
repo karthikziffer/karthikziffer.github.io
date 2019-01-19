@@ -276,15 +276,17 @@ $$
 
 
 
+<br>
 
+<br>
+
+<br>
 
 ---
 
 
 
-
-
-### Other Similar Applications:
+#### Other Similar Applications:
 
 
 
