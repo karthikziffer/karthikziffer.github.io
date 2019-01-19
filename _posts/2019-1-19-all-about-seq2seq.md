@@ -164,7 +164,7 @@ The below mentioned Probablity distribution is represented with a softmax over a
 
 <br>
 $$
-\ \ \ \ \ \ \ \ \ \ \ \ \ P(y_t | v , y_1 , ....,y_{t-1})
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P(y_t | v , y_1 , ....,y_{t-1})
 $$
 
 <br>
