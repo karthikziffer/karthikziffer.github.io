@@ -126,6 +126,8 @@ The goal of LSTM is to estimate the conditional probability :
 $$
 P(y_1....y_{T'} | x_1 ....x_T)
 $$
+<br>
+
 Input sequence length is **T** and output sequence length is **T'** . The input sequence length may differ from that of output sequence.
 
 
@@ -151,12 +153,16 @@ $$
 P(y_1, ... , y_{T'}) =  \  \Pi^{T'}_{t =1} \ \  P(y_t | v , y_1 , ....,y_{t-1})
 $$
 
+<br>
+
 The below mentioned Probablity distribution is represented with a softmax over all words in the vocabulary. 
 
 <br>
 $$
 P(y_t | v , y_1 , ....,y_{t-1})
 $$
+
+<br>
 
 
 >we require that each sentence ends with a special end-of-sentence symbol **<EOS>**, which enables the model to define a distribution over sequences of all possible lengths. 
@@ -193,6 +199,7 @@ $$
 
 
 
+<br>
 
 #### Beam Search
 
@@ -219,6 +226,10 @@ $$
 
 
 ---
+
+<br>
+
+<br>
 
 
 
