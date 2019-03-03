@@ -9,7 +9,7 @@ title: Who is Karthik?
 
 <!-- ![](../assets/img/me.png) -->
 
-An Electronics and Communication Engineer by Degree but a Tech Enthusiast who is currently learning Deep Learning. 
+An Electronics and Communication Engineer by Degree but a Tech Enthusiast who is currently exploring Deep Learning. 
 <br>
 I write on.
 
