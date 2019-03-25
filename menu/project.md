@@ -8,7 +8,7 @@ title: Project
 
 <br>
 
-- [Keras Densenet with 1M parameter+ 93% Test Accuracy](https://github.com/karthikziffer/Keras_Densenet_CIFAR10_)
+- [Keras CIFAR10 Densenet with 1M parameter+93% Test Accuracy](https://github.com/karthikziffer/Keras_Densenet_CIFAR10_)
 
 <br>
 
