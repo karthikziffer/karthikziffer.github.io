@@ -4,37 +4,28 @@ title: Project
 ---
 
 
-- [Wikipedia-Voice](https://github.com/karthikziffer/Wiki-Voice)
+- [RESNET facial keypoints detection](https://github.com/karthikziffer/RESNET_facial_keypoints_detector){:target="_blank"}
 
-<br>
-
-- [Keras CIFAR10 Densenet with 1M parameter+93% Test Accuracy](https://github.com/karthikziffer/Keras_Densenet_CIFAR10_)
-
-<br>
+- [Keras CIFAR10 Densenet with 1M parameter+93% Test Accuracy](https://github.com/karthikziffer/Keras_Densenet_CIFAR10_){:target="_blank"}
+- [Neural network in numpy](https://github.com/karthikziffer/neural_network_in_numpy){:target="_blank"}
 
 
-- [NLP Text Modelling](https://github.com/karthikziffer/NLP-Text-Modelling-)
+- [NLP Text Modelling](https://github.com/karthikziffer/NLP-Text-Modelling-){:target="_blank"}
+
+- [Machine Learning Project Marathon](https://github.com/karthikziffer/Machine-Learning-Project-Marathon){:target="_blank"}
 
 
-<br>
-
-- [Machine Learning Project Marathon](https://github.com/karthikziffer/Machine-Learning-Project-Marathon)
-
-<br>
+- [Network Phishing Detection ML Model](https://github.com/karthikziffer/Phishing_Machine_Learning_Detection){:target="_blank"}
 
 
-- [Network Phishing Detection ML Model](https://github.com/karthikziffer/Phishing_Machine_Learning_Detection)
+- [Wikipedia-Voice](https://github.com/karthikziffer/Wiki-Voice){:target="_blank"}
 
 
-<br>
 
 
-- [RESNET facial keypoints detection](https://github.com/karthikziffer/RESNET_facial_keypoints_detector)
+
 
 
 <br>
 
-
-- [Neural network in numpy](https://github.com/karthikziffer/neural_network_in_numpy)
-
-<br>
+![](https://i.ytimg.com/vi/P6t52Pjh6mk/maxresdefault.jpg)
