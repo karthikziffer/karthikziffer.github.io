@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AI on Web 
+title: AI helping hands
 ---
 
 
