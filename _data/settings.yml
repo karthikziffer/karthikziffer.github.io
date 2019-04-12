@@ -9,9 +9,9 @@ menu:
 - {name: 'Writing', path: 'menu', url: 'writing.html'}
 - {name: 'Project', path: 'menu', url: 'project.html'}
 - {name: 'Dataset', path: 'menu', url: 'dataset.html'}
+- {name: 'Web', path: 'menu', url: 'web.html'}
 - {name: 'About', path: 'menu', url: 'about.html'}
 - {name: 'Contact', path: 'menu', url: 'contact.html'}
-- {name: 'Web', path: 'menu', url: 'web.html'}
 
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
