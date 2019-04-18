@@ -13,3 +13,6 @@ title: AI helping hands
 - [AI weekly](http://aidl.io/issues){:target="_blank"}
 
 - [Sebastian Ruder](http://ruder.io/){:target="_blank"}
+
+- [deeplearning.ai notes](https://github.com/mbadry1/DeepLearning.ai-Summary){:target="_blank"}
+
