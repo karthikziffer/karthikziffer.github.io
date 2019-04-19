@@ -17,3 +17,8 @@ title: AI helping hands
 - [deeplearning.ai notes](https://github.com/mbadry1/DeepLearning.ai-Summary){:target="_blank"}
 
 - [Tutorials](http://ufldl.stanford.edu/wiki/index.php/UFLDL_Tutorial){:target="_blank"}
+
+- [deepnotes](https://deepnotes.io/){:target="_blank"}
+
+- [distill publication](https://distill.pub/){:target="_blank"}
+
