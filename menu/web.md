@@ -22,3 +22,4 @@ title: AI helping hands
 
 - [distill publication](https://distill.pub/){:target="_blank"}
 
+- [gombru blog](https://gombru.github.io/){:target="_blank"}
