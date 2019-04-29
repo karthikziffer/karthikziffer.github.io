@@ -8,6 +8,8 @@ title: AI helping hands
 
 - [Machine Learning Latest arxiv](https://arxiv.org/list/cs.LG/recent){:target="_blank"}
 
+- [CMU Computer Vision](https://ci2cv.net/papers/){:target="_blank"}
+
 - [POCKETCLUSTER](https://blog.pocketcluster.io/){:target="_blank"}
 
 - [AI weekly](http://aidl.io/issues){:target="_blank"}
