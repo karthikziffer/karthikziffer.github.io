@@ -27,3 +27,8 @@ title: AI helping hands
 - [gombru blog](https://gombru.github.io/){:target="_blank"}
 
 - [ML cheatsheet](https://ml-cheatsheet.readthedocs.io/en/latest/index.html){:target="_blank"}
+
+- [GAN Papers List1](https://github.com/zhangqianhui/AdversarialNetsPapers){:target="_blank"}
+
+- [GAN Papers List2](https://github.com/nightrome/really-awesome-gan){:target="_blank"}
+
