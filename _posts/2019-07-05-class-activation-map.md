@@ -65,18 +65,26 @@ Similarly, we compute a weighted sum of feature maps of the last convolution lay
 
 <br>
 
-1. For a given image, Let
-   $$
-   f_k(x,y)
-   $$
-   represent the activation of unit **k** in the last convolution layer at spatial location (x,y)
 
-2. Then, for unit **k**, the result of performing global average pooling, 
-   $$
-   F_k = \sum_{x,y} f_k(x,y)
-   $$
-   
-3. 
+
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/dcFFNCB" data-context="false" ><a href="//imgur.com/a/dcFFNCB"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+
+
+- For a given image, Let
+
+$$
+f_k(x,y)
+$$
+represent the activation of unit **k** in the last convolution layer at spatial location (x,y)
+
+- Then, for unit **k**, the result of performing global average pooling, 
+
+$$
+F_k = \sum_{x,y} f_k(x,y)
+$$
+
+- 
 
 $$
 S_c = \sum_{k} w_k^c.F_k
@@ -84,7 +92,7 @@ S_c = \sum_{k} w_k^c.F_k
 w_k^c \ weight \ corresponding \ to \ class \ c \ for \ unit \ k
 $$
 
-4. Output of the softmax for class c , 
+- Output of the softmax for class c , 
 
 $$
 P_c = e^{S_c} \div \sum_{c} e^{S_c}
@@ -92,24 +100,26 @@ $$
 
 
 
-5.  We define , Class Activation Map
-   $$
-   M_c(x,y) = \sum_k w_k^c. f_k(x,y)
-   \\
-   M_c \ is \ the \ class \ activation \ map \
-   $$
+- We define , Class Activation Map
 
-6. Softmax class output dependency on Class Activation Map is given by
-   $$
-   S_c = \sum_{x,y} M_c(x,y)
-   $$
-   
+$$
+M_c(x,y) = \sum_k w_k^c. f_k(x,y)
+\\
+M_c \ is \ the \ class \ activation \ map \
+$$
 
-   
+- Softmax class output dependency on Class Activation Map is given by
+
+$$
+S_c = \sum_{x,y} M_c(x,y)
+$$
+
+
+
 ---
-   
+
 <br>
-   
+
 
 
 
