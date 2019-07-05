@@ -84,7 +84,7 @@ $$
 F_k = \sum_{x,y} f_k(x,y)
 $$
 
-- 
+- Each Class weighted output
 
 $$
 S_c = \sum_{k} w_k^c.F_k
@@ -95,7 +95,7 @@ $$
 - Output of the softmax for class c , 
 
 $$
-P_c = e^{S_c} \div \sum_{c} e^{S_c}
+P_c = {e^{S_c} \over \sum_{c} e^{S_c}}
 $$
 
 
