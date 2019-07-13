@@ -33,3 +33,6 @@ title: AI helping hands
 - [GAN Papers List2](https://github.com/nightrome/really-awesome-gan){:target="_blank"}
 
 - [Collection of Deep Learning Models, Architectures.](https://github.com/rasbt/deeplearning-models){:target="_blank"}
+
+- [https://neurohive.io/en/](NeuroHive AI Research ){:target="_blank"}
+
