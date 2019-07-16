@@ -113,13 +113,15 @@ the behaviour of the training process of our network by setting different weight
 
 
 We first measure the difference between the predicted probability values and the ground truth alpha values:
+
+<br>
 $$
 L_d(\vec{F_p}) =   |\vec{F_p} - \alpha_p| , 0< \alpha_p < 1  \ \ \ \ or \ \ \ \ \  
 
 
                  (\vec{F_p} - \alpha_p)^2 , \alpha_p = 0,1
 $$
-
+<br>
 
 The difference is chosen to be L1 inside transition regions so as to recover the details of the alpha matte there, while the L2 loss is used in the rest of the regions to penalize the possible segmentation error. We find this setting can well balance between the soft segmentation and the hard
 segmentation
@@ -127,11 +129,10 @@ segmentation
 We also introduce the L1 loss on the gradients of the predicted alpha matte since it is beneficial to remove the over-blurred alpha matte after classification:
 
 <br>
-
 $$
 L_g(\vec{F_p}) \  =  \ |\nabla_x (\vec{F_p}) - \nabla_x(\alpha_p)| \ + \  |\nabla_y(\vec{F_p}) - \nabla_y(\alpha_p) |
 $$
-
+<br>
 
 The cross-entropy (CE) loss for the foreground classification branch at a pixel p is given by:
 
@@ -144,6 +145,7 @@ CE(\vec{F_p}) \ = \ w_p . (-\hat{\alpha_p}.log(\vec{F_p}) - (1-\hat{\alpha_p}).l
 \text{The weight $w_p$ is set to 1 when $α_p$ = 1 or 0 and set to
 0.5 when $α_p$ is in (0, 1)}
 $$
+<br>
 
 
 The final loss function of the foreground classification branch with respect to an image is:
@@ -151,9 +153,8 @@ The final loss function of the foreground classification branch with respect to 
 <br>
 $$
 L_p = \sum_p { CE(\vec{F_p}) + L_d (\vec{F_p}) + L_g(\vec{F_p})}
-
-\\
 $$
+<br>
 
 
 For the background classification branch, its loss L_B can be simply computed by setting α_p = 1 − α_p. 
