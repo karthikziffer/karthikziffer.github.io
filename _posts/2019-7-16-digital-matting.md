@@ -9,7 +9,7 @@ tags: [documentation,sample]
 
 <br>
 
-[A Late Fusion CNN for Digital Matting](http://www.cad.zju.edu.cn/home/weiweixu/wwxu2019.files/3710.pdf)
+Paper: [A Late Fusion CNN for Digital Matting](http://www.cad.zju.edu.cn/home/weiweixu/wwxu2019.files/3710.pdf)
 
 
 <br>
@@ -27,6 +27,8 @@ Digital matting is to accurately extract the foreground object in an image for o
 
 
 We assume that the observed image I is generated from three underlying images: the foreground image F, the background image B, and the alpha matte α, through the following model:
+<br>
+
 $$
 I_p = α_pF_p + (1 − α_p)B_p
 
@@ -66,6 +68,8 @@ pixel level. The two-decoder branch structure allows us to design a fusion branc
 The network is trained over three consecutive steps: segmentation network pretraining step, fusion network pretraining step and finally end-to-end joint training step whose training loss is imposed on the output alpha matte.
 
 we try to predict the alpha values with the following fusion formula:
+
+<br>
 $$
 α_p = β_p\vec{F_p} + (1 − β_p)(1 − \vec{B_p})
 $$
@@ -74,6 +78,7 @@ $$
 where F_p and B_p represent the predicted foreground and background probability at pixel p.  βp is the blending weight predicted by the fusion network.
 
 From the optimization perspective, the derivative of αp with respect to βp vanishes when
+<br>
 $$
 \vec{B_p} + \vec{F_p} = 1
 $$
@@ -121,6 +126,7 @@ segmentation
 
 We also introduce the L1 loss on the gradients of the predicted alpha matte since it is beneficial to remove the over-blurred alpha matte after classification:
 
+<br>
 
 $$
 L_g(\vec{F_p}) \  =  \ |\nabla_x (\vec{F_p}) - \nabla_x(\alpha_p)| \ + \  |\nabla_y(\vec{F_p}) - \nabla_y(\alpha_p) |
@@ -128,6 +134,8 @@ $$
 
 
 The cross-entropy (CE) loss for the foreground classification branch at a pixel p is given by:
+
+<br>
 $$
 CE(\vec{F_p}) \ = \ w_p . (-\hat{\alpha_p}.log(\vec{F_p}) - (1-\hat{\alpha_p}).log(1-\vec{F_p}))
 
@@ -139,11 +147,15 @@ $$
 
 
 The final loss function of the foreground classification branch with respect to an image is:
+
+<br>
 $$
 L_p = \sum_p { CE(\vec{F_p}) + L_d (\vec{F_p}) + L_g(\vec{F_p})}
 
 \\
 $$
+
+
 For the background classification branch, its loss L_B can be simply computed by setting α_p = 1 − α_p. 
 
 We also impose the L_F and L_B loss at each decoder block of two branches to further regulate the behaviour of the network.
@@ -168,6 +180,10 @@ It is a fully convolution network with five convolution layers and one sigmoid l
 
 ### Training Loss
 
+
+<br>
+
+
 $$
 L_u = \sum_p {w_p . |\beta_p.\vec{F_p} + (1-\beta_p)(1-\vec{B_p}) - \alpha_p|}
 
@@ -178,6 +194,7 @@ L_u = \sum_p {w_p . |\beta_p.\vec{F_p} + (1-\beta_p)(1-\vec{B_p}) - \alpha_p|}
 }
 $$
 
+<br>
 
 
 ## Results
