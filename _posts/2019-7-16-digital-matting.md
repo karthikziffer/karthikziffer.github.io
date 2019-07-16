@@ -37,7 +37,7 @@ I_p = α_pF_p + (1 − α_p)B_p
 
 \text{where p represents a pixel across all images, and the value of α_p ∈ [0, 1]}
 $$
- 
+
 
 
 
@@ -116,9 +116,7 @@ We first measure the difference between the predicted probability values and the
 
 <br>
 $$
-L_d(\vec{F_p}) =   |\vec{F_p} - \alpha_p| , 0< \alpha_p < 1  \ \ \ \ or \ \ \ \ \  
-
-
+L_d(\vec{F_p}) =   |\vec{F_p} - \alpha_p| , 0< \alpha_p < 1 \ \  or \ \ 
                  (\vec{F_p} - \alpha_p)^2 , \alpha_p = 0,1
 $$
 <br>
@@ -138,9 +136,7 @@ The cross-entropy (CE) loss for the foreground classification branch at a pixel 
 
 <br>
 $$
-CE(\vec{F_p}) \ = \ w_p . (-\hat{\alpha_p}.log(\vec{F_p}) - (1-\hat{\alpha_p}).log(1-\vec{F_p}))
-
-\\
+CE(\vec{F_p}) \ = \ w_p . (-\hat{\alpha_p}.log(\vec{F_p}) - (1-\hat{\alpha_p}).log(1-\vec{F_p})) \\ 
 
 \text{The weight $w_p$ is set to 1 when $α_p$ = 1 or 0 and set to
 0.5 when $α_p$ is in (0, 1)}
