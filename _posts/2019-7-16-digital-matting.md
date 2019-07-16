@@ -135,14 +135,19 @@ $$
 The cross-entropy (CE) loss for the foreground classification branch at a pixel p is given by:
 
 <br>
+
+<br>
 $$
-CE(\vec{F_p}) \ = \ w_p . (-\hat{\alpha_p}.log(\vec{F_p}) - (1-\hat{\alpha_p}).log(1-\vec{F_p})) \\ 
+CE(\vec{F_p}) \ = \ w_p.(-\hat{\alpha_p}.log(\vec{F_p}) - (1-\hat{\alpha_p}).log(1-\vec{F_p})) 
+
+\\
 
 \text{The weight $w_p$ is set to 1 when $α_p$ = 1 or 0 and set to
 0.5 when $α_p$ is in (0, 1)}
 $$
 <br>
 
+<br>
 
 The final loss function of the foreground classification branch with respect to an image is:
 
