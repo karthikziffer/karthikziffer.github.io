@@ -6,6 +6,8 @@ title: AI helping hands
 
 - [Computer Vision and Patter recognition Latest arxiv](https://arxiv.org/list/cs.CV/recent){:target="_blank"}
 
+- [Image and Video Processing](https://arxiv.org/list/eess.IV/recent){:target="_blank"}
+
 - [Machine Learning Latest arxiv](https://arxiv.org/list/cs.LG/recent){:target="_blank"}
 
 - [CMU Computer Vision](https://ci2cv.net/papers/){:target="_blank"}
