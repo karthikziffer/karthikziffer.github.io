@@ -4,7 +4,6 @@ title: "Decoding gradients"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-
 ---
 
 
