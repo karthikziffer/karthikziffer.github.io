@@ -11,14 +11,23 @@ tags: [documentation,sample]
 
 
 
-
 In neural networks, the convergence is attained by finding the optimal network error. The error is defined as a function called the Loss function, which must be minimized through an iterative process of weight updates w.r.t the gradients.
+
+Gradients are defined as the rate of change of Loss function w.r.t the multivariate weights. The optimization problem is complicated since neural network learns a non-linear function to understand the training data.  
+
+An indepth understanding of optimization can be understood by **Introduction to deep learning course by CMU**
 
 ![Screenshot-from-2019-10-28-11-47-23.png](https://i.postimg.cc/rwsrKvyv/Screenshot-from-2019-10-28-11-47-23.png)
 
-Gradients are defined as the rate of change of Loss function w.r.t the multivariate weights. 
 
-An indepth understanding of optimization can be understood by **Introduction to deep learning course by CMU**
+
+
+
+<br>
+
+
+
+
 
 
 ### The problem of Optimization
@@ -28,7 +37,13 @@ An indepth understanding of optimization can be understood by **Introduction to 
 The minimum value of Loss function facilitates the network with convergence. But in general, the loss function is a non-convex function which makes the process of finding the lowest point complicated.  
 
 By employing gradient of the multivariate function we can navigate to the minimum point. There are possibilities that the local minimum can be misunderstood as global minimum during the optimization process. 
-  
+
+
+
+<br>
+
+
+
 ### Gradient 
 
 ![Screenshot-from-2019-10-28-10-53-04.png](https://i.postimg.cc/F15dkqY4/Screenshot-from-2019-10-28-10-53-04.png)
@@ -36,6 +51,12 @@ By employing gradient of the multivariate function we can navigate to the minimu
 ![Screenshot-from-2019-10-28-10-57-13.png](https://i.postimg.cc/43brDh6b/Screenshot-from-2019-10-28-10-57-13.png)
 
 The rate of change of Loss function w.r.t all the weights in the network provides a comprehensive dependency of network weights in minimizing the loss. 
+
+
+
+<br>
+
+
 
 ### Properties of Gradient
 
@@ -51,17 +72,24 @@ When both the vector are aligned i.e when the value of **θ** = 0 and **Cos(θ)*
 The sign plays the major role in navigating towards the minimum/maximum loss point in the non-convex loss function. 
 
 ![Screenshot-from-2019-10-28-11-35-27.png](https://i.postimg.cc/Jn4HJvRw/Screenshot-from-2019-10-28-11-35-27.png)
- 
+
 
 ![Screenshot-from-2019-10-28-11-36-52.png](https://i.postimg.cc/s281QXHW/Screenshot-from-2019-10-28-11-36-52.png)
 
 
 ![Screenshot-from-2019-10-28-11-38-16.png](https://i.postimg.cc/zXJDfKDM/Screenshot-from-2019-10-28-11-38-16.png)
 
-
 ![Screenshot-from-2019-10-28-11-39-16.png](https://i.postimg.cc/52DM8C1f/Screenshot-from-2019-10-28-11-39-16.png)
 
+
+
+<br>
+
+
+
 ![Screenshot-from-2019-10-28-11-42-22.png](https://i.postimg.cc/fyyHH8jp/Screenshot-from-2019-10-28-11-42-22.png)
+
+
 
 
 ![Screenshot-from-2019-10-28-11-43-17.png](https://i.postimg.cc/dt7HrS0T/Screenshot-from-2019-10-28-11-43-17.png)
@@ -69,5 +97,14 @@ The sign plays the major role in navigating towards the minimum/maximum loss poi
 ![Screenshot-from-2019-10-28-11-44-06.png](https://i.postimg.cc/3JD1d4LX/Screenshot-from-2019-10-28-11-44-06.png)
 
 
+
+The gradient as a multiple of step size acts as weight updating factor. When this factor becomes zero, this causes vanishing gradient problem. Vanishing gradient occurs when there is no weight update which lowers the loss function.  
+
 ![Screenshot-from-2019-10-28-11-46-33.png](https://i.postimg.cc/qBKQ76D8/Screenshot-from-2019-10-28-11-46-33.png)
+
+
+
+
+
+The neural network attains convergence when the difference in loss function is less than **ε**.  **ε** might depend upon multiple factors such as the minimum loss that can be attained by that specific data distribution. 
 
