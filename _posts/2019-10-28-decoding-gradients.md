@@ -122,5 +122,7 @@ The gradient as a multiple of step size acts as weight updating factor. When thi
 
 
 
-The neural network attains convergence when the difference in loss function is less than **ε**.  **ε** might depend upon multiple factors such as the minimum loss that can be attained by that specific data distribution. 
+- The neural network attains convergence when the difference in loss function is less than **ε**.  
+
+- **ε** depends on the minimum loss that can be attained from a given data distribution. 
 
