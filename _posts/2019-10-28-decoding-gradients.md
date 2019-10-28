@@ -11,11 +11,27 @@ tags: [documentation,sample]
 
 
 
+This blog provides indepth understanding of optimization from **Introduction to deep learning course by CMU** .
+
+[Course Page](http://deeplearning.cs.cmu.edu/)
+
+
+
+<br>
+
+
+
+---
+
+
+
+<br>
+
 In neural networks, the convergence is attained by finding the optimal network error. The error is defined as a function called the Loss function, which must be minimized through an iterative process of weight updates w.r.t the gradients.
 
 Gradients are defined as the rate of change of Loss function w.r.t the multivariate weights. The optimization problem is complicated since neural network learns a non-linear function to understand the training data.  
 
-An indepth understanding of optimization can be understood by **Introduction to deep learning course by CMU**
+ 
 
 ![Screenshot-from-2019-10-28-11-47-23.png](https://i.postimg.cc/rwsrKvyv/Screenshot-from-2019-10-28-11-47-23.png)
 
