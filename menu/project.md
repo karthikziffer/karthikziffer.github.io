@@ -4,6 +4,8 @@ title: Project
 ---
 
 
+- [RESNET50 Network Architecure Implementation](https://github.com/karthikziffer/RESNET50-Implementation){:target="_blank"}
+
 - [RESNET facial keypoints detection](https://github.com/karthikziffer/RESNET_facial_keypoints_detector){:target="_blank"}
 
 - [Keras CIFAR10 Densenet with 1M parameter+93% Test Accuracy](https://github.com/karthikziffer/Keras_Densenet_CIFAR10_){:target="_blank"}
