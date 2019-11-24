@@ -11,7 +11,7 @@ tags: [documentation,sample]
 
 
 
-Paper: [Optimization]()
+Paper: [An overview of gradient descent optimization algorithms](https://arxiv.org/pdf/1609.04747.pdf)
 
 
 
@@ -243,4 +243,6 @@ They show that adding this noise makes networks more robust to poor initializati
 ---
 
 
+### Reference
 
+- [Sebastian Ruder - An overview of gradient descent optimization algorithms](https://ruder.io/optimizing-gradient-descent/index.html)
