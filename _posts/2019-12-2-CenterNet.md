@@ -4,7 +4,6 @@ title: "CenterNet"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
-image: andrew-NG-ffp.png
 ---
 
 
