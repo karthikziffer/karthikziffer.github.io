@@ -1,20 +1,21 @@
+---
 layout: post
 title: "Text Summarization Architectures"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
-# Text Summarization Architectures
 
-</br>
+
+<br>
 
 Text Summarizing is an important NLP Task. It comprises of two categories, abstractive summarization and extractive summarization. However, the real world application of text summarization is challenging such as human readability and quality. I will try to explain different research approaches and architectures employed. This blog post will focues on complete end to end information about text summarization. This blog is a comprised version of the paper
 
 **Neural Abstractive Text Summarization with Sequence-to-Sequence Models: A Survey**. 
 
-</br>
+<br>
 
 ## Introduction
 
@@ -24,7 +25,7 @@ Extractive summarization considers the words, phrases and sentences in the summa
 
 Abstractive summaries, extracts the structural representation from source article and then generates summaries using language generation models. They have a strong potential of producing high quality summaries and can also easily incorporate external knowledge. 
 
-</b>
+<br>
 
 ### Seq2seq Models and Pointer Generator Network
 
@@ -83,13 +84,13 @@ $$
 
    - hierarchical attention to capture hierarchical document structures. 
 
-     </br>
+     <br>
 
      
 
      > In this work, we model abstractive text summarization using Attentional EncoderDecoder Recurrent Neural Networks, and show that they achieve state-of-the-art performance on two different corpora. We propose several novel models that address critical problems in summarization that are not adequately modeled by the basic architecture, such as modeling key-words, capturing the hierarchy of sentence-toword structure, and emitting words that are rare or unseen at training time. Our work shows that many of our proposed models contribute to further improvement in performance. We also propose a new dataset consisting of multi-sentence summaries, and establish performance benchmarks for further research.
 
-     </br>
+     <br>
 
       [![Screenshot-from-2020-03-01-12-12-14.png](https://i.postimg.cc/PJMyrgfw/Screenshot-from-2020-03-01-12-12-14.png)](https://postimg.cc/2LVh0XZk)
 
@@ -99,11 +100,11 @@ $$
 
 When there is OOV words, the switching decoder/pointer architecture will point to their location in the source document. The decoder is equipped with a 'switch' to use the generator or a pointer at every time-step. If the switch is turned on, the decoder produces a word from its target vocabulary. If the switch if turned off, the decoder instead generates a pointer to one of the word-positions in the source. The word at the pointer-location is then copied into the summary. The switch is modeled as a sigmoid activation function.    
 
-</br>
+<br>
 
 [![Screenshot-from-2020-03-01-13-21-12.png](https://i.postimg.cc/wjX77LSD/Screenshot-from-2020-03-01-13-21-12.png)](https://postimg.cc/cvJszg1J)
 
-</br>
+<br>
 
 
 
@@ -111,7 +112,7 @@ When there is OOV words, the switching decoder/pointer architecture will point t
 
 
 
-</br>
+<br>
 
 ##### Learning Hierarchical Document Structure with Hierarchical Attention
 
@@ -123,13 +124,13 @@ The word level attention is further re-weighted by the corresponding sentence le
 
 
 
-</br>
+<br>
 
 [![Screenshot-from-2020-03-01-13-31-23.png](https://i.postimg.cc/HxhhXJft/Screenshot-from-2020-03-01-13-31-23.png)](https://postimg.cc/k6Wsd5MV)
 
 
 
-</br>
+<br>
 
 4. [Get To The Point: Summarization with Pointer-Generator Networks](https://www.aclweb.org/anthology/P17-1099.pdf) paper tackles two important challenges:
    - Accurately reproduce the salient information of source document.
@@ -141,7 +142,7 @@ This model combines the abstraction with the extraction. The pointer-generator a
 
 [![Screenshot-from-2020-03-01-14-22-36.png](https://i.postimg.cc/4y39c5DY/Screenshot-from-2020-03-01-14-22-36.png)](https://postimg.cc/G8ZtwkhR)
 
-</br>
+<br>
 
 [![Screenshot-from-2020-03-01-14-25-08.png](https://i.postimg.cc/6p6ppqNQ/Screenshot-from-2020-03-01-14-25-08.png)](https://postimg.cc/VdT87Yvy)
 
@@ -151,7 +152,7 @@ It avoids the attention mechanism to avoid repeatedly attending to the same loca
 
 coverage mechanism solves the word and sentence level repetitions and generating unnatural summaries. 
 
-</br>
+<br>
 
 
 
@@ -184,7 +185,7 @@ This paper follows an heuristic approach to avoid repetition depends on the data
 
 
 
-</br>
+<br>
 
   - Length-Constrained Summarization
 
@@ -192,7 +193,7 @@ This paper follows an heuristic approach to avoid repetition depends on the data
 
     > To enable the user to control length, we first quantize summary length into discrete bins, each representing a size range. Length bins are chosen so that they each contain roughly an equal number of training documents. We then expand the input vocabulary with special word types to indicate the length bin of the desired summary, which allows generation to be conditioned upon this discrete length variable. For training, we prepend the input of our summarizer with a marker that indicates the length of the ground-truth summary. At test time, we control the length of generated text by prepending a particular length marker token.
 
-</br>
+<br>
 
 - Entity-Centric Summarization
 
@@ -202,7 +203,7 @@ This paper follows an heuristic approach to avoid repetition depends on the data
 
 Higher accuracy is achieved:   + when the constrained entities were from first few sentences of a document. + markers taken from the reference summary.  + providing more entities improves summarization quality.
 
-</br>
+<br>
 
 - Source-Specific Summarization
 
@@ -210,7 +211,7 @@ Higher accuracy is achieved:   + when the constrained entities were from first f
 
 > we introduce special marker tokens (@genSource0, . . . , @genSourceN) to express source desiderata. For training, we preprend the input with the marker corresponding to the ground-truth source. At inference, we control the style of generated summary by prepending different markers.
 
-</br>
+<br>
 
 - Remainder Summarization
 
@@ -220,11 +221,11 @@ Higher accuracy is achieved:   + when the constrained entities were from first f
 
   > To enable remainder summarization without such data, we align summaries to full documents. Our procedure matches each reference summary sentence to its best matching document sentence based on ROUGE-L. For any position in the document, we remove sentences aligned before this point from the full summary and consider this shorter summary as the summary of the remainder.
 
-</br>
+<br>
 
 In this blog, I have covered some of the major text summarization architectures. In the part2 blog, I will list out the challenges and solution strategies employed in providing a qualitative text summary. 
 
-</br>
+<br>
 
 ---
 
