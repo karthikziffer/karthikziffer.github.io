@@ -11,7 +11,7 @@ tags: [documentation,sample]
 
 <br>
 
-Text Summarizing is an important NLP Task. It comprises of two categories, abstractive summarization and extractive summarization. However, the real world application of text summarization is challenging such as human readability and quality. I will try to explain different research approaches and architectures employed. This blog post will focues on complete end to end information about text summarization. This blog is a comprised version of the paper
+Text Summarizing is an important NLP Task. It comprises of two categories, abstractive summarization and extractive summarization. However, the real world application of text summarization is challenging due to human readability and quality. I will try to explain different research approaches and architectures employed. This blog post will focus on complete end to end information about text summarization. This blog is a summarized version of the paper
 
 **Neural Abstractive Text Summarization with Sequence-to-Sequence Models: A Survey**. 
 
@@ -27,7 +27,13 @@ Abstractive summaries, extracts the structural representation from source articl
 
 <br>
 
-### Seq2seq Models and Pointer Generator Network
+---
+
+<br>
+
+## Seq2seq Models and Pointer Generator Network
+
+<br>
 
 1. [A Neural Attention Model for Sentence Summarization](https://www.aclweb.org/anthology/D15-1044.pdf) paper first introduced a neural attention seq2seq model with an attention based encoder and a neural network language model decoder for abstractive sentence summarization task. 
 
@@ -51,12 +57,19 @@ E \ - \  word \ embedding \ matrix
 U \ V \ W \ - \ weight \ matrices
 $$
 
+<br>
 
 [![Screenshot-from-2020-03-01-10-37-20.png](https://i.postimg.cc/NGxvrZZL/Screenshot-from-2020-03-01-10-37-20.png)](https://postimg.cc/4nnSD2fT)
 
 
 
 
+
+<br>
+
+-----
+
+<br>
 
 2. [Abstractive Sentence Summarization with Attentive Recurrent Neural Networks](https://www.aclweb.org/anthology/N16-1012.pdf) paper extends the above feed forward NNLM with a recurrent neural network. The model is also equipped with a convolutional attention based encoder and a RNN decoder. 
 
@@ -72,9 +85,11 @@ $$
 P(y|x; \theta) = \prod_{t=1}^N p(y_t | \{ y_!,....,y_{t-1}\}, x; \theta)
 $$
 
+<br>
 
+-------
 
-
+<br>
 
 3. [Abstractive Text Summarization using Sequence-to-sequence RNNs and Beyond](https://www.aclweb.org/anthology/K16-1028.pdf) paper introduced several novel elements to the RNN encoder-decoder architecture to address critical problems in the abstractive text summarization, such as:
 
@@ -120,7 +135,7 @@ Identifying keywords and dominating representation from lenghty source sentences
 
 The word level attention is further re-weighted by the corresponding sentence level attention and re-normalized.
 
-> The re-scaled attention is then used to compute the attention weighted context vector that goes as input to the hidden state of the decoder. Further, we also concatenate additional positional embeddings to the hidden state of the sentence-level RNN to model positional importance of sentences in the document. This architecture therefore models key sentences as well as keywords within those sentences jointly
+>  The re-scaled attention is then used to compute the attention weighted context vector that goes as input to the hidden state of the decoder. Further, we also concatenate additional positional embeddings to the hidden state of the sentence-level RNN to model positional importance of sentences in the document. This architecture therefore models key sentences as well as keywords within those sentences jointly
 
 
 
@@ -129,6 +144,12 @@ The word level attention is further re-weighted by the corresponding sentence le
 [![Screenshot-from-2020-03-01-13-31-23.png](https://i.postimg.cc/HxhhXJft/Screenshot-from-2020-03-01-13-31-23.png)](https://postimg.cc/k6Wsd5MV)
 
 
+
+<br>
+
+
+
+---------
 
 <br>
 
@@ -156,11 +177,15 @@ coverage mechanism solves the word and sentence level repetitions and generating
 
 
 
+----
 
+<br>
 
 5. [A DEEP REINFORCED MODEL FOR ABSTRACTIVE SUMMARIZATION](https://arxiv.org/pdf/1705.04304.pdf) paper employs intra-temporal attention function to attend specific parts of the encoded input sequence, in addition to the decoder's own hidden state and the previously generated words. This kind of attention prevents the model from attending over the same parts of the input on different decoding steps.
 
 > Attentional, RNN-based encoder-decoder models for abstractive summarization have achieved good performance on short input and output sequences. For longer documents and summaries however these models often include repetitive and incoherent phrases. We introduce a neural network model with a novel intra-attention that attends over the input and continuously generated output separately, and a new training method that combines standard supervised word prediction and reinforcement learning (RL). Models trained only with supervised learning often exhibit “exposure bias” – they assume ground truth is provided at each step during training. However, when standard word prediction is combined with the global sequence prediction training of RL the resulting summaries become more readable. We evaluate this model on the CNN/Daily Mail and New York Times datasets. Our model obtains a 41.16 ROUGE-1 score on the CNN/Daily Mail dataset, an improvement over previous state-of-the-art models. Human evaluation also shows that our model produces higher quality summaries.
+
+<br>
 
 [![Screenshot-from-2020-03-01-15-24-40.png](https://i.postimg.cc/CK2hJp6H/Screenshot-from-2020-03-01-15-24-40.png)](https://postimg.cc/d78ctpFL)
 
@@ -174,12 +199,16 @@ This paper follows an heuristic approach to avoid repetition depends on the data
 
 
 
+<br>
 
+----
+
+<br>
 
 6. [Controllable Abstractive Summarization](https://arxiv.org/pdf/1711.05217.pdf) paper describes mechanisms that enable the reader to control important
    aspects of the generated summary. It provides length constrained summarization, entity centric summarization, source specific summarization and remainder summarization. 
 
-   
+   <br>
 
 > Current models for document summarization disregard user preferences such as the desired length, style, the entities that the user might be interested in, or how much of the document the user has already read. We present a neural summarization model with a simple but effective mechanism to enable users to specify these high level attributes in order to control the shape of the final summaries to better suit their needs. With user input, our system can produce high quality summaries that follow user preferences. Without user input, we set the control variables automatically – on the full text CNN-Dailymail dataset, we outperform state of the art abstractive systems (both in terms of F1-ROUGE1 40.38 vs. 39.53 F1-ROUGE and human evaluation).
 
@@ -187,7 +216,7 @@ This paper follows an heuristic approach to avoid repetition depends on the data
 
 <br>
 
-  - Length-Constrained Summarization
+  - **Length-Constrained Summarization**
 
     Controlling summary length enables reading with different time spans. Length range bins are created with equal number of training documents. Then, special words are included in the vocabulary to fill out the missing spots to obtain the constrained length. At training, we prepend the ground truth markers. At test time, the length is controlled by prepending length marker token.
 
@@ -195,17 +224,22 @@ This paper follows an heuristic approach to avoid repetition depends on the data
 
 <br>
 
-- Entity-Centric Summarization
+- **Entity-Centric Summarization**
 
   Preprending entity token instructs the model to focus on the sentences that mention these entity tokens during training. At testing, the generated summarized sentences will focus on the constrained entity sentences from the source document.  
 
 > To enable entity-centric summaries, we first anonymize entities by replacing all occurrences of a given entity in a document by the same token. For a (document, summary) pair, each entity is replaced with a token from the set (@entity0, . . . , @entityN). This abstracts away the surface form, allowing our approach to scale to many entities and generalize to unseen ones. We then express that an entity should be present in the generated summary by prepending the entity token to the input — prepending @entity3 expresses that the model should generate a summary where @entity3 is present. In effect, this instructs the model to focus on sentences that mention the marked entities.
 
-Higher accuracy is achieved:   + when the constrained entities were from first few sentences of a document. + markers taken from the reference summary.  + providing more entities improves summarization quality.
+​		Higher accuracy is achieved:   
+​			1. when the constrained entities were from first few sentences of a document. 
+
+​			2. markers taken from the reference summary.  
+
+​			3. providing more entities improves summarization quality.
 
 <br>
 
-- Source-Specific Summarization
+- **Source-Specific Summarization**
 
   Subjecting the summary to different style. Newspaper article sounds different from magazines, since they follow an unique style for different audiences. This constrain enable users to specify a preferred source style for a summary. Markers are preprended used to specify the style.
 
@@ -213,7 +247,7 @@ Higher accuracy is achieved:   + when the constrained entities were from first f
 
 <br>
 
-- Remainder Summarization
+- **Remainder Summarization**
 
   If the reader, who has read the first paragraph needs a summary of only second paragraph, then remainder summarization is the constrain imposed. This requires more specific training data with position markers separating already read portion from the remainder part along with the corresponding summaries. 
 
@@ -228,6 +262,8 @@ In this blog, I have covered some of the major text summarization architectures.
 <br>
 
 ---
+
+<br>
 
 Resources:
 
