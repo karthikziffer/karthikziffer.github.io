@@ -188,7 +188,7 @@ coverage mechanism solves the word and sentence level repetitions and generating
 
 [![Screenshot-from-2020-03-01-15-24-40.png](https://i.postimg.cc/CK2hJp6H/Screenshot-from-2020-03-01-15-24-40.png)](https://postimg.cc/d78ctpFL)
 
-This paper follows an heuristic approach to avoid repetition depends on the dataset used. 
+This paper follows an heuristic approach to avoid repetition that depends on the dataset used. 
 
 > Another way to avoid repetitions comes from our observation that in both the CNN/Daily Mail and
 > NYT datasets, ground-truth summaries almost never contain the same trigram twice. Based on this
