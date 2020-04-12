@@ -329,3 +329,13 @@ Some changes to the character+word model was made to learn affix embeddings alon
 
 ![Screenshot-2020-04-12-at-1-35-59-AM.png](https://i.postimg.cc/FKdDhTB9/Screenshot-2020-04-12-at-1-35-59-AM.png)
 
+
+
+
+# Conclusion
+
+
+Our first finding from the survey is that feature-inferring NN systems outperform feature-engineered systems, despite the latter’s access to domain specific rules, knowledge, features, and lexicons.
+
+
+Neural network models generally outperform feature-engineered models, character+word hybrid neural networks generally outperform other representational choices, and further improvements are available by applying past insights to current neural network models. 
