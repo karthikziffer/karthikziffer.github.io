@@ -16,13 +16,18 @@ tags: [documentation,sample]
 
 
 
-The loss functions are the major driving force in training a good model. For Object detection and Instance segmentation tasks, the most widely used loss function is Intersection over Union (IOU). In [Enhancing Geometric Factors for Object Detection and Instance Segmentation Loss function.](https://arxiv.org/pdf/2005.03572.pdf) psper, a new loss function called as Complete Intersection over Union id proposed by considering three geometric factors.
+The loss functions are the major driving force in training a good model. In Object detection and Instance segmentation tasks, the most widely used loss function is Intersection over Union (IOU). In [Enhancing Geometric Factors for Object Detection and Instance Segmentation Loss function.](https://arxiv.org/pdf/2005.03572.pdf) paper, a new loss function called as Complete Intersection over Union is proposed by considering three geometric factors.
 
 <br>
 
+Before that, Let's understand Intersection over Union
+
+<br>
+
+
 ### Intersection over Union
 
-Intersection over Union is the ratio of Area of Overlap over Area of Union. 
+Intersection over Union is the ratio of Area of Overlap over Area of Union. In the below figure, B is the ground truth box and A is the predicted bounding Box.
 
 
 $$
@@ -85,7 +90,7 @@ In this paper, a new CIoU loss is introduced by considering the geometric factor
 
 GIoU loss tries to maximize overlap area of two boxes and still performs limited due to only considering overlap areas. 
 
-GIoU loss tends to increase the size of the predicted box, while the predicted box moves towards the target box very slowly. Consequently , GIoU loss emprically needs more iterations to converge, especially for bounding box at horizontal and vertical orientations. Thus increasing the training time.
+GIoU loss tends to increase the size of the predicted box, while the predicted box moves towards the target box very slowly. Consequently , GIoU loss emprically needs more iterations to converge, especially for bounding box at horizontal and vertical orientations, thus increasing the training time.
 
 <br>
 
@@ -211,7 +216,7 @@ CIoU loss can provide moving direction for bounding boxes when non-overlapping w
 
 
 
-This is a new loss for improving the training of detection and segmentation tasks. CIoU converges faster with less iterations than IoU and GIoU due to the consideration of three geometric factors. 
+CIoU loss improves the performance of detection and segmentation tasks. CIoU converges faster with less iterations than IoU and GIoU due to the consideration of three geometric factors. 
 
 
 
