@@ -164,6 +164,7 @@ V = \alpha \ (\frac{4}{\pi^2}(arctan(\frac{w^B}{h^B}) - arctan(\frac{w}{h}))^2)
 \\ 
 
 w^B \ width \ of \ ground \ truth \ box
+\\
 h^B \ height of ground truth box
 $$
 
