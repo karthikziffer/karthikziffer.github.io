@@ -57,11 +57,10 @@ The problem to distinguish between the same level of overlap, but different scal
 
 
 $$
-GIoU = \frac{|A \cap B|}{|A \cup B} - \frac{C\setminus( A \cup B)}{|C|} \\
-\\
-\\
-= IoU - \frac{C\setminus( A \cup B)}{|C|}
+GIoU = \frac{|A \cap B|}{|A \cup B} - \frac{C\setminus( A \cup B)}{|C|} \ = IoU - \frac{C\setminus( A \cup B)}{|C|}
 $$
+
+
 Here, A and B are the prediction and ground truth bounding boxes. C is the smallest convex hull that encloses both A and B. C is the smallest box covering A and B. 
 
 The penality term in GIoU loss, will move the predicted box towards the target box in non-overlapping cases.
@@ -167,14 +166,28 @@ V = \alpha \ (\frac{4}{\pi^2}(arctan(\frac{w^B}{h^B}) - arctan(\frac{w}{h}))^2)
 w^B \ width \ of \ ground \ truth \ box
 h^B \ height of ground truth box
 $$
+
+
+
 <br>
+
+
 $$
 \alpha = 0, \\if \ IoU < 0.5
 $$
+
+
+
 <br>
+
+
 $$
 \alpha = \frac{V}{(1-IoU) + V} \\ if \ IoU \ge 0.5
 $$
+
+
+<br>
+
 
 
 alpha is a trade-off parameter. When the IoU is less than 0.5, then the two boxes are not well matched, the consistency of aspect ratio is less important.
