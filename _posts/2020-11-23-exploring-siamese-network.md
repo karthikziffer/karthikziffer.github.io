@@ -51,9 +51,7 @@ tags: [documentation,sample]
 
 
 
-- The encoder in x2 does not receive any gradients from z2, but receives gradient from p2 in the second
-
-  term. 
+- The encoder in x2 does not receive any gradients from z2, but receives gradient from p2 in the second term. 
 
 
 
