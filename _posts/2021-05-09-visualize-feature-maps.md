@@ -266,4 +266,4 @@ conv1 layer feature map
 
 
 
-If you notice, the feature maps are flipped. The input images are horizontal flipped during augmentation. Similarly, you can visualize other layers of the network. I have visualized the feature maps, as a next step, I want to cluster these features map vectors to find their behavior over the training phase. 
+If you notice, the feature maps are flipped. The input images are horizontally flipped during augmentation. Similarly, you can visualize other layers of the network. In this project, I have visualized only the feature maps, as a next step, I want to cluster these features map vectors to find their behavior over the training phase. 
