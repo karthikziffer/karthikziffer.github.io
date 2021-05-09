@@ -218,7 +218,7 @@ The batch size is 100, there are totally 244 training images.
 
 
 
- Just visualizing **conv1**
+ Visualizing **conv1**
 
 ```python
 query_epoch = '3'
@@ -266,4 +266,4 @@ conv1 layer feature map
 
 
 
-Similarly you can visualize other layers of the network. I have visualized the feature maps, as a next step, I want to cluster these features map vectors to find their behavior over the training phase. 
+If you notice, the feature maps are flipped. The input images are horizontal flipped during augmentation. Similarly, you can visualize other layers of the network. I have visualized the feature maps, as a next step, I want to cluster these features map vectors to find their behavior over the training phase. 
