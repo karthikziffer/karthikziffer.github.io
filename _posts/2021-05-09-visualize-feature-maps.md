@@ -81,7 +81,7 @@ Defining a class for forward hooks. **register_forward_hook** calls the function
 
  
 
-```
+```python
 from functools import partial
 
 class HooksExecution(nn.Module):
@@ -106,7 +106,7 @@ class HooksExecution(nn.Module):
 
 I am using an universal unique identifier for activations dictionary keys to avoid overwriting. This can be optimized. 
 
-```
+```python
 activations = {}
 
 def save_activation(name, epoch, batch, mod, inp, out):
@@ -121,7 +121,7 @@ Below is the training script. Since I want to visualize the feature maps during 
 
 
 
-```
+```python
 epochs = 5
 for epoch in range(epochs): 
 
@@ -164,7 +164,7 @@ for epoch in range(epochs):
 
 printing epoch 3 and conv1 layer 
 
-```
+```python
 query_epoch = '3'
 query_layer = 'conv1'
 
@@ -177,7 +177,7 @@ for key, val in activations.items():
 
 The batch size is 100, there are totally 244 training images. 
 
-```
+```python
 # output
 
 3_0_07a4a_conv1 --->  torch.Size([100, 64, 112, 112])
@@ -220,7 +220,7 @@ The batch size is 100, there are totally 244 training images.
 
  Just visualizing **conv1**
 
-```
+```python
 query_epoch = '3'
 query_layer = 'conv1'
 
@@ -234,7 +234,7 @@ for key, val in activations.items():
 
 
 
-```
+```python
 width=60
 height=60
 rows = 10
