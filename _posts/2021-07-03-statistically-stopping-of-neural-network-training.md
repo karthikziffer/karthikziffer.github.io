@@ -10,9 +10,9 @@ tags: [documentation,sample]
 
 
 
-Paper: https://arxiv.org/abs/2103.01205
+Paper: [Statistically Significant Stopping of Neural Network Training](https://arxiv.org/abs/2103.01205)
 
-Github: https://github.com/justinkterry/ASWS
+Github: [Code Repository](https://github.com/justinkterry/ASWS)
 
 
 
@@ -41,7 +41,7 @@ Currently, the optimal place to stop the neural network's training is when the t
 - A decrease in highest test accuracy observed over a given number of epochs
 - An average change in test accuracy over a given number of epochs
 
-
+<br>
 
 In the context of Auto ML, along with above conditions, two of the most popular conditions are used.
 
