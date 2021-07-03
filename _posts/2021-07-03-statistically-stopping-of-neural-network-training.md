@@ -51,8 +51,8 @@ Currently, the optimal place to stop the neural network's training is when the t
 
 In the context of Auto ML, along with above conditions, two of the most popular conditions are used.
 
-- Median stopping rule: Where a run is stopped if its performance falls below the median of other trials at similar points in time. 
-- Hyper Band: Where runs are placed into brackets and low performing runs in each bracket are stopped.
+- **Median stopping rule**: Where a run is stopped if its performance falls below the median of other trials at similar points in time. 
+- **Hyper Band**: Where runs are placed into brackets and low performing runs in each bracket are stopped.
 
 
 
