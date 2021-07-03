@@ -112,6 +112,12 @@ Results
 
 The only stopping methods able to consistently achieve higher test accuracy, when compared to ASWS method are the performance stopping method and the average difference stopping method. The difference in test accuracy is 0.5%. 
 
+This paper shows that the ASWS learning rate scheduler can achieve comparable performance to schedulers which are commonly used in fewer iterations. All of these advances are of potentially great use towards amore environmentally sustainable machine learning, faster prototyping, and less far computational expense during large AutoML training endeavours. 
+
+
+
+<br>
+
 
 
 ![](https://media.giphy.com/media/3o7buiyYnf8OhsVp9m/giphy.gif)
