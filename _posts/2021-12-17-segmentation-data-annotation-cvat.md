@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Segmentation data annotation CVAT"
+title: "Segmentation data annotation cvat"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
