@@ -38,7 +38,7 @@ Let's create a simple application that takes input image and returns 90 degree r
 
 ![Capture1.png](https://i.postimg.cc/Hx2LjTQ6/Capture1.png)
 
-The problem with above code is, whenever you execute this code, it runs on a new port. To avoid it, we must close all the active port connections before starting. 
+<mark>The problem with the above code is, whenever you execute this code, it runs on a new port.</mark> To avoid it, we must close all the active port connections before starting. 
 
 ```
 import gradio as gr
