@@ -12,7 +12,7 @@ tags: [documentation,sample]
 
 
 
-I recently had a POC to present to my team. It was an image similarity project in the retail space. I was looking for a simple tool to demo the top N similar image for a given query image. I did not want to spend much time in learning the tool, but I started with [Streamlit](https://streamlit.io/), since it was famous than [Gradio](https://gradio.app/). [Streamlit](https://streamlit.io/) is a good package, which provides controlled options to build but requires steep learning curve to make necessary changes. I chose [Gradio](https://gradio.app/) for my image similarity demo over Streamlit because it was simple to implement for my use case. On the other hand, I faced some issues because I was using it in my office laptop, so be prepared. It worked flawlessly in my personal laptop. 
+I recently had a POC to present to my team. It was an image similarity project in the retail space. I was looking for a simple tool to demo the top N similar image for a given query image. I did not want to spend much time in learning the tool, but I started with [Streamlit](https://streamlit.io/), since it was famous than [Gradio](https://gradio.app/). [Streamlit](https://streamlit.io/) is a good package, which provides controlled options to build but requires steep learning curve to make necessary changes. I chose [Gradio](https://gradio.app/) for my image similarity demo over Streamlit because it was simple to implement for my use case. On the other hand, I faced some issues because I was using it in my office laptop because of some network accessibility restrictions, so be prepared. It worked flawlessly in my personal laptop. 
 
 
 
