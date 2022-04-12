@@ -158,9 +158,17 @@ This scheme never explicitly calculates a gradient with respect to <mark>θ</mar
 
 
 
+---
 
+#### Conclusion:
 
+<br>
 
+- The paper introduced an optimization scheme that restricts gradient descent to a few random directions, re-drawn at every step. 
+- This provides further evidence that viable solutions of neural network loss landscape can be found, even if only a small fraction of directions in the weight space are explored. 
+- In addition, the paper shows that using compartmentalization to limit the dimensionality of the approximation can further improve task performance.
+
+<br>
 
 
 
