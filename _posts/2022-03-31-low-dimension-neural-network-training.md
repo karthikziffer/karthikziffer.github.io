@@ -29,11 +29,19 @@ We realize further improvements by applying independent projections to different
 
 To implement these experiments, we leverage <mark>hardware-accelerated pseudo-random number generation</mark> to construct the random projections on-demand at every optimization step, allowing us to distribute the computation of independent random directions across multiple workers with shared random seeds.
 
+<br>
+
 This yields significant reductions in memory and is up to 10x faster for the workloads in question.
+
+<br>
 
 <mark>Empirical evidence suggests that not all of the gradient directions are required to sustain effective optimization and that the descent may happen in much smaller subspaces</mark>
 
+<br>
+
 Many methods are able to greatly reduce model redundancy while achieving high task performance at a lower computational cost
+
+<br>
 
 The paper observes that applying smaller independent random projections to different parts of the network and re-drawing them at every step significantly improves the obtained accuracy on fully-connected and several convolutional architectures
 
@@ -56,14 +64,17 @@ At the point θ, the black arrow represents the direction of steepest descent co
 To reduce the network training dimensionality, we seek to project into a lower dimensional random subspace by applying a <mark>D*d</mark> random projection matrix <mark>P</mark> to the parameters  
 
 <br>
+
+
 $$
-\theta_t := \theta_0 + P.c_t
-\\
-\theta_o : Network's \ initialization
-\\
-c_t : Low \ dimensional \ trainable \ parameter \ vector \ of \ size \ d
-\\ 
-d < D
+
+    \theta_t := \theta_0 + P.c_t
+    \\
+    \theta_o : Network's \ initialization
+    \\
+    c_t : Low \ dimensional \ trainable \ parameter \ vector \ of \ size \ d
+    \\ 
+    d < D
 $$
 
 
@@ -73,6 +84,8 @@ If <mark>P’s</mark> column vectors are orthogonal and normalized, they form a 
 $$
 c_t - \ can \ be \ interpreted \ as \ coordinates \ in \ the \ subspace.
 $$
+<br>
+
 As such, the construction can be used to train in a d-dimensional subspace of the network’s original D-dimensional parameter space.
 
 <br>
@@ -129,13 +142,17 @@ Computing the gradient of this modified objective with respect to
 $$
 c = [c_1, ..., c_d]^T \ at \ c = \vec{0}
 $$
+<br>
+
 and substituting it back into the basis yields a descent gradient that is restricted to the specified set of basis vectors
 $$
 g_t^{RBD} := \sum_{i=1}^{d} \frac{\partial{L^{RBD}}}{\partial{c_i}}
 $$
+<br>
+
 This scheme never explicitly calculates a gradient with respect to <mark>θ</mark>, but performs the weight update using only the <mark>d</mark>> coordinate gradients in the respective base.
 
-
+<br>
 
 
 
