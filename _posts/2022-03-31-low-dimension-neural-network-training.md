@@ -71,7 +71,7 @@ $$
 
 If <mark>P’s</mark> column vectors are orthogonal and normalized, they form a randomly oriented base and 
 $$
-c_t \ can \ be \ interpreted \ as \ coordinates \ in \ the \ subspace.
+c_t - \ can \ be \ interpreted \ as \ coordinates \ in \ the \ subspace.
 $$
 As such, the construction can be used to train in a d-dimensional subspace of the network’s original D-dimensional parameter space.
 
@@ -117,7 +117,7 @@ can be directly used for descent in the native weight space following the standa
 $$
 \theta_{t+1} := \theta_t - \eta_{RB} * g_t^{RB}
 $$
-
+<br>
 
 To obtain the <mark> d dimensional coordinate vector</mark>, we redefine the training objective itself to implement the random bases constraint
 $$
