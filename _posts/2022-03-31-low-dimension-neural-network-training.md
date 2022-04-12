@@ -108,15 +108,15 @@ To obtain a more general expression of subspace optimization, the random project
 $$
 g^{(RB)}_t := \sum_{i=1}^{d} c_{i,t} * \varphi_{i,t}
 $$
-with random basis vectors 
+with random basis vectors <br>
 $$
-\{ \ \varphi_{i,t} \in \R^D \ \}_{i = 1}^{d}
+\{ \ \varphi_{i,t} \in \mathbb{R}^D \ \}_{i = 1}^{d}
 $$
 
 
-and co-ordinates 
+and co-ordinates  <br>
 $$
-c_{i,t} \in \R
+c_{i,t} \in \mathbb{R}
 $$
 
 
@@ -124,8 +124,10 @@ $$
 
 The gradient step 
 $$
-g_t^{RB} \in \R^D 
+g_t^{RB} \in \mathbb{R}^D
 $$
+ <br>
+
 can be directly used for descent in the native weight space following the standard update equation  
 $$
 \theta_{t+1} := \theta_t - \eta_{RB} * g_t^{RB}
