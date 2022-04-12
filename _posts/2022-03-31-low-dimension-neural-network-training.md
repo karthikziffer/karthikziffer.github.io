@@ -126,7 +126,7 @@ The gradient step
 $$
 g_t^{RB} \in \mathbb{R}^D
 $$
- <br>
+
 
 can be directly used for descent in the native weight space following the standard update equation  
 $$
