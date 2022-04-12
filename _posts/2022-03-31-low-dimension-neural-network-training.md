@@ -39,7 +39,7 @@ The paper observes that applying smaller independent random projections to diffe
 
 <br>
 
-![Capture11.png](https://i.postimg.cc/Px9jz4m7/Capture11.png)
+![Capture11.png](https://i.postimg.cc/VL4KxNhf/Capture11.png)
 
 <br>
 
@@ -75,7 +75,13 @@ c_t \ can \ be \ interpreted \ as \ coordinates \ in \ the \ subspace.
 $$
 As such, the construction can be used to train in a d-dimensional subspace of the network’s original D-dimensional parameter space.
 
+<br>
 
+![Capture11.png](https://i.postimg.cc/Px9jz4m7/Capture11.png)
+
+
+
+<br>
 
 In this formulation, however, <mark>any optimization progress is constrained to the particular subspace that is determined by the network initialization and the projection matrix</mark>.
 
