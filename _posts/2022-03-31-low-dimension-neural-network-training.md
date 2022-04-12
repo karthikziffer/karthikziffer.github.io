@@ -124,7 +124,7 @@ $$
 
 The gradient step 
 $$
-g_t^{RB} \in \mathbb{R}^D
+g_t^{RB} \in \mathbb{R}^D \
 $$
 
 
