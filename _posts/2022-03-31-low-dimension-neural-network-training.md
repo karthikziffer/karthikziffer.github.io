@@ -47,11 +47,11 @@ The paper observes that applying smaller independent random projections to diffe
 
 <br>
 
-![Capture11.png](https://i.postimg.cc/VL4KxNhf/Capture11.png)
+At the point <mark>θ</mark>, the black arrow represents the direction of steepest descent computed by conventional SGD. The colored arrow represents the direction of steepest descent under the constraint of being in the chosen lower dimensional random subspace (the green plane)
 
 <br>
 
-At the point θ, the black arrow represents the direction of steepest descent computed by conventional SGD. The colored arrow represents the direction of steepest descent under the constraint of being in the chosen lower dimensional random subspace (the green plane)
+![Capture11.png](https://i.postimg.cc/VL4KxNhf/Capture11.png)
 
 <br>
 
