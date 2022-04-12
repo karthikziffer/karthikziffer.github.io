@@ -55,6 +55,8 @@ At the point θ, the black arrow represents the direction of steepest descent co
 
 <br>
 
+The below YouTube video will explain you about Basis, which is necessary to understand the further blog content. 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eeMJg4uI7o0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
