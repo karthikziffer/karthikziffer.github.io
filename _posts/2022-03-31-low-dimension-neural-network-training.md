@@ -85,11 +85,11 @@ As such, the construction can be used to train in a d-dimensional subspace of th
 
 In this formulation, however, <mark>any optimization progress is constrained to the particular subspace that is determined by the network initialization and the projection matrix</mark>.
 
-
+<br>
 
 To obtain a more general expression of subspace optimization, the random projection can instead be formulated as a <mark>constraint of the gradient descent in the original weight space</mark>.
 
-
+<br>
 
  The constraint requires the gradient to be expressed in the random base 
 $$
@@ -107,7 +107,7 @@ c_{i,t} \in \R
 $$
 
 
-
+<br>
 
 The gradient step 
 $$
@@ -123,7 +123,7 @@ To obtain the <mark> d dimensional coordinate vector</mark>, we redefine the tra
 $$
 L^{RBD}(c_1,.....,c_d) := L(\theta_t + \sum_{i=1}^{d} c_i * \varphi_{i,t})
 $$
-
+<br>
 
 Computing the gradient of this modified objective with respect to 
 $$
