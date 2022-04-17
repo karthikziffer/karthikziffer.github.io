@@ -83,7 +83,7 @@ $$
 
 If <mark>P’s</mark> column vectors are orthogonal and normalized, they form a randomly oriented base and 
 $$
-c_t - \ can \ be \ interpreted \ as \ coordinates \ in \ the \ subspace.
+\\ c_t - \ can \ be \ interpreted \ as \ coordinates \ in \ the \ subspace.
 $$
 <br>
 
@@ -107,19 +107,18 @@ To obtain a more general expression of subspace optimization, the random project
 
  The constraint requires the gradient to be expressed in the random base 
 $$
-g^{(RB)}_t := \sum_{i=1}^{d} c_{i,t} * \varphi_{i,t}
+\\ g^{(RB)}_t := \sum_{i=1}^{d} c_{i,t} * \varphi_{i,t}
 $$
 with random basis vectors <br>
 $$
-\{ \ \varphi_{i,t} \in \mathbb{R}^D \ \}_{i = 1}^{d}
+\\ \{ \ \varphi_{i,t} \in \mathbb{R}^D \ \}_{i = 1}^{d}
 $$
 
 
 and co-ordinates  <br>
 $$
-c_{i,t} \in \mathbb{R}
+\\ c_{i,t} \in \mathbb{R}
 $$
-
 
 <br>
 
@@ -133,25 +132,25 @@ $$
 
 can be directly used for descent in the native weight space following the standard update equation  
 $$
-\theta_{t+1} := \theta_t - \eta_{RB} * g_t^{RB}
+\\ \theta_{t+1} := \theta_t - \eta_{RB} * g_t^{RB}
 $$
 <br>
 
 To obtain the <mark> d dimensional coordinate vector</mark>, we redefine the training objective itself to implement the random bases constraint
 $$
-L^{RBD}(c_1,.....,c_d) := L(\theta_t + \sum_{i=1}^{d} c_i * \varphi_{i,t})
+\\ L^{RBD}(c_1,.....,c_d) := L(\theta_t + \sum_{i=1}^{d} c_i * \varphi_{i,t})
 $$
 <br>
 
 Computing the gradient of this modified objective with respect to 
 $$
-c = [c_1, ..., c_d]^T \ at \ c = \vec{0}
+\\ c = [c_1, ..., c_d]^T \ at \ c = \vec{0}
 $$
 <br>
 
 and substituting it back into the basis yields a descent gradient that is restricted to the specified set of basis vectors
 $$
-g_t^{RBD} := \sum_{i=1}^{d} \frac{\partial{L^{RBD}}}{\partial{c_i}}
+\\ g_t^{RBD} := \sum_{i=1}^{d} \frac{\partial{L^{RBD}}}{\partial{c_i}}
 $$
 <br>
 
