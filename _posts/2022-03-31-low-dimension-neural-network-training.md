@@ -69,14 +69,13 @@ To reduce the network training dimensionality, we seek to project into a lower d
 
 
 $$
-
     \theta_t := \theta_0 + P.c_t
     \\
     \theta_o : Network's \ initialization
     \\
     c_t : Low \ dimensional \ trainable \ parameter \ vector \ of \ size \ d
     \\ 
-    d < D
+    d < D
 $$
 
 
@@ -126,7 +125,7 @@ $$
 
 The gradient step 
 $$
-g_t^{RB} \in \mathbb{R}^D \
+g_t^{RB}  \in   \mathbb{R}^{D}
 $$
 
 
