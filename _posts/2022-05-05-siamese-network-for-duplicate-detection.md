@@ -15,7 +15,7 @@ tags: [documentation,sample]
 
 
 
-In this post, I will list out few applications of Siamese network from the paper [Using Siamese CNNs for Removing Duplicate Entries From Real-Estate Listing Databases](http://cs231n.stanford.edu/reports/2017/pdfs/7.pdf).
+In this post, I will list out the application of Siamese network from the paper [Using Siamese CNNs for Removing Duplicate Entries From Real-Estate Listing Databases](http://cs231n.stanford.edu/reports/2017/pdfs/7.pdf).
 
 <br>
 
