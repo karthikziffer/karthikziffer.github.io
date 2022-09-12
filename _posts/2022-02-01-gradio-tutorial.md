@@ -26,6 +26,10 @@ My use case is as follows:
 
 Installation:
 
+Need Python > 3.7 version
+
+<br>
+
 ```
  pip install gradio
 ```
