@@ -15,11 +15,21 @@ tags: [documentation,sample]
 
 <br>
 
-## PyTorch model architecture
+## PyTorch LSTM model architecture
 
 <br>
 
-![image-20220927154510444](C:\Users\karth\AppData\Roaming\Typora\typora-user-images\image-20220927154510444.png)
+
+
+```
+LSTM1(
+  (lstm1): LSTM(2800, 5, batch_first=True)
+  (linear): Linear(in_features=5, out_features=5, bias=True)
+  (softmax): Softmax(dim=None)
+)
+```
+
+
 
 
 
@@ -47,39 +57,21 @@ class LSTM1(nn.Module):
 
 <br>
 
-
-
 ```
-pip install tf-nightly
+pip install tf-nightly==2.11.0.dev20220927
 ```
-
-![image-20220927161251371](C:\Users\karth\AppData\Roaming\Typora\typora-user-images\image-20220927161251371.png)
-
-
 
 <br>
 
 ```
-pip show tensorflow
+pip show tensorflow==2.8.2+zzzcolab20220719082949
 ```
-
-
-
-![image-20220927161408306](C:\Users\karth\AppData\Roaming\Typora\typora-user-images\image-20220927161408306.png)
-
-
 
 <br>
 
 ```
-pip show torch
+pip show torch==1.12.1+cu113
 ```
-
-![image-20220927161528768](C:\Users\karth\AppData\Roaming\Typora\typora-user-images\image-20220927161528768.png)
-
-
-
-
 
 <br>
 
