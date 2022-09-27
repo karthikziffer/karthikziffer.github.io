@@ -119,13 +119,7 @@ print(torch_out)
 tensor([[[-0.0377,  0.0866, -0.0598,  1.0364, -0.0254]]], grad_fn=<ViewBackward0>)
       
       
-torch.onnx.export(
-    model = lstm1,                  		 # PyTorch Model
-    args = sample_input,                	 # Input tensor
-    f = "./LSTM.onnx",       				# Output file (eg. 'output_model.onnx')
-    opset_version=12,       				# Operator support version
-    input_names=['input'],   				# Input tensor name (arbitary)
-    output_names=['output'] 				# Output tensor name (arbitary)
+torch.onnx.export(model = lstm1, args = sample_input, f = "./LSTM.onnx", opset_version=12, input_names=['input'], output_names=['output'] 				
 )
 ```
 
@@ -156,9 +150,7 @@ tf_rep.export_graph("./LSTM_tf_2.pb")
 ```
 
 #TensorFlow freezegraph .pb model file 
-converter = tf.compat.v1.lite.TFLiteConverter.from_frozen_graph('/content/LSTM_tf_2.pb', 
-                                                      input_shapes = {'input':[1,1,2800]},
-                                                      input_arrays = ['input'],output_arrays = ['output'])
+converter = tf.compat.v1.lite.TFLiteConverter.from_frozen_graph('/content/LSTM_tf_2.pb', input_shapes = {'input':[1,1,2800]}, input_arrays = ['input'],output_arrays = ['output'])
 
 
 converter.target_ops = [tf.lite.OpsSet.TFLITE_BUILTINS, tf.lite.OpsSet.SELECT_TF_OPS]
