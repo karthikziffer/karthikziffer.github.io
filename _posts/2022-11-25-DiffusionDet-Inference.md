@@ -86,7 +86,7 @@ Manually download the [pretrained model](https://github.com/ShoufaChen/Diffusion
 
 <br>
 
-Edit the DEVICE config file Base-DiffusionDet inside the configs folder to add the MODEL.DEVICE as "cpu", since the inference is perfomed on CPU machine without GPU.  I only added the line  <mark> DEVICE: "cpu" </mark>.
+Edit the config file Base-DiffusionDet inside the configs folder to add the MODEL.DEVICE as "cpu", since the inference is perfomed on CPU machine without GPU.  I only added the line  <mark> DEVICE: "cpu" </mark>.
 
 <br>
 
