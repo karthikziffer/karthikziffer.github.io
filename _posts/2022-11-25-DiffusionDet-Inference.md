@@ -16,10 +16,6 @@ tags: [documentation,sample]
 
 <br>
 
-## 
-
-<br>
-
 In this blog post I will provide the procedures that I followed to inference the DiffusionDet Model for object detection. This is based on the 
 
 - [Github repo](https://github.com/ShoufaChen/DiffusionDet)
