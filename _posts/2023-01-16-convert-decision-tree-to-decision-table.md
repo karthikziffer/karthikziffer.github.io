@@ -111,7 +111,7 @@ for idx, _ in enumerate(tree_text_data):
     sequence.append(feature_rule.group(0))
     
   # if it's last condition, add it to rules list
-  if idx+1 == len(tree_text_data):
+  elif idx+1 == len(tree_text_data):
         rules.append(sequence)
     
     
