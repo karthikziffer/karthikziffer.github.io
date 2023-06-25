@@ -81,7 +81,7 @@ I installed the pip packages using ```pip install -r requirements.txt ``` , howe
 
 <br>
 
-Too avoid this process, I decided to install each pip package individually
+To avoid this process, I decided to install each pip package individually
 
 ```
 pip install rouge-score
