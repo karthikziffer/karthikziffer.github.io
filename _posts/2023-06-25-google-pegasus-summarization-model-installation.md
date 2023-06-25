@@ -54,7 +54,9 @@ python3 pegasus/bin/evaluate.py --params=aeslc_transformer --param_overrides=voc
 
 But the relative import in evaluate.py script did not work, hence I moved the evaluate.py script to root folder. Here the main folder **./pegasus** is my main project folder and all the folders inside are the cloned contents from the repository. 
 
-![image-20230625143319346](C:\Users\karth\AppData\Roaming\Typora\typora-user-images\image-20230625143319346.png)
+[![Capture.jpg](https://i.postimg.cc/nzgQhHGM/Capture.jpg)](https://postimg.cc/wy5BWYPd)
+
+
 
 <br>
 
