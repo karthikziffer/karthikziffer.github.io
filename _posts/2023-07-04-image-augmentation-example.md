@@ -24,7 +24,7 @@ from skimage.io import imread_collection
 import cv2
 import numpy as np
 
-# list .jpg files from the folder
+# list .PNG files from the folder
 IMAGE_FOLDER_PATH = "/content/*.PNG"
 
 
