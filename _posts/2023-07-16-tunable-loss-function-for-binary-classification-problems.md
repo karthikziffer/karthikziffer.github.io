@@ -22,7 +22,7 @@ This is a paper summary generated from summarizepaper.com. I edited for better u
 
 - Loss functions are crucial in optimizing machine learning algorithms. The choice of loss function impacts the training process and model learning. Binary classification is widely used in various applications. Traditional loss functions for binary classification include binary cross-entropy and hinge loss
 
-
+<br>
 
 How Xtreme Margin is different
 
@@ -55,26 +55,32 @@ How Xtreme Margin is different
 ## Formula
 
 Xtreme Margin loss function
+
+<br>
 $$
 L(y, t_true; \lambda_1, \lambda_2) = \frac{1}{1+ (\sigma(y, y_{true}) + \gamma)}
 $$
-
+<br>
 $$
 \gamma = \ \  1_[ytrue = ypred \ \  \& \ \ ytrue = 0] \ * \ \lambda_1 (2y - 1)^2 + \ \  1_[ytrue = ypred \ \  \& \ \ ytrue = 1] * \ \lambda_2 (2y - 1)^2
 $$
 
 
-
+<br>
 
 \lambda_1 (2y - 1)^2  term of the expression below is the <mark>extreme margin term</mark>, and is derived from the squared difference between the true conditional probability prediction score of belonging to the default class and the true conditional probability prediction score of belonging to the non-default class. 
+
+<br>
 $$
 1_A (x) := \begin{cases} 1 \ if \ x \in A  \\ 0 \ if \ x \notin A \end{cases}
 $$
 
+
+<br>
 $$
 \sigma(y, y_{true}) := \begin{cases} 0 \ \ if \ \ |y - y_{true}| \ \ < \ \ 0.5 \\  \frac{1}{e|y_{true} - y|} - 1 \end{cases}
 $$
-
+<br>
 $$
 y_{pred} := \begin{cases} 1 \ if y \ge 0.50 \\ 0 \ if \ y \le 0.50   \end{cases}
 $$
