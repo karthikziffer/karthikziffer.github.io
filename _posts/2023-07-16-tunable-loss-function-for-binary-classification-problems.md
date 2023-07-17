@@ -61,6 +61,10 @@ $$
 L(y, t_true; \lambda_1, \lambda_2) = \frac{1}{1+ (\sigma(y, y_{true}) + \gamma)}
 $$
 <br>
+
+
+
+<br>
 $$
 \gamma = \ \  1_[ytrue = ypred \ \  \& \ \ ytrue = 0] \ * \ \lambda_1 (2y - 1)^2 + \ \  1_[ytrue = ypred \ \  \& \ \ ytrue = 1] * \ \lambda_2 (2y - 1)^2
 $$
@@ -74,12 +78,16 @@ $$
 $$
 1_A (x) := \begin{cases} 1 \ if \ x \in A  \\ 0 \ if \ x \notin A \end{cases}
 $$
-
+<br>
 
 <br>
 $$
 \sigma(y, y_{true}) := \begin{cases} 0 \ \ if \ \ |y - y_{true}| \ \ < \ \ 0.5 \\  \frac{1}{e|y_{true} - y|} - 1 \end{cases}
 $$
+<br>
+
+
+
 <br>
 $$
 y_{pred} := \begin{cases} 1 \ if y \ge 0.50 \\ 0 \ if \ y \le 0.50   \end{cases}
