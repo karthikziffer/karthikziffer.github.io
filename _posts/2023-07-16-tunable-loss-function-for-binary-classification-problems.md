@@ -66,7 +66,7 @@ $$
 
 <br>
 $$
-\gamma = \ \  1_[ytrue = ypred \ \  \& \ \ ytrue = 0] \ * \ \lambda_1 (2y - 1)^2 + \ \  1_[ytrue = ypred \ \  \& \ \ ytrue = 1] * \ \lambda_2 (2y - 1)^2
+\gamma = \ \  1_{[ytrue = ypred \ \  \& \ \ ytrue = 0]} \ * \ \lambda_1 (2y - 1)^2 + \ \  1_{[ytrue = ypred \ \  \& \ \ ytrue = 1]} * \ \lambda_2 (2y - 1)^2
 $$
 
 
