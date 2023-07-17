@@ -72,7 +72,11 @@ $$
 
 <br>
 
-\lambda_1 (2y - 1)^2  term of the expression below is the <mark>extreme margin term</mark>, and is derived from the squared difference between the true conditional probability prediction score of belonging to the default class and the true conditional probability prediction score of belonging to the non-default class. 
+```
+\lambda_1 (2y - 1)^2  term of the expression below is the extreme margin term, and is derived from the squared difference between the true conditional probability prediction score of belonging to the default class and the true conditional probability prediction score of belonging to the non-default class. 
+```
+
+
 
 <br>
 $$
