@@ -11,6 +11,18 @@ tags: [documentation,sample]
 
 
 
+
+
+<br>
+
+
+
+<br>
+
+Hi everyone, I have written this blog post to share steps and my knowledge on how to fine tune a Large language model at ease. 
+
+<br>
+
 ## Introduction
 
 I am using the huggingface library to fine tune the "bigscience/bloom-7b1" model using [LoRA](https://arxiv.org/pdf/2106.09685.pdf) (Low rank adaptation of large language models).
