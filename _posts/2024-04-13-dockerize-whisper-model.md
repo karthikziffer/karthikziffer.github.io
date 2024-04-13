@@ -49,7 +49,7 @@ pip install git+https://github.com/m-bain/whisperx.git
 ```
 # Problem
 
-In local system this installation step works perfectly, but when the same steps are tried as a docker image, the dependency of whisperX on [faster_whisper](https://github.com/SYSTRAN/faster-whisper) throws an error and breaks the installation.  
+In local system these installation step works perfectly, but when the same steps are tried as a docker image, the dependency of whisperX on [faster_whisper](https://github.com/SYSTRAN/faster-whisper) throws an error and breaks the installation.  
 
 
 
