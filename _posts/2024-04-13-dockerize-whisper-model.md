@@ -133,8 +133,13 @@ In this blog post, I have shared the dockerfile to dockerize the whisper model i
 
 # References
 
-[1] https://github.com/SYSTRAN/faster-whisper
+[1] https://github.com/SYSTRAN/faster-whisper 
+<br>
 [2] https://github.com/m-bain/whisperX?tab=readme-ov-file
+<br>
 [3] https://github.com/openai/whisper#setup
+<br>
 [4] https://pythonspeed.com/articles/activate-conda-dockerfile/
+<br>
 [5] https://stackoverflow.com/questions/55123637/activate-conda-environment-in-docker
+<br>
