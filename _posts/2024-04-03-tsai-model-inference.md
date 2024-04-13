@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "tsar model inference"
+title: "tsai model inference"
 author: "Karthik"
 categories: journal
 tags: [documentation,sample]
@@ -9,8 +9,7 @@ tags: [documentation,sample]
 
 ---
 
-
-
+<br>
 
 
 # Introduction:
