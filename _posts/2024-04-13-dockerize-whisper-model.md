@@ -10,6 +10,7 @@ tags: [documentation,sample]
 
 # Introduction
 What is a whisper model?
+<br>
 Whisper is an open source speech recognition model trained by OpenAI. It enables transcription in multiple languages, as well as translation from those languages into English. 
 
 Because Whisper was trained on a large and diverse dataset and was not fine-tuned to any specific one, it does not beat models that specialize in LibriSpeech performance, a famously competitive benchmark in speech recognition.
@@ -20,7 +21,7 @@ About a third of Whisper’s audio dataset is non-English, and it is alternately
 There is a repository called whisperX that provides 70X fast automatic speech recognition with additional features such as forced alignment, voice activity detection and speaker diarization.  
 
 # How to install whisperX in local?
-
+```
 conda create --name whisperx python=3.10
 
 conda activate whisperx
@@ -28,7 +29,7 @@ conda activate whisperx
 conda install pytorch==2.0.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 
 pip install git+https://github.com/m-bain/whisperx.git
-
+```
 # Problem
 
 In local system this installation step works perfectly, but when the same steps are tried as a docker image, the dependency of whisperX on [faster_whisper](https://github.com/SYSTRAN/faster-whisper) throws an error and breaks the installation.  
