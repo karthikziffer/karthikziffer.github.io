@@ -128,3 +128,13 @@ print(result["segments"])
 
 # Summary
 In this blog post, I have shared the dockerfile to dockerize the whisper model inference by overcoming the issue of installing faster_whisper.  The solution is to install faster_whisper seperately as a pip install command. Since the faster_whisper dependency is met, then whisperX smoothly continues the installation steps. 
+
+
+
+# References
+
+[1] https://github.com/SYSTRAN/faster-whisper
+[2] https://github.com/m-bain/whisperX?tab=readme-ov-file
+[3] https://github.com/openai/whisper#setup
+[4] https://pythonspeed.com/articles/activate-conda-dockerfile/
+[5] https://stackoverflow.com/questions/55123637/activate-conda-environment-in-docker
