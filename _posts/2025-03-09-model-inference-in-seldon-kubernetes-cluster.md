@@ -204,7 +204,7 @@ namespace/seldon-system created
 
 #### 3. Seldon-core installation using helm chart
 
-
+Helm chart is used to simplify deployments, keep track of the deployed version and can be easily shared through repositories. 
 
 ```
 helm install seldon-core seldon-core-operator \
@@ -212,6 +212,7 @@ helm install seldon-core seldon-core-operator \
     --set usageMetrics.enabled=true \
     --set istio.enabled=true \
     --namespace seldon-system
+    
 NAME: seldon-core
 LAST DEPLOYED: Sun Mar  9 19:11:48 2025
 NAMESPACE: seldon-system
@@ -276,9 +277,11 @@ Handling connection for 8080
 
 The seldon core installation is completed. 
 
+I would recommend to use the configurations in an .yaml file rather than directly pasting it on the command line. Yaml file keeps the indentation intact, this will avoid indentation errors. 
 
 
-#### 4. Sample Maching learning trained model inference
+
+#### 4. Sample Machine learning trained model inference
 
 Seldon Core lets you run predictions on your trained models using a simple API. It works with many model types—including computer vision and Hugging Face models—and you can make predictions using either REST or gRPC calls.
 
