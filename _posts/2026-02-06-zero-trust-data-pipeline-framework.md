@@ -21,19 +21,6 @@ The framework is divided into three layers:
 ---
 
 
-```dot
-digraph G {
-  rankdir=LR;
-  node [shape=box];
-  Raw -> Ingestion -> Processing -> Warehouse;
-  Processing -> "Error Store" [color=red];
-  "Error Store" -> Dashboard [color=blue];
-}
-```
-
----
-
-
 -   **Data Layer:** <br> The layer in which data exists in its raw format.
 <br>
 
