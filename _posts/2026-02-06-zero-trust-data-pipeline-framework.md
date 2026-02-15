@@ -19,6 +19,31 @@ In this blog post, I want to demonstrate this concept using practical code and a
 The framework is divided into three layers:
 ---
 
+
+graph TD
+    A[Raw Data Sources] --> B[Ingestion Layer<br/>- Validate schema<br/>- Check data freshness]
+    
+    B -->|Valid| C[Processing Layer<br/>- Transformation logic<br/>- Lineage tracking]
+    B -->|Invalid| D[Error Metadata Store<br/>- Rejection reason<br/>- Sample records]
+    
+    C -->|Success| E[Output Sink<br/>- Data warehouse<br/>- Downstream consumers]
+    C -->|Failure| F[Error Metadata Store<br/>- Processing error<br/>- Stack trace]
+    
+    E --> G[Metadata Aggregator<br/>- Full data lineage<br/>- Stats summary]
+    
+    D --> G
+    F --> G
+    
+    G --> H[Zero Trust Dashboard<br/>- Real-time alerts<br/>- Traceability UI<br/>- Audit logs]
+    
+    style D fill:#ffcccc
+    style F fill:#ffcccc
+    style H fill:#e1f5fe
+
+
+---
+
+
 -   **Data Layer:** <br> The layer in which data exists in its raw format.
 <br>
 
