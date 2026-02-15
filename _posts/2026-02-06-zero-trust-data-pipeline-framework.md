@@ -17,15 +17,6 @@ In this blog post, I want to demonstrate this concept using practical code and a
 <br>
 
 The framework is divided into three layers:
----
-
-Raw Sources → [INGEST] → [PROCESS] → Output Sink
-                ↓         ↓
-           [Error Store] ←──────┘
-                ↓
-         Metadata → Zero Trust Dashboard
-
-
 
 ---
 
