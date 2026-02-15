@@ -21,7 +21,9 @@ The framework is divided into three layers:
 
 -   **Data Layer:** <br> The layer in which data exists in its raw format.
 <br>
+
 ---
+
 -   **Traceability Layer:** <br> In this layer, the data is aggregated, and each subset of the aggregation is assigned a unique hash. The number of rows constributing for the aggregation is constantly tracked. 
 <br>
 
