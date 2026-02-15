@@ -88,7 +88,7 @@ The framework is divided into three layers:
 <br>
 <br>
 
-This framework provides a deep view of how data moves through the entire pipeline. It encourages us to stop assuming that our data pipeline always works perfectly and instead maintain layered traceability to detect and understand errors. That’s the main idea behind this blog — introducing the concept of a “zero-trust” data pipeline.
+This framework provides a deep view of how data moves through the entire pipeline. It encourages us to stop assuming that our data pipeline always works perfectly and instead maintain layered traceability to detect and understand errors. That’s the main idea behind this blog, introducing the concept of a “zero-trust” data pipeline.
 
 <br>
 
