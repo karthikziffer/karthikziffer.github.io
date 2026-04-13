@@ -1,48 +1,191 @@
 ---
+title: "Home"
 layout: default
-title: Home
+pagination:
+    enabled: true
 ---
 
-{% for post in paginator.posts %}
-<div class="posts">
-  <h1>
-    <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
-  </h1>
-  {% if post.image %}
-  <div class="thumbnail-container">
-    <a href="{{ site.github.url }}{{ post.url }}"><img src="{{ site.github.url }}/assets/img/{{ post.image }}"></a>
-  </div>
-  {% endif %}
-  <p>
-    {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
-  </p>
+
+<div class="container">
+
+{% if page.url == "/" %}
+
+
+
+<!-- Begin post excerpts, highlight the first 4 posts on top -->
+<div class="row remove-site-content-margin">
+
+    <!-- latest post -->
+    {% assign latest_post = site.posts[0] %}
+    {% assign latest_seed = latest_post.title | slugify %}
+    <div class="col-md-6">
+    <div class="card border-0 mb-4 box-shadow">
+    <a href="{{site.baseurl}}{{latest_post.url}}">
+    <div class="topfirstimage" style="background-image: url(https://picsum.photos/seed/{{ latest_seed }}/800/400); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
+    </a>
+    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <h2 class="h4 font-weight-bold">
+    <a class="text-dark" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
+    </h2>
+    <p class="excerpt">
+        {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+    </p>
+    <div>
+        <small class="d-block text-muted">
+            In <span class="catlist">
+                {% for category in latest_post.categories %}
+                <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                {% endfor %}
+                </span>
+        </small>
+        <small class="text-muted">
+            {{ latest_post.date | date: '%b %d, %Y' }}
+        </small>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+
+        <!-- second latest post -->
+        {%- assign second_post = site.posts[1] -%}
+        {% assign second_seed = second_post.title | slugify %}
+        <div class="mb-3 d-flex align-items-center">
+                <div class="col-md-4">
+                <a href="{{site.baseurl}}{{second_post.url}}">
+                 <img class="w-100 rounded" src="https://picsum.photos/seed/{{ second_seed }}/400/200" alt="{{ second_post.title }}">
+                </a>
+                </div>
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        {% for category in second_post.categories %}
+                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        {% endfor %}
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        {{ second_post.date | date: '%b %d, %Y' }}
+                    </small>
+                </div>
+            </div>
+
+        <!-- third latest post -->
+        {%- assign third_post = site.posts[2] -%}
+        {% assign third_seed = third_post.title | slugify %}
+        <div class="mb-3 d-flex align-items-center">
+                <div class="col-md-4">
+                <a href="{{site.baseurl}}{{third_post.url}}">
+                 <img class="w-100 rounded" src="https://picsum.photos/seed/{{ third_seed }}/400/200" alt="{{ third_post.title }}">
+                </a>
+                </div>
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        {% for category in third_post.categories %}
+                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        {% endfor %}
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        {{ third_post.date | date: '%b %d, %Y' }}
+                    </small>
+                </div>
+            </div>
+
+        <!-- fourth latest post -->
+        {%- assign fourth_post = site.posts[3] -%}
+        {% assign fourth_seed = fourth_post.title | slugify %}
+        <div class="mb-3 d-flex align-items-center">
+                <div class="col-md-4">
+                <a href="{{site.baseurl}}{{fourth_post.url}}">
+                 <img class="w-100 rounded" src="https://picsum.photos/seed/{{ fourth_seed }}/400/200" alt="{{ fourth_post.title }}">
+                </a>
+                </div>
+                <div>
+                    <h2 class="mb-2 h6 font-weight-bold">
+                    <a class="text-dark" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
+                    </h2>
+                    <small class="d-block text-muted">
+                        In <span class="catlist">
+                        {% for category in fourth_post.categories %}
+                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
+                        {% endfor %}
+                        </span>
+                    </small>
+                    <small class="text-muted">
+                        {{ fourth_post.date | date: '%b %d, %Y' }}
+                    </small>
+                </div>
+            </div>
+
+    </div>
+
 </div>
-{% endfor %}
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active" href="{{ site.github.url }}{{ paginator.next_page_path }}" class="next">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
+{% endif %} <!--endif page url is / -->
 
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
+
+
+<!-- Now the rest of the posts with the usual loop -->
+
+<div class="row mt-3">
+
+    <div class="col-md-8 main-loop">
+
+        <h4 class="font-weight-bold spanborder"><span>All Stories</span></h4>
+
+
+        {% for post in paginator.posts %}
+
+            {% include main-loop-card.html %}
+
+        {% endfor %}
+
+        <div class="mt-5">
+         <!-- Pagination links -->
+            {% if paginator.total_pages > 1 %}
+            <ul class="pagination">
+              {% if paginator.previous_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="prev page-link">&laquo;</span></li>
+              {% endif %}
+
+              {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <li class="page-item disabled"><span class="webjeda page-link">{{ page }}</span></li>
+                {% elsif page == 1 %}
+                <li class="page-item"><a class="page-link" href="{{site.baseurl}}/">{{ page }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+                {% endif %}
+              {% endfor %}
+
+              {% if paginator.next_page %}
+                <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+              {% else %}
+                <li class="page-item disabled"><span class="next page-link">&raquo;</span></li>
+              {% endif %}
+            </ul>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+        {% include sidebar-featured.html %}
+    </div>
+
 </div>
 
 
-<!-- Form -->
-<!-- <form action="https://app.99inbound.com/api/e/71SeXIXC" method="POST" target="_blank">
-  <input type="email" name="email" placeholder="enter your email">
-  <input type="text" name="name" placeholder="enter your name">
-  <button>Submit</button>
-</form> -->
 
-<!-- <div style="position: absolute; left: -5000px;">
-  <input type="checkbox" name="glazed_ivory_polka_dotted_housecat" value="1" tabindex="-1" autocomplete="no">
-</div> -->
+</div>
