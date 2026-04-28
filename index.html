@@ -18,7 +18,7 @@ pagination:
     <!-- latest post -->
     {% assign latest_post = site.posts[0] %}
     {% assign latest_seed = latest_post.title | slugify %}
-    <div class="col-md-6">
+    <div class="col-md-8">
     <div class="card border-0 mb-4 box-shadow">
     <a href="{{site.baseurl}}{{latest_post.url}}">
     <div class="topfirstimage" style="background-image: url(https://picsum.photos/seed/{{ latest_seed }}/800/400); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
@@ -46,7 +46,7 @@ pagination:
     </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
 
         <!-- second latest post -->
         {%- assign second_post = site.posts[1] -%}
@@ -181,7 +181,7 @@ pagination:
     </div>
 
     <div class="col-md-4">
-        {% include sidebar-featured.html %}
+        {% include sidebar-papers.html %}
     </div>
 
 </div>

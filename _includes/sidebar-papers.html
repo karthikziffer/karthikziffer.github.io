@@ -1,0 +1,95 @@
+<div class="sticky-top sticky-top-offset">
+    <h4 class="font-weight-bold spanborder"><span>Trending AI Papers</span></h4>
+    <ol class="list-featured" id="hf-papers-list">
+        <li class="mb-4 text-muted"><small>Loading top papers…</small></li>
+    </ol>
+
+    <h4 class="font-weight-bold spanborder mt-5"><span>Trending AI Repos</span></h4>
+    <ol class="list-featured" id="gh-repos-list">
+        <li class="mb-4 text-muted"><small>Loading top repos…</small></li>
+    </ol>
+</div>
+
+<script>
+(function () {
+    function escapeHtml(s) {
+        return String(s)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    // Hugging Face Daily Papers — top 5 by upvotes
+    var papersEl = document.getElementById('hf-papers-list');
+    if (papersEl) {
+        fetch('https://huggingface.co/api/daily_papers')
+            .then(function (r) { return r.json(); })
+            .then(function (items) {
+                var sorted = items.slice().sort(function (a, b) {
+                    return ((b.paper && b.paper.upvotes) || 0) - ((a.paper && a.paper.upvotes) || 0);
+                });
+                var top = sorted.slice(0, 5);
+                papersEl.innerHTML = top.map(function (item) {
+                    var paper = item.paper || {};
+                    var id = paper.id || '';
+                    var title = escapeHtml(paper.title || '(untitled)');
+                    var upvotes = paper.upvotes || 0;
+                    var hfUrl = 'https://huggingface.co/papers/' + id;
+                    var arxivUrl = 'https://arxiv.org/abs/' + id;
+                    return ''
+                        + '<li class="mb-4">'
+                        + '<span>'
+                        + '<h6 class="font-weight-bold">'
+                        + '<a href="' + hfUrl + '" class="text-dark" target="_blank" rel="noopener">' + title + '</a>'
+                        + '</h6>'
+                        + '<span class="d-block text-muted">'
+                        + upvotes + ' upvotes · '
+                        + '<a class="text-muted" href="' + arxivUrl + '" target="_blank" rel="noopener">arXiv</a>'
+                        + '</span>'
+                        + '</span>'
+                        + '</li>';
+                }).join('');
+            })
+            .catch(function () {
+                papersEl.innerHTML = '<li class="mb-4 text-muted"><small>Could not load papers.</small></li>';
+            });
+    }
+
+    // GitHub Search — top 5 LLM repos pushed in the last 30 days, sorted by stars
+    var reposEl = document.getElementById('gh-repos-list');
+    if (reposEl) {
+        var since = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
+        var url = 'https://api.github.com/search/repositories?q=topic:llm+pushed:%3E' + since + '&sort=stars&order=desc&per_page=5';
+        fetch(url)
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                var items = (data && data.items) || [];
+                if (items.length === 0) {
+                    reposEl.innerHTML = '<li class="mb-4 text-muted"><small>No repos found.</small></li>';
+                    return;
+                }
+                reposEl.innerHTML = items.map(function (repo) {
+                    var name = escapeHtml(repo.full_name);
+                    var stars = (repo.stargazers_count || 0).toLocaleString();
+                    var lang = repo.language ? ' · ' + escapeHtml(repo.language) : '';
+                    return ''
+                        + '<li class="mb-4">'
+                        + '<span>'
+                        + '<h6 class="font-weight-bold">'
+                        + '<a href="' + repo.html_url + '" class="text-dark" target="_blank" rel="noopener">' + name + '</a>'
+                        + '</h6>'
+                        + '<span class="d-block text-muted">'
+                        + stars + ' stars' + lang
+                        + '</span>'
+                        + '</span>'
+                        + '</li>';
+                }).join('');
+            })
+            .catch(function () {
+                reposEl.innerHTML = '<li class="mb-4 text-muted"><small>Could not load repos.</small></li>';
+            });
+    }
+})();
+</script>
