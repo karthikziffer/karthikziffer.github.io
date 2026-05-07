@@ -17,7 +17,7 @@ pagination:
 
     <!-- latest post -->
     {% assign latest_post = site.posts[0] %}
-    {% assign latest_seed = latest_post.date | date: '%s' %}
+    {% assign latest_seed = latest_post.date | date: '%s' | modulo: 100000 %}
     <div class="col-md-8">
     <div class="card border-0 mb-4 box-shadow">
     <a href="{{site.baseurl}}{{latest_post.url}}">
@@ -50,7 +50,7 @@ pagination:
 
         <!-- second latest post -->
         {%- assign second_post = site.posts[1] -%}
-        {% assign second_seed = second_post.date | date: '%s' %}
+        {% assign second_seed = second_post.date | date: '%s' | modulo: 100000 %}
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{second_post.url}}">
@@ -76,7 +76,7 @@ pagination:
 
         <!-- third latest post -->
         {%- assign third_post = site.posts[2] -%}
-        {% assign third_seed = third_post.date | date: '%s' %}
+        {% assign third_seed = third_post.date | date: '%s' | modulo: 100000 %}
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{third_post.url}}">
@@ -102,7 +102,7 @@ pagination:
 
         <!-- fourth latest post -->
         {%- assign fourth_post = site.posts[3] -%}
-        {% assign fourth_seed = fourth_post.date | date: '%s' %}
+        {% assign fourth_seed = fourth_post.date | date: '%s' | modulo: 100000 %}
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{fourth_post.url}}">
