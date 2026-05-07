@@ -8,7 +8,7 @@ tags: [agentic ai, llm]
 
 
 
-I recently read the paper Pioneer Agent and found several interesting ideas that are highly relevant for building agentic workflows in production systems. We have used some learning in our production agent monitoring. 
+I read the paper ![Pioneer Agent](https://arxiv.org/pdf/2604.09791) and found several interesting ideas that are highly relevant for building agentic workflows in production systems. We have used some learning in our production agent monitoring. 
 
 One section that stood out was the production mode architecture, which focuses on automated monitoring, failure diagnosis, retraining, and regression prevention for small language models (SLMs).
 
@@ -129,13 +129,13 @@ A specialized Trace Analyzer sub-agent handles:
 * Data-heavy SQL analysis
 * Long execution traces
 
-with an output-token limit of approximately 100K tokens.
+with an output-token limit of approximately 100K tokens. There is a limit to keep the token usage in check. 
 
 ---
 
 ## Parallel Sub-Agents
 
-Independent sub-agents can be spawned through delegate_task for parallel execution.
+Independent sub-agents can be spawned through parallel execution.
 
 Examples include:
 
