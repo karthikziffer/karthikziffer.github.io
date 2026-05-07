@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Improve small language model in production using pioneer agent"
+title: "Improve small language model monitoring in production"
 author: "Karthik"
 categories: journal
 tags: [agentic ai, llm]
 ---
 
-# Production Monitoring and Failure Diagnosis in Pioneer Agent
+
 
 I recently read the paper Pioneer Agent and found several interesting ideas that are highly relevant for building agentic workflows in production systems. We have used some learning in our production agent monitoring. 
 
