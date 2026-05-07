@@ -8,7 +8,7 @@ tags: [agentic ai, llm]
 
 
 
-I read the paper ![Pioneer Agent](https://arxiv.org/pdf/2604.09791) and found several interesting ideas that are highly relevant for building agentic workflows in production systems. We have used some learning in our production agent monitoring. 
+I read the paper [Pioneer Agent](https://arxiv.org/pdf/2604.09791) and found several interesting ideas that are highly relevant for building agentic workflows in production systems. We have used some learning in our production agent monitoring. 
 
 One section that stood out was the production mode architecture, which focuses on automated monitoring, failure diagnosis, retraining, and regression prevention for small language models (SLMs).
 
