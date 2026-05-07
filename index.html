@@ -17,11 +17,10 @@ pagination:
 
     <!-- latest post -->
     {% assign latest_post = site.posts[0] %}
-    {% assign latest_seed = latest_post.date | date: '%s' | modulo: 100000 %}
     <div class="col-md-8">
     <div class="card border-0 mb-4 box-shadow">
     <a href="{{site.baseurl}}{{latest_post.url}}">
-    <div class="topfirstimage" style="background-image: url(https://loremflickr.com/800/400/technology?lock={{ latest_seed }}); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
+    <div class="topfirstimage" style="background-image: url(https://loremflickr.com/800/400/abstract?r={{ latest_post.url | slugify }}); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
     </a>
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
@@ -50,11 +49,10 @@ pagination:
 
         <!-- second latest post -->
         {%- assign second_post = site.posts[1] -%}
-        {% assign second_seed = second_post.date | date: '%s' | modulo: 100000 %}
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{second_post.url}}">
-                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/technology?lock={{ second_seed }}" alt="{{ second_post.title }}">
+                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ second_post.url | slugify }}" alt="{{ second_post.title }}">
                 </a>
                 </div>
                 <div>
@@ -76,11 +74,10 @@ pagination:
 
         <!-- third latest post -->
         {%- assign third_post = site.posts[2] -%}
-        {% assign third_seed = third_post.date | date: '%s' | modulo: 100000 %}
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{third_post.url}}">
-                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/technology?lock={{ third_seed }}" alt="{{ third_post.title }}">
+                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ third_post.url | slugify }}" alt="{{ third_post.title }}">
                 </a>
                 </div>
                 <div>
@@ -102,11 +99,10 @@ pagination:
 
         <!-- fourth latest post -->
         {%- assign fourth_post = site.posts[3] -%}
-        {% assign fourth_seed = fourth_post.date | date: '%s' | modulo: 100000 %}
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{fourth_post.url}}">
-                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/technology?lock={{ fourth_seed }}" alt="{{ fourth_post.title }}">
+                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ fourth_post.url | slugify }}" alt="{{ fourth_post.title }}">
                 </a>
                 </div>
                 <div>

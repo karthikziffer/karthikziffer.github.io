@@ -1,4 +1,3 @@
-{% assign card_seed = post.date | date: '%s' | modulo: 100000 %}
 <div class="mb-4 d-flex justify-content-between main-loop-card border rounded p-4">
 <div class="pr-3">
 	<h2 class="mb-1 h4 font-weight-bold">
@@ -20,7 +19,7 @@
 </div>
 	<div class="col-md-3 pr-0 text-right">
 	<a href="{{site.baseurl}}{{post.url}}">
-	<img class="w-100 rounded" src="https://loremflickr.com/400/200/technology?lock={{ card_seed }}" alt="{{ post.title }}">
+	<img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ post.url | slugify }}" alt="{{ post.title }}">
 	</a>
 	</div>
 </div>
