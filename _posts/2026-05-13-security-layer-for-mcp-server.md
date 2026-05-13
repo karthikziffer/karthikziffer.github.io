@@ -250,3 +250,7 @@ You can pass the role at launch, or configure it later under the tools section o
 <img src="/assets/images/mcp-shield-list-tables-form.png" alt="MCP Inspector: list_tables tool selected" style="display: block; max-width: 700px; width: 100%; height: auto; margin: 40px auto;" />
 
 <img src="/assets/images/mcp-shield-list-tables-result.png" alt="MCP Inspector: list_tables result showing customers, orders, products" style="display: block; max-width: 700px; width: 100%; height: auto; margin: 40px auto;" />
+
+
+
+This is the summary of the mcp-shield project. I would encourage to extend it further with more policies that aligns with the business use cases and security requirements.
