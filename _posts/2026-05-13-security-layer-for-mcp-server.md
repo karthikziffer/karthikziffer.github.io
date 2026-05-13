@@ -31,7 +31,7 @@ The codebase is designed as a class that supplies the policy to the MCP server.
 # The flow
 
 
-<img src="/assets/images/mcp-shield-flow.png" alt="MCP shield flow" style="display: block; max-width: 700px; width: 100%; height: auto; margin: 40px auto;" />
+<img src="/assets/images/mcp-shield-flow.png" alt="MCP shield flow" style="display: block; max-width: 1200px; width: 100%; height: auto; margin: 40px auto;" />
 
 ```
 user question
@@ -93,6 +93,8 @@ The same idea in the Inspector — an `admin` role calling `read_query` (which i
 
 <img src="/assets/images/mcp-shield-admin-access-denied.png" alt="MCP Inspector: AccessDenied — no role grants access to tool 'read_query'" style="display: block; max-width: 700px; width: 100%; height: auto; margin: 40px auto;" />
 
+---
+
 ### Policy 2 — RBAC on tables
 
 The analyst also doesn't have access to the `invoices` table, so any query touching it is blocked.
@@ -101,6 +103,8 @@ The analyst also doesn't have access to the `invoices` table, so any query touch
 Caller input: SELECT * FROM invoices
 After shield: AccessDenied: table 'invoices' is not in allow_tables
 ```
+
+---
 
 ### Policy 3 — No writes
 
@@ -111,6 +115,8 @@ Caller input: DELETE FROM customers WHERE id=1
 After shield: ValidationError: write statements are not allowed
 ```
 
+---
+
 ### Policy 4 — Single statement only
 
 LLMs can be tricked into producing multiple statements in one call. To prevent that — and the security risk it carries — only one statement is allowed at a time.
@@ -119,6 +125,8 @@ LLMs can be tricked into producing multiple statements in one call. To prevent t
 Caller input: SELECT * FROM customers; DROP TABLE orders
 After shield: ParseError: multiple statements are not allowed
 ```
+
+---
 
 ### Policy 5 — Row-level security
 
@@ -129,6 +137,8 @@ Caller input: SELECT id, tier FROM customers WHERE tier='gold'
 After shield: SELECT id, tier FROM customers WHERE tier='gold' AND tenant_id='acme' LIMIT 50
 ```
 
+---
+
 ### Policy 6 — Column-level control
 
 Some columns shouldn't be exposed at all. For example, `tenant_id` itself leaks information about the row-level access scheme, so it gets stripped before the query is run.
@@ -137,6 +147,8 @@ Some columns shouldn't be exposed at all. For example, `tenant_id` itself leaks 
 Caller input: SELECT id, tenant_id, email FROM customers
 After shield: SELECT id, email FROM customers WHERE tenant_id='acme' LIMIT 50
 ```
+
+---
 
 ### Policy 7 — Limit cap on returned rows
 
@@ -167,6 +179,8 @@ In the Inspector, an analyst running `SELECT * FROM orders` gets the rewritten S
 
 <img src="/assets/images/mcp-shield-analyst-limit-cap.png" alt="MCP Inspector: rewritten SQL with LIMIT 50 cap applied" style="display: block; max-width: 700px; width: 100%; height: auto; margin: 40px auto;" />
 
+---
+
 ### Policy 8 — Redaction (masking sensitive fields)
 
 Fields like email and full name shouldn't be visible to every role. These are redacted on the way out.
@@ -178,6 +192,8 @@ After shield: {"email": "a***@example.com"}
 Caller input: DB row {"full_name": "Ada Lovelace"}
 After shield: {"full_name": "A. L."}
 ```
+
+---
 
 ### Policy 9 — Business glossary
 
@@ -229,6 +245,8 @@ rows:
 
 The caller is an analyst, the shield scopes the query to their `tenant_id` and caps it at 50 rows. Two rows match the filter, so two rows come back.
 
+---
+
 ### 2. The MCP Inspector
 
 For interactive exploration, run the demo server under [`@modelcontextprotocol/inspector`](https://github.com/modelcontextprotocol/inspector). Each tool accepts optional `role`, `tenant_id`, and `region` arguments, so you can switch identity per call without restarting the server.
@@ -251,6 +269,8 @@ You can pass the role at launch, or configure it later under the tools section o
 
 <img src="/assets/images/mcp-shield-list-tables-result.png" alt="MCP Inspector: list_tables result showing customers, orders, products" style="display: block; max-width: 700px; width: 100%; height: auto; margin: 40px auto;" />
 
+---
 
+# Wrapping up
 
 This is the summary of the mcp-shield project. I would encourage to extend it further with more policies that aligns with the business use cases and security requirements.
