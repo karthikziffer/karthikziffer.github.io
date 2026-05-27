@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <style>
+    .ring { fill: none; stroke: #000; }
+    .k    { fill: #000; }
+    @media (prefers-color-scheme: dark) {
+      .ring { stroke: #fff; }
+      .k    { fill: #fff; }
+    }
+  </style>
+  <circle class="ring" cx="256" cy="256" r="233" stroke-width="16"/>
+  <text class="k" x="256" y="256" text-anchor="middle" dominant-baseline="central"
+        font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="300">K</text>
+</svg>
