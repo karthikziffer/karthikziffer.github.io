@@ -1,0 +1,17 @@
+# Industrial projects rendered on the About page (_pages/about.md).
+# Each partner `logo` path is relative to assets/images/.
+- name: "RoboTex"
+  org: "Fraunhofer IWKS"
+  url: "https://www.iwks.fraunhofer.de/de/projekte/aktuelle-projekte/robotex.html"
+  desc: "An automated robotic system that sorts used textiles for recycling — combining robotics with AI-powered image recognition and sensors to identify material composition and sort clothing automatically. Coordinated by Fraunhofer IWKS."
+  partners:
+    - name: "Fraunhofer IIS"
+      logo: "partners/fraunhofer.png"
+    - name: "Robotextile GmbH"
+      logo: "partners/robotextile.png"
+    - name: "Wagner+Thummerer GmbH"
+      logo: "companies/turns.png"
+    - name: "Siemens AG"
+      logo: "partners/siemens.png"
+    - name: "Friedrich-Alexander-Universität Erlangen-Nürnberg"
+      logo: "partners/fau.png"

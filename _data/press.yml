@@ -1,0 +1,43 @@
+# Press coverage rendered on the About page (_pages/about.md).
+# `logo` path is relative to assets/images/.
+- title: "How a recycling start-up is bringing Bosch, dm & Austrian Airlines into the textile loop"
+  source: "Texcare International · Messe Frankfurt"
+  date: "Aug 2025"
+  logo: "press/messefrankfurt.png"
+  url: "https://texcare.messefrankfurt.com/frankfurt/en/industry-portal/media-library/specialized-articles/recycling-start-up-turns.html"
+
+- title: "KI-gestützte Ermittlung qualitätsrelevanter Sortierkriterien für das Textilrecycling (DBU · TURNS)"
+  source: "Hochschule Ansbach"
+  date: "2023–2025"
+  logo: "press/hsansbach.png"
+  url: "https://forschung.hs-ansbach.de/forschungsprojekt/150-dbu-turns"
+
+- title: "„Zweites Leben für 1er-Panier\": Schulterschluss bei textiler Kreislaufwirtschaft"
+  source: "ÖBB — Austrian Federal Railways"
+  date: "Mar 2025"
+  logo: "press/oebb.png"
+  url: "https://presse-oebb.at/news-zweites-leben-fuer-1er-panier-schulterschluss-bei-textiler-kreislaufwirtschaft?id=214786&menueid=27025&l=deutsch"
+
+- title: "Textilfaserrecycling — ein neuer Kreislauf für Alttextilien"
+  source: "dm-drogerie markt"
+  date: ""
+  logo: "press/dm.png"
+  url: "https://www.dm.de/unternehmen/lust-an-zukunft/entwicklung-und-fortschritt/textilfaserrecycling-2733384"
+
+- title: "Recycling und Inklusion: Diakoneo und Turns arbeiten in Bruckberg zusammen"
+  source: "Fränkische Landeszeitung (FLZ)"
+  date: "Sep 2024"
+  logo: "press/flz.png"
+  url: "https://www.flz.de/recycling-und-inklusion-diakoneo-und-turns-arbeiten-in-bruckberg-zusammen/cnt-id-ps-bf109500-a7d2-4926-b038-354efe3401b1"
+
+- title: "RadarImager — making the invisible visible for quality assurance"
+  source: "Balluff"
+  date: ""
+  logo: "press/balluff.png"
+  url: "https://www.balluff.com/en-de/software-and-system-solutions/radarimager-increased-quality-assurance"
+
+- title: "Schwarz Group introduces new self-checkouts at Lidl and Kaufland"
+  source: "Retail Optimiser"
+  date: "Mar 2026"
+  logo: ""
+  url: "https://retail-optimiser.de/en/schwarz-group-brings-kaufland-self-checkouts-also-to-lidl/"

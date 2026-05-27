@@ -1,0 +1,125 @@
+# Experience timeline rendered on the About page (_pages/about.md).
+# Newest first. `logo: true` means assets/images/companies/<slug>.png exists;
+# otherwise a coloured initial badge is shown. Drop a <slug>.png in that folder
+# to replace any badge with a real logo.
+
+- company: "TURNS (Wagner+Thummerer GmbH)"
+  slug: "turns"
+  role: "Machine Learning Engineer"
+  start: "Feb 2024"
+  end: "Present"
+  location: "Germany"
+  logo: true
+  highlights:
+    - "Building AI for textile-to-textile recycling — automated sorting of garments by fibre, colour and quality."
+
+- company: "Balluff EMEA"
+  slug: "balluff"
+  role: "AI Engineer — Detection of Hidden Objects"
+  start: "Mar 2023"
+  end: "Nov 2023"
+  location: "Baden-Württemberg, Germany"
+  url: "https://www.balluff.com"
+  logo: true
+  highlights:
+    - "Compared YOLO, RetinaNet and Vision Transformers for object detection on industrial 3D radar imaging, capturing complex spatial patterns for quality assurance."
+    - "Applied FMCW radar signal-processing as a pre-processing step to improve model training and detection accuracy."
+    - "Developed AI methods to identify anomalies and defects in industrial products, reducing errors and improving production reliability."
+
+- company: "German Aerospace Center (DLR)"
+  slug: "dlr"
+  role: "Data Science Intern — Future Lab for Additive Manufacturing & Engineering"
+  start: "Nov 2022"
+  end: "Feb 2023"
+  location: ""
+  url: "https://www.dlr.de/de/fk/forschung-transfer/forschungsinfrastruktur/forschungslabor-future-lab-for-additive-manufacturing-engineering-flame-1"
+  logo: true
+  highlights:
+    - "Analysed the emissivity of 3D-printed polycarbonate across different shapes and geometries."
+    - "Investigated the temperature dependence of polycarbonate emissivity using a reference object in a 150 °C heating chamber."
+    - "Used Python for data analysis, visualisation and presenting results to the team."
+
+- company: "Schwarz Dienstleistungen"
+  slug: "schwarz"
+  role: "AI Engineer — Research & Development"
+  start: "Oct 2021"
+  end: "Oct 2022"
+  location: "Neckarsulm"
+  url: "https://gruppe.schwarz"
+  logo: true
+  highlights:
+    - "Built an image-similarity model (Siamese network with triplet loss) to track retail products from warehouse to shelf without retraining for new products."
+    - "Built an anomaly-detection system for defects in printed text and deployed a containerised PaddleOCR pipeline on an NVIDIA Jetson Nano."
+    - "Created Debian packages enabling GPU access on the Jetson Nano from within Docker containers, and benchmarked edge inference latency."
+
+- company: "CoffeeBeans Consulting"
+  slug: "coffeebeans"
+  role: "Data Science Consultant"
+  start: "Feb 2020"
+  end: "Mar 2021"
+  location: ""
+  url: "https://coffeebeans.io"
+  logo: true
+  highlights:
+    - "Implemented a Named Entity Recognition model with a prior probability distribution, improving click-through rate by 8%."
+    - "Designed and ran an A/B-testing strategy that reached statistical significance to validate improvements."
+    - "Built a probabilistic push-notification recommender (1,000 notifications/sec) that lifted user interaction by 10%."
+    - "Extended the SimDB semantic-search system with Faiss + Kafka for faster, higher-throughput retrieval, plus news grouping and sentiment-based ranking."
+
+- company: "Facex.io"
+  slug: "facex"
+  role: "Computer Vision Intern"
+  start: "Nov 2019"
+  end: "Jan 2020"
+  location: ""
+  logo: true
+  highlights:
+    - "Developed an adaptive shadow-removal technique for outdoor video analytics under varying lighting conditions."
+    - "Built an edge-optimised face-detection pipeline (HOG + SVM with random-forest landmark detection via dlib) at 90% accuracy."
+
+- company: "Krishihub"
+  slug: "krishihub"
+  role: "Machine Learning Intern"
+  start: "Jan 2019"
+  end: "Mar 2019"
+  location: ""
+  logo: false
+  highlights:
+    - "Built a Seq2Seq demand-forecasting model using market trends and weather, reaching 90% accuracy for two major commodities."
+    - "Built a lightweight LSTM price-forecasting model exposed as a REST API for a mobile app."
+    - "Developed a remote-sensing solution extracting NDVI from satellite imagery to estimate harvest readiness."
+
+- company: "instinctus.ai"
+  slug: "instinctus"
+  role: "Data Scientist"
+  start: "Feb 2018"
+  end: "Dec 2018"
+  location: "Bangalore"
+  logo: false
+  highlights:
+    - "Built a super-resolution model that improved OCR and handwriting-recognition accuracy by 15%."
+    - "Implemented OpenCV kernel-based image processing to extract survey-form data at ~60 ms per document."
+    - "Built a Word2Vec contextual spelling-correction system, improving OCR accuracy by 10%."
+    - "Built chatbots (Dialogflow, Wit.ai), a Flask + MongoDB annotation platform, and an AWS Lambda + S3 + SNS reporting pipeline."
+
+- company: "Think201"
+  slug: "think201"
+  role: "Software Development Intern"
+  start: "Nov 2017"
+  end: "Feb 2018"
+  location: ""
+  url: "https://think201.com"
+  logo: true
+  highlights:
+    - "Built e-commerce and education websites with PHP Laravel."
+    - "Wrote Selenium and Appium automation scripts for mobile-application testing."
+
+- company: "Hykmann Technologies"
+  slug: "hykmann"
+  role: "Software Development Intern"
+  start: "Aug 2017"
+  end: "Oct 2017"
+  location: ""
+  logo: true
+  highlights:
+    - "Built websites with PHP Laravel."

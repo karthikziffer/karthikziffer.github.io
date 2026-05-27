@@ -1,5 +1,10 @@
 <div class="sticky-top sticky-top-offset">
-    <h4 class="font-weight-bold spanborder"><span>Trending AI Papers</span></h4>
+    <h4 class="font-weight-bold spanborder"><span>My Podcasts</span></h4>
+    <ol class="list-featured" id="podcast-list">
+        <li class="mb-4 text-muted"><small>Loading episodes…</small></li>
+    </ol>
+
+    <h4 class="font-weight-bold spanborder mt-5"><span>Trending AI Papers</span></h4>
     <ol class="list-featured" id="hf-papers-list">
         <li class="mb-4 text-muted"><small>Loading top papers…</small></li>
     </ol>
@@ -21,6 +26,49 @@
             .replace(/'/g, '&#39;');
     }
 
+    // Latent Flow podcast — latest 3 episodes from the RSS feed (Anchor feed sends CORS *)
+    var podcastEl = document.getElementById('podcast-list');
+    if (podcastEl) {
+        fetch('https://anchor.fm/s/112e71bbc/podcast/rss')
+            .then(function (r) { return r.text(); })
+            .then(function (xml) {
+                var doc = new DOMParser().parseFromString(xml, 'application/xml');
+                var items = Array.prototype.slice.call(doc.querySelectorAll('item'), 0, 3);
+                if (items.length === 0) {
+                    podcastEl.innerHTML = '<li class="mb-4 text-muted"><small>No episodes found.</small></li>';
+                    return;
+                }
+                podcastEl.innerHTML = items.map(function (item) {
+                    function txt(tag) {
+                        var el = item.querySelector(tag);
+                        return el ? el.textContent : '';
+                    }
+                    var title = escapeHtml(txt('title') || '(untitled)');
+                    var link = txt('link');
+                    var pub = txt('pubDate');
+                    var dateStr = '';
+                    if (pub) {
+                        var d = new Date(pub);
+                        if (!isNaN(d)) {
+                            dateStr = d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+                        }
+                    }
+                    return ''
+                        + '<li class="mb-4">'
+                        + '<span>'
+                        + '<h6 class="font-weight-bold">'
+                        + '<a href="' + link + '" class="text-dark" target="_blank" rel="noopener">' + title + '</a>'
+                        + '</h6>'
+                        + (dateStr ? '<span class="d-block text-muted">' + dateStr + '</span>' : '')
+                        + '</span>'
+                        + '</li>';
+                }).join('');
+            })
+            .catch(function () {
+                podcastEl.innerHTML = '<li class="mb-4 text-muted"><small>Could not load episodes.</small></li>';
+            });
+    }
+
     // Hugging Face Daily Papers — top 5 by upvotes
     var papersEl = document.getElementById('hf-papers-list');
     if (papersEl) {
@@ -30,7 +78,7 @@
                 var sorted = items.slice().sort(function (a, b) {
                     return ((b.paper && b.paper.upvotes) || 0) - ((a.paper && a.paper.upvotes) || 0);
                 });
-                var top = sorted.slice(0, 5);
+                var top = sorted.slice(0, 3);
                 papersEl.innerHTML = top.map(function (item) {
                     var paper = item.paper || {};
                     var id = paper.id || '';
@@ -61,7 +109,7 @@
     var reposEl = document.getElementById('gh-repos-list');
     if (reposEl) {
         var since = new Date(Date.now() - 30 * 86400000).toISOString().slice(0, 10);
-        var url = 'https://api.github.com/search/repositories?q=topic:llm+pushed:%3E' + since + '&sort=stars&order=desc&per_page=5';
+        var url = 'https://api.github.com/search/repositories?q=topic:llm+pushed:%3E' + since + '&sort=stars&order=desc&per_page=3';
         fetch(url)
             .then(function (r) { return r.json(); })
             .then(function (data) {

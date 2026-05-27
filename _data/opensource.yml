@@ -1,0 +1,6 @@
+# Open-source projects rendered on the About page (_pages/about.md).
+- name: "SimDB"
+  repo: "CoffeeBeansLabs/SimDB"
+  url: "https://github.com/CoffeeBeansLabs/SimDB"
+  language: "Python"
+  desc: "A lightweight, open-source vector similarity database for storing embeddings and running fast nearest-neighbour search. Built at CoffeeBeans Labs. I extended it with Faiss and Kafka improvements for higher-throughput retrieval."
