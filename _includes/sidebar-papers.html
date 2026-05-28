@@ -29,6 +29,14 @@
     // Latent Flow podcast — latest 3 episodes from the RSS feed (Anchor feed sends CORS *)
     var podcastEl = document.getElementById('podcast-list');
     if (podcastEl) {
+        podcastEl.addEventListener('click', function (e) {
+            var link = e.target.closest('a');
+            if (!link || typeof gtag !== 'function') return;
+            gtag('event', 'podcast_click', {
+                episode_title: link.textContent.trim(),
+                episode_url: link.href
+            });
+        });
         fetch('https://anchor.fm/s/112e71bbc/podcast/rss')
             .then(function (r) { return r.text(); })
             .then(function (xml) {
