@@ -365,3 +365,30 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
   </div>
 
 </div>
+
+<script>
+  (function () {
+    if (typeof gtag !== 'function') return;
+
+    var ref = document.referrer;
+    var source;
+
+    if (!ref) {
+      source = 'direct';
+    } else {
+      try {
+        var refHost = new URL(ref).hostname;
+        source = refHost === window.location.hostname ? 'internal' : 'external';
+      } catch (e) {
+        source = 'unknown';
+      }
+    }
+
+    if (source === 'direct' || source === 'external') {
+      gtag('event', 'about_direct_visit', {
+        referrer_type: source,
+        referrer: ref || '(none)'
+      });
+    }
+  })();
+</script>
