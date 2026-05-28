@@ -3,7 +3,7 @@ disqus:
   comments: true
   disqus_shortname: 'http-karthink-me'
 
-google-ID: 'UA-112060364-1'
+google-ID: 'G-RK89G2MLQ1'
 
 menu:
 - {name: 'Writing', path: 'menu', url: 'writing.html'}
