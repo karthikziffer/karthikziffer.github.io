@@ -102,7 +102,7 @@ Your first task is to solve the problem: "my laptop gets an error with a blue sc
 
 
 
-The complexity increases when a multi line prompts need to be decomposed into neo4j representation.
+The complexity increases when a multi line prompts need to be decomposed into Neo4j representation.
 
 We create a general pattern to use for multi line prompts. The original prompt is broken down into Prompt entity, role or task entities, responsibilites or action entities, rules and constraints. 
 
