@@ -225,7 +225,7 @@ The version of the prompt is done in Neo4j using nodes for different version of 
 <br>
 
 
-## results
+## Results
 
 
 <br>
