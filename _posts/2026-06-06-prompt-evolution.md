@@ -219,7 +219,7 @@ CREATE (p)-[:FULFILLS_CONSTRAINT]->(rule))
 
 ## Evolution
 
-The version of the prompt is done in Neo4j using nodes for different version of prompts and relationships to track their history. Each version contains a timestamp indicating when it was created, and links back to the prompt's data. When updating a prompt, you create a new version node that includes the updated content and links to both the old and new versions. This allows querying the database as if it were at any given point in time, capturing historical changes accurately. 
+The versioning of the prompt is done in Neo4j using nodes for different version of prompts and relationships to track their history. Each version contains a timestamp indicating when it was created, and links back to the prompt's data. When updating a prompt, you create a new version node that includes the updated content and links to both the old and new versions. This allows querying the database as if it were at any given point in time, capturing historical changes accurately. 
 
 
 <br>
