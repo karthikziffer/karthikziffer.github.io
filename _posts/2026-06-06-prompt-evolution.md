@@ -227,8 +227,6 @@ The version of the prompt is done in Neo4j using nodes for different version of 
 
 ## Results
 
-
-<br>
     
 A sample size of [1828 prompts](https://raw.githubusercontent.com/f/prompts.chat/main/PROMPTS.md) is taken for the evaluation of the framework to determine if these prompts can be represented within this decomposed role or task entities, responsibility or actions entities, and rules and constraints. 
 
