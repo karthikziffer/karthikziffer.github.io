@@ -263,7 +263,7 @@ It also shows the frequency of graph nodes and graph edges in Neo4j and the grap
 
 ## Conclusion
 
-This blog has outlined an architectural strategy for storing prompts of agentic AI solutions in a graph database, specifically Neo4j. The approach involves representing prompts as structured knowledge using nodes and edges, which allows for efficient management and evolution over time. By decomposing information into clear, interconnected parts, we can handle versioning, debugging, and security more effectively.
+This blog has outlined an framework for storing prompts of agentic AI solutions in a graph database, specifically Neo4j. The approach involves representing prompts as structured knowledge using nodes and edges, which allows for efficient management and evolution over time. By decomposing information into clear, interconnected parts, we can handle versioning, debugging, and security more effectively.
 
 The example provided demonstrates how complex multi-line prompts can be broken down into individual roles, tasks, responsibilities, actions, and rules. This structured decomposition enables precise querying and modification of prompts, making it easier to adapt the framework to various AI and machine learning applications.
 
