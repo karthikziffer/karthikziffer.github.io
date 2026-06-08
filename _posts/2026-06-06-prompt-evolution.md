@@ -8,15 +8,15 @@ tags: [agentic ai, prompt engineering]
 
 ## Introduction
 
-This blog aims to develop an architectural strategy for storing prompts of agentic AI solutions in a graph database (considered Neo4j for this example). These prompts will be versioned over changes instead of mainatining the versioning in github, with metadata added to trace the version description. 
+This blog aims to develop an abstract framework to store prompts of agentic functions in a graph database (considered Neo4j for this example). These prompts will be versioned over changes as a better alternative to github versionin. Prompts are no longer stored in the codebase, they can be considered as a feature store and fetched during the CI/CD stage. 
 
 <br>
     
 ## Data Structure
 
-The approach involves representing prompts as structured knowledge using nodes and entities in Neo4j. This representation decomposes information into clear, interconnected parts, making it easier to manage and evolve over time. Unlike traditional repositories, Neo4j provides a more efficient way to track changes, debug errors, and maintain security by enforcing strict data integrity and access controls.
+The approach involves representing prompts as structured knowledge using nodes and edges in Neo4j. This representation decomposes information into clear, interconnected parts, making it easier to manage and evolve over time. Unlike traditional repositories, Neo4j provides a more efficient way to track changes, debug errors, and maintain security by enforcing strict data integrity and access controls.
 
-Prompts are divided into nodes and entities based on their structure and relationships. For instance, a classification prompt might be represented as nodes for the task (e.g., "classification"), model type (e.g., "transformer"), and specific classes (e.g., "cat", "dog"). This structured format facilitates efficient querying and modification of prompts.
+Prompts are divided into nodes and edges based on their structure and relationships. For instance, a classification prompt might be represented as nodes for the task (e.g., "classification"), model type (e.g., "transformer"), and specific classes (e.g., "cat", "dog"). This structured format facilitates efficient querying and modification of prompts.
 
 The data structure in Neo4j can be defined using labels (e.g., `Prompt`, `Task`, `ModelType`) and relationships (e.g., `HAS_TASK`, `USES_MODEL_TYPE`). Each prompt node would contain properties like its text, description, version, and metadata. Relationships between nodes represent the semantic connections between prompts and their components.
 
@@ -26,7 +26,7 @@ This approach is flexible and can be adapted to various AI and machine learning 
     
 ## Security
 
-Storing prompts in Neo4j offers an advantage by making it easier to debug errors on each prompt node and entity. Another interesting application is that if nodes and entities are stored as embeddings, similarity can be calculated across these prompt nodes and entities using vector embeddings from the RAG vector store.
+Storing prompts in Neo4j offers an advantage by making it easier to debug errors on each prompt node and entity. Another interesting application is that if nodes and edges are stored as embeddings, similarity can be calculated across these prompt nodes and edges using vector embeddings from the RAG vector store.
 
 For the security, storing prompts in Neo4j avoids prompt injection attacks since the attacker cannot introduce any new corrupted prompts. This is because Neo4j enforces strict data integrity and authentication mechanisms. Additionally, the use of access controls ensures that only authorized users can modify or delete prompts, thereby preventing malicious modifications.
 
@@ -34,7 +34,7 @@ For the security, storing prompts in Neo4j avoids prompt injection attacks since
     
 ## Example
 
-Prompts are decomposed into nodes and entities based on their structure and relationships. For example, a classification prompt might be broken down into nodes for the task (e.g., "classification"), the model type (e.g., "transformer"), and the specific classes (e.g., "cat", "dog"). This structured decomposition allows for efficient querying, retrieval, and modification of prompts.
+Prompts are decomposed into nodes and edges based on their structure and relationships. For example, a classification prompt might be broken down into nodes for the task (e.g., "classification"), the model type (e.g., "transformer"), and the specific classes (e.g., "cat", "dog"). This structured decomposition allows for efficient querying, retrieval, and modification of prompts.
 
 The data structure for the prompts in Neo4j can be created using labels (e.g., `Prompt`, `Task`, `ModelType`) and relationships (e.g., `HAS_TASK`, `USES_MODEL_TYPE`). Each prompt node would contain properties such as its text, description, version, and metadata. Relationships between nodes represent the semantic connections between prompts and their components.
 
@@ -67,7 +67,7 @@ Example of storing them in Neo4j:
 ```
 MATCH (p:Prompt), (t:Task), (m:ModelType)
 WHERE p.text = "Classify this image as either a cat or a dog."
-AND t.name = "Classification"
+AND t.name = "Classification class is either cat or a dog"
 AND m.name = "Transformer"
 
 CREATE (p)-[:HAS_TASK]->(t),
@@ -102,7 +102,7 @@ Your first task is to solve the problem: "my laptop gets an error with a blue sc
 
 
 
-The complexity increases when a multi line prompts need to be decomposed into Neo4j representation.
+The complexity increases when a multi line prompts need to be represented as nodes and edges in Neo4j.
 
 We create a general pattern to use for multi line prompts. The original prompt is broken down into Prompt entity, role or task entities, responsibilites or action entities, rules and constraints. 
 
@@ -236,7 +236,7 @@ The versioning of the prompt is done in Neo4j using nodes for different version 
 ## Results
 
     
-A sample size of [1828 prompts](https://raw.githubusercontent.com/f/prompts.chat/main/PROMPTS.md) is taken for the evaluation of the framework to determine if these prompts can be represented within this decomposed role or task entities, responsibility or actions entities, and rules and constraints. 
+A sample size of [1828 prompts](https://raw.githubusercontent.com/f/prompts.chat/main/PROMPTS.md) is taken for the evaluation of the framework to determine if these prompts can be represented with this framework with role or task entities, responsibility or actions entities, and rules and constraints. 
 
 
 First result shows on the sample prompts, what percentage has their roles, tasks, responsibilities, actions, and rules or constraints.
@@ -251,7 +251,9 @@ First result shows on the sample prompts, what percentage has their roles, tasks
 
 Second result is to check what is the distribution of the prompts into proposed framework components. 
 
-The image shows histograms representing the frequency of prompts categorized by their roles, tasks, responsibilities, actions, and rules or constraints. The plots provide a visual overview of how well the current framework can represent various types of prompts.
+The image shows histograms representing the frequency of roles, tasks, responsibilities, actions, and rules or constraints in the prompt sample. This conveys that most of the prompts can be represented by the framework components (roles, tasks, responsibilities, actions, and rules or constraints). 
+
+It also shows the frequency of graph nodes and graph edges in Neo4j and the graph complexity is the combination of both graph node and edge. 
 
 ![](/assets/images/all_metrics_histograms.png)
 
