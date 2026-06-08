@@ -217,7 +217,7 @@ CREATE (p)-[:FULFILLS_CONSTRAINT]->(rule))
 <br>
 
 
-The visualization of graph in Neo4J
+The visualization of graph in Neo4j
 
 
 ![](/assets/images/bloom-visualisation.png)
