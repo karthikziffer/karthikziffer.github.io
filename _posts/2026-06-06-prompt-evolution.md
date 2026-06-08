@@ -215,7 +215,15 @@ CREATE (p)-[:FULFILLS_CONSTRAINT]->(rule))
 ```
 
 <br>
-    
+
+
+The visualization of graph in Neo4J
+
+
+![](/assets/images/bloom-visualisation.png)
+
+
+<br>
 
 ## Evolution
 
