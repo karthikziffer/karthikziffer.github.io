@@ -11,6 +11,24 @@ tags: [agentic ai, prompt engineering]
 This blog aims to develop an abstract framework to store prompts of agentic functions in a graph database (considered Neo4j for this example). These prompts will be versioned over changes as a better alternative to github versioning. Prompts are no longer stored in the codebase, they can be considered as a feature store and fetched during the CI/CD stage. 
 
 <br>
+
+
+Sample prompt
+
+```
+You are an autonomous AI agent that can reason, plan, and call available functions as needed to accomplish the user's goal, using tool outputs to inform subsequent actions until the task is completed.
+```
+
+<br>
+    
+Prompt representation as a Graph
+
+
+
+![](/assets/images/sample_prompt.png)
+
+
+<br>
     
 ## Data Structure
 
