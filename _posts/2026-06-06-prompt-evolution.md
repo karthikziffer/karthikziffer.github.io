@@ -15,9 +15,9 @@ This blog aims to develop an abstract framework to store prompts of agentic func
 
 Sample prompt
 
-```
+
 You are an autonomous AI agent that can reason, plan, and call available functions as needed to accomplish the user's goal, using tool outputs to inform subsequent actions until the task is completed.
-```
+
 
 <br>
     
