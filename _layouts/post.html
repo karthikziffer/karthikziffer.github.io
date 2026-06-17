@@ -22,7 +22,7 @@ layout: default
 					</div>
 				</div>
 				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="https://loremflickr.com/800/400/abstract?r={{ page.url | slugify }}" alt="{{ page.title }}">
+					{% if page.image %}<img class="rounded" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/assets/img/{{ page.image }}{% endif %}" alt="{{ page.title }}">{% else %}<img class="rounded" src="https://loremflickr.com/800/400/building?r={{ page.url | slugify }}" alt="{{ page.title }}">{% endif %}
 				</div>
 			</div>
 		</div>

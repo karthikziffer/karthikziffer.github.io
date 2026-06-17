@@ -19,7 +19,7 @@
 </div>
 	<div class="col-md-3 pr-0 text-right">
 	<a href="{{site.baseurl}}{{post.url}}">
-	<img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ post.url | slugify }}" alt="{{ post.title }}">
+	{% if post.image %}<img class="w-100 rounded" src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ post.image }}{% endif %}" alt="{{ post.title }}">{% else %}<img class="w-100 rounded" src="https://loremflickr.com/400/200/building?r={{ post.url | slugify }}" alt="{{ post.title }}">{% endif %}
 	</a>
 	</div>
 </div>

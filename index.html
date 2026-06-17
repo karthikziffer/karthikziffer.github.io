@@ -20,7 +20,7 @@ pagination:
     <div class="col-md-8">
     <div class="card border-0 mb-4 box-shadow">
     <a href="{{site.baseurl}}{{latest_post.url}}">
-    <div class="topfirstimage" style="background-image: url(https://loremflickr.com/800/400/abstract?r={{ latest_post.url | slugify }}); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
+    {% if latest_post.image %}<div class="topfirstimage" style="background-image: url({% if latest_post.image contains '://' %}{{ latest_post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ latest_post.image }}{% endif %}); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>{% else %}<div class="topfirstimage" style="background-image: url(https://loremflickr.com/800/400/building?r={{ latest_post.url | slugify }}); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>{% endif %}
     </a>
     <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
     <h2 class="h4 font-weight-bold">
@@ -52,7 +52,7 @@ pagination:
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{second_post.url}}">
-                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ second_post.url | slugify }}" alt="{{ second_post.title }}">
+                 {% if second_post.image %}<img class="w-100 rounded" src="{% if second_post.image contains '://' %}{{ second_post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ second_post.image }}{% endif %}" alt="{{ second_post.title }}">{% else %}<img class="w-100 rounded" src="https://loremflickr.com/400/200/building?r={{ second_post.url | slugify }}" alt="{{ second_post.title }}">{% endif %}
                 </a>
                 </div>
                 <div>
@@ -77,7 +77,7 @@ pagination:
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{third_post.url}}">
-                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ third_post.url | slugify }}" alt="{{ third_post.title }}">
+                 {% if third_post.image %}<img class="w-100 rounded" src="{% if third_post.image contains '://' %}{{ third_post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ third_post.image }}{% endif %}" alt="{{ third_post.title }}">{% else %}<img class="w-100 rounded" src="https://loremflickr.com/400/200/building?r={{ third_post.url | slugify }}" alt="{{ third_post.title }}">{% endif %}
                 </a>
                 </div>
                 <div>
@@ -102,7 +102,7 @@ pagination:
         <div class="mb-3 d-flex align-items-center">
                 <div class="col-md-4">
                 <a href="{{site.baseurl}}{{fourth_post.url}}">
-                 <img class="w-100 rounded" src="https://loremflickr.com/400/200/abstract?r={{ fourth_post.url | slugify }}" alt="{{ fourth_post.title }}">
+                 {% if fourth_post.image %}<img class="w-100 rounded" src="{% if fourth_post.image contains '://' %}{{ fourth_post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ fourth_post.image }}{% endif %}" alt="{{ fourth_post.title }}">{% else %}<img class="w-100 rounded" src="https://loremflickr.com/400/200/building?r={{ fourth_post.url | slugify }}" alt="{{ fourth_post.title }}">{% endif %}
                 </a>
                 </div>
                 <div>
