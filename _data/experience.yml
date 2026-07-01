@@ -11,6 +11,7 @@
   location: "Germany"
   logo: true
   highlights:
+    - "Designing and developing scalable agentic workflows and RAG knowledge base for the Turns Digital Platform."
     - "Building AI for textile-to-textile recycling — automated sorting of garments by fibre, colour and quality."
 
 - company: "Balluff EMEA"
