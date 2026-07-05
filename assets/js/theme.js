@@ -134,3 +134,43 @@ $(function() {
     }
   }
 });
+
+// Auto-build the post table of contents from h2/h3 headings inside the article.
+// Populates #post-toc (added by _layouts/post.html) using each heading's id
+// (kramdown auto-generates ids, or an explicit {#id} in the markdown).
+$(function () {
+    var $toc = $('#post-toc');
+    var $article = $('.article-post');
+    if (!$toc.length || !$article.length) return;
+
+    var $headings = $article.find('h2, h3');
+    if ($headings.length < 3) return; // not worth a TOC on short posts
+
+    function slugify(text) {
+        return text.toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '');
+    }
+
+    var html = '<span class="toc-title">On this page</span>';
+    var inSub = false;
+
+    $headings.each(function () {
+        var $h = $(this);
+        if (!$h.attr('id')) {
+            $h.attr('id', slugify($h.text()));
+        }
+        var link = '<a href="#' + $h.attr('id') + '">' + $h.text() + '</a>';
+
+        if (this.tagName === 'H3') {
+            if (!inSub) { html += '<div class="toc-sub">'; inSub = true; }
+            html += link;
+        } else {
+            if (inSub) { html += '</div>'; inSub = false; }
+            html += link;
+        }
+    });
+    if (inSub) html += '</div>';
+
+    $toc.html(html).addClass('has-items');
+});
