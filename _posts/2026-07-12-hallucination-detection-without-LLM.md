@@ -6,7 +6,7 @@ categories: journal
 tags: [agentic ai, prompt engineering]
 ---
 
-Hallucination detection happens at two levels: semantic and factual. A software version number rarely contradicts itself, so a factual check is enough. A support log is trickier, since a discount might only apply in summer, and catching that takes semantic understanding too. Most systems need both. This post covers a non-LLM factual technique: breaking text into facts and checking them against the source.
+Hallucination detection happens at two levels: semantic and factual. A software version number rarely contradicts itself, so a factual check is enough. A support log is trickier, since a discount might only apply in summer, and catching that takes semantic understanding too. Most systems need both. This post covers a non-LLM factual technique: breaking text into facts and checking them against the context.
 
 
 ---
