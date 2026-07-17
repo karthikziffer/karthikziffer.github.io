@@ -243,7 +243,7 @@ Sample 1 needs a `GPE` attribute (a place), sample 2 needs a `CARDINAL` attribut
 
 ## Evaluation Results
 
-Running this metric on 58 single-hop questions sampled from SQuAD:
+Running this metric on 58 questions sampled from SQuAD:
 
 ![](/assets/images/hallucination/02_total_vs_matched.png)
 
