@@ -15,6 +15,8 @@ Hallucination detection happens at two levels: semantic and factual. A software 
 
 The idea is simple: break text into facts with LLM. Once a passage is broken into who did what, and what we know about them, that structure turns out to be useful for more than spotting hallucinations. There are three applications at the end of this post. But first, here's how the decomposition itself works, using hallucination detection as the running example.
 
+Want to see it run on your own text? Try the [live demo](https://hallucination-detector-tbv5.onrender.com/).
+
 This only works under a few assumptions:
 
 - **Spelling and grammar must be accurate.** Nothing here corrects errors before parsing.
