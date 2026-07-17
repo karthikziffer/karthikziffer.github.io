@@ -268,7 +268,7 @@ There are two ways to push past this, one LLM-based and one not.
 
 An LLM holds onto subject-object relationships across long, complicated sentences better than spaCy's dependency parser and tagger. Swap those two components for an LLM call, keep the rest of the pipeline (fact table, fuzzy linking, "not answerable" logic) as-is, and the match rate on harder contexts should rise directly.
 
-### Or, staying non-LLM: add coreference resolution
+### Adding coreference resolution
 
 Long contexts refer back to the same entity with a pronoun or a shortened name a sentence later ("Notre Dame ... the university ... it ..."), and the pipeline currently treats each as an unrelated subject, since fact-table grouping is exact-string matching (Step 3). Coreference resolution would link those mentions to one entity before the fact table gets built, so facts scattered across a long context merge under one subject instead of splintering. Fully non-LLM, and it targets the multi-hop failure mode directly rather than parsing accuracy in general.
 
