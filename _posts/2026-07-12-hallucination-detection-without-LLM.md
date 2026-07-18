@@ -6,6 +6,113 @@ categories: journal
 tags: [agentic ai, prompt engineering]
 ---
 
+<style>
+article.article-post h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+}
+article.article-post h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: #1d1d1f;
+}
+article.article-post p {
+  color: #333336;
+}
+article.article-post hr {
+  border: none;
+  border-top: 1px solid #e5e5e7;
+  margin: 3rem 0;
+}
+article.article-post blockquote {
+  padding: 1.1rem 1.4rem;
+  margin: 0 0 2rem;
+  background: #f9f9fb;
+  border-left: 3px solid #03a87c;
+  border-radius: 0 10px 10px 0;
+  font-style: normal;
+  color: #4a4a4d;
+}
+article.article-post blockquote:before {
+  content: none;
+}
+article.article-post blockquote p:last-child {
+  margin-bottom: 0;
+}
+article.article-post pre {
+  background: #f6f6f8;
+  border: 1px solid #e5e5e7;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+article.article-post code {
+  background: #f2f2f4;
+  padding: 0.15em 0.4em;
+  border-radius: 5px;
+  font-size: 0.85em;
+}
+article.article-post pre code {
+  background: none;
+  padding: 0;
+}
+article.article-post table {
+  border: 1px solid #e5e5e7;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.92rem;
+}
+article.article-post table th {
+  background: #f6f6f8;
+  font-weight: 600;
+  border-color: #e5e5e7;
+}
+article.article-post table td {
+  border-color: #e5e5e7;
+  vertical-align: top;
+}
+article.article-post img {
+  border-radius: 14px;
+  border: 1px solid #eee;
+}
+.entity-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.entity-legend .chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: #1d1d1f;
+}
+.chip-date { background: rgba(255, 200, 0, 0.25); }
+.chip-place { background: rgba(3, 168, 124, 0.16); }
+.chip-norp { background: rgba(120, 50, 226, 0.14); }
+.chip-org { background: rgba(53, 189, 255, 0.2); }
+.tag-date, .tag-place, .tag-norp, .tag-org {
+  padding: 0 4px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.tag-date { background: rgba(255, 200, 0, 0.25); }
+.tag-place { background: rgba(3, 168, 124, 0.16); }
+.tag-norp { background: rgba(120, 50, 226, 0.14); }
+.tag-org { background: rgba(53, 189, 255, 0.2); }
+</style>
+
 Hallucination detection happens at two levels: semantic and factual. A software version number rarely contradicts itself, so a factual check is enough. A support log is trickier, since a discount might only apply in summer, and catching that takes semantic understanding too. Most systems need both. This post covers a non-LLM factual technique: breaking text into facts and checking them against the context.
 
 
@@ -32,15 +139,15 @@ One example runs through this whole post, so a single fact can be followed from 
 
 **Context text:**
 
-<div markdown="0" style="font-size:0.85rem; margin-bottom:0.75rem;">
-  <span style="background-color:rgba(255,222,3,0.4); padding:2px 8px; border-radius:4px; margin-right:6px; display:inline-block; margin-bottom:4px;">Date</span>
-  <span style="background-color:rgba(3,168,124,0.22); padding:2px 8px; border-radius:4px; margin-right:6px; display:inline-block; margin-bottom:4px;">Place</span>
-  <span style="background-color:rgba(120,50,226,0.2); padding:2px 8px; border-radius:4px; margin-right:6px; display:inline-block; margin-bottom:4px;">Nationality / group</span>
-  <span style="background-color:rgba(53,189,255,0.28); padding:2px 8px; border-radius:4px; display:inline-block; margin-bottom:4px;">Organization</span>
+<div class="entity-legend" markdown="0">
+  <span class="chip chip-date">Date</span>
+  <span class="chip chip-place">Place</span>
+  <span class="chip chip-norp">Nationality / group</span>
+  <span class="chip chip-org">Organization</span>
 </div>
 
 <blockquote markdown="0">
-"Arthur's Magazine (<span style="background-color:rgba(255,222,3,0.4); border-radius:3px; padding:0 2px;">1844-1846</span>) was an <span style="background-color:rgba(120,50,226,0.2); border-radius:3px; padding:0 2px;">American</span> literary periodical published in <span style="background-color:rgba(3,168,124,0.22); border-radius:3px; padding:0 2px;">Philadelphia</span> in <span style="background-color:rgba(255,222,3,0.4); border-radius:3px; padding:0 2px;">the 19th century</span>. First for Women is a woman's magazine published by <span style="background-color:rgba(53,189,255,0.28); border-radius:3px; padding:0 2px;">Bauer Media Group</span> in the <span style="background-color:rgba(3,168,124,0.22); border-radius:3px; padding:0 2px;">USA</span>."
+"Arthur's Magazine (<span class="tag-date">1844-1846</span>) was an <span class="tag-norp">American</span> literary periodical published in <span class="tag-place">Philadelphia</span> in <span class="tag-date">the 19th century</span>. First for Women is a woman's magazine published by <span class="tag-org">Bauer Media Group</span> in the <span class="tag-place">USA</span>."
 </blockquote>
 
 **Question:**
