@@ -1,0 +1,420 @@
+/*
+  Editorial article theme.
+  Scoped to the post hero, the article body (.article-post), and the
+  table of contents — the rest of the site (nav, listings, footer) is
+  untouched. Loaded after main.css/theme.css/syntax.css so it wins on
+  specificity.
+*/
+
+:root {
+  --ed-paper: #fbfaf7;
+  --ed-ink: #1a1a1a;
+  --ed-ink-muted: #5b5f66;
+  --ed-rule: #e4e0d7;
+  --ed-accent: #7a2e2e;
+  --ed-code-bg: #f3f1ec;
+  --ed-code-border: #ddd8cd;
+  --ed-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --ed-sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+  --ed-mono: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ---------- Hero / masthead ---------- */
+
+.post-hero {
+  padding: 4.5rem 1rem 0;
+  background-color: var(--ed-paper);
+}
+
+.post-hero-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.post-eyebrow {
+  margin: 0 0 1.25rem;
+  font-family: var(--ed-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ed-accent);
+}
+
+.post-eyebrow .catlist a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-eyebrow .catlist a:hover {
+  text-decoration: underline;
+}
+
+.post-title.article-headline {
+  font-family: var(--ed-serif);
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--ed-ink);
+  margin: 0 0 1.5rem;
+}
+
+.post-meta {
+  font-family: var(--ed-sans);
+  font-size: 0.95rem;
+  color: var(--ed-ink-muted);
+}
+
+.post-meta-author {
+  font-weight: 600;
+  color: var(--ed-ink);
+}
+
+.post-meta-author::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 0.85em;
+  margin: 0 0.65em;
+  background: var(--ed-rule);
+  vertical-align: middle;
+}
+
+.post-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  height: auto;
+  margin: 3rem auto 0;
+  border-radius: 2px;
+  filter: saturate(0.85) contrast(1.02);
+}
+
+@media (min-width: 992px) {
+  .post-title.article-headline { font-size: 3.5rem; }
+}
+
+/* ---------- Article body ---------- */
+
+.article-post {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--ed-sans);
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--ed-ink);
+}
+
+.article-post p {
+  margin-bottom: 1.6rem;
+}
+
+.article-post a {
+  color: var(--ed-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(122, 46, 46, 0.35);
+  text-underline-offset: 2px;
+}
+
+.article-post a:hover {
+  text-decoration-color: currentColor;
+}
+
+.article-post h1,
+.article-post h2,
+.article-post h3,
+.article-post h4 {
+  font-family: var(--ed-serif);
+  font-weight: 500;
+  color: var(--ed-ink);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+.article-post h1 { font-size: 2rem; }
+.article-post h2 { font-size: 1.75rem; }
+.article-post h3 { font-size: 1.3rem; }
+.article-post h4 { font-size: 1.1rem; }
+
+/* Opening lede paragraph: small drop cap, a quiet editorial signature */
+.article-post > p:first-of-type::first-letter {
+  font-family: var(--ed-serif);
+  font-weight: 500;
+  color: var(--ed-accent);
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding-right: 0.09em;
+  padding-top: 0.03em;
+}
+
+/* Standalone bold labels ("**The `Read` tool.**") read as mini subheads */
+.article-post p > strong:only-child {
+  display: inline-block;
+  font-family: var(--ed-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--ed-ink);
+}
+
+.article-post ul,
+.article-post ol {
+  margin-bottom: 1.6rem;
+  line-height: 1.75;
+  padding-left: 1.4rem;
+}
+
+.article-post li {
+  margin-bottom: 0.5rem;
+}
+
+.article-post li::marker {
+  color: var(--ed-accent);
+}
+
+.article-post blockquote {
+  margin: 2rem 0;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 2px solid var(--ed-accent);
+  font-family: var(--ed-serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--ed-ink);
+}
+
+.article-post hr {
+  margin: 3.25rem 0 2.5rem;
+  border: none;
+  border-top: 1px solid var(--ed-rule);
+}
+
+.article-post hr + h1,
+.article-post hr + h2,
+.article-post hr + h3,
+.article-post hr + h4 {
+  margin-top: 0;
+}
+
+.article-post img {
+  max-width: 100%;
+  margin: 2.25rem 0;
+  border-radius: 2px;
+}
+
+/* ---------- Code ---------- */
+
+.article-post .highlighter-rouge {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.article-post .highlighter-rouge .highlight {
+  margin: 0;
+}
+
+.article-post pre.highlight,
+.article-post pre {
+  padding: 1.25rem 1.5rem;
+  margin: 0;
+  border-radius: 3px;
+  border: 1px solid var(--ed-code-border);
+  background-color: var(--ed-code-bg) !important;
+  font-family: var(--ed-mono);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  overflow-x: visible;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.article-post .highlighter-rouge pre code {
+  background: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.article-post .language-python,
+.article-post .language-json,
+.article-post .language-bash {
+  padding-top: 1.75rem;
+}
+
+.article-post .language-python::before,
+.article-post .language-json::before,
+.article-post .language-bash::before {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  font-family: var(--ed-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ed-ink-muted);
+}
+
+.article-post .language-python::before { content: "python"; }
+.article-post .language-json::before { content: "json"; }
+.article-post .language-bash::before { content: "bash"; }
+
+.article-post p code,
+.article-post li code {
+  font-family: var(--ed-mono);
+  font-size: 0.88em;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  background-color: var(--ed-code-bg);
+  color: var(--ed-ink);
+}
+
+/* Retune Rouge's default palette to sit quietly inside the editorial page */
+.article-post .highlight .c,
+.article-post .highlight .c1,
+.article-post .highlight .cm,
+.article-post .highlight .cp,
+.article-post .highlight .cs {
+  color: var(--ed-ink-muted);
+  font-style: italic;
+}
+
+.article-post .highlight .k,
+.article-post .highlight .kn,
+.article-post .highlight .kd,
+.article-post .highlight .kc,
+.article-post .highlight .kr,
+.article-post .highlight .kt {
+  color: #55606e;
+  font-weight: 500;
+}
+
+.article-post .highlight .s,
+.article-post .highlight .s1,
+.article-post .highlight .s2,
+.article-post .highlight .sh,
+.article-post .highlight .sx {
+  color: #5f6f3f;
+}
+
+.article-post .highlight .nf,
+.article-post .highlight .nd {
+  color: var(--ed-accent);
+}
+
+.article-post .highlight .mi,
+.article-post .highlight .mf {
+  color: #a05a2c;
+}
+
+.article-post .highlight .nt {
+  color: #55606e;
+}
+
+/* ---------- Table of contents ---------- */
+
+.post-toc {
+  font-family: var(--ed-sans);
+}
+
+.post-toc a {
+  color: var(--ed-ink-muted);
+}
+
+.post-toc a:hover {
+  color: var(--ed-accent);
+}
+
+/* ---------- Diagrams ---------- */
+
+.article-post figure.diagram {
+  margin: 2.75rem 0;
+}
+
+.article-post figure.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--ed-sans);
+}
+
+.article-post figure.diagram figcaption {
+  margin-top: 0.85rem;
+  font-family: var(--ed-sans);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ed-ink-muted);
+  text-align: center;
+}
+
+.article-post .diagram .box {
+  fill: var(--ed-code-bg);
+  stroke: var(--ed-code-border);
+  stroke-width: 1;
+}
+
+.article-post .diagram .box-accent {
+  fill: var(--ed-paper);
+  stroke: var(--ed-accent);
+  stroke-width: 1.25;
+}
+
+.article-post .diagram .box-dashed {
+  fill: none;
+  stroke: var(--ed-rule);
+  stroke-width: 1.25;
+  stroke-dasharray: 4 4;
+}
+
+.article-post .diagram .lane-rule {
+  stroke: var(--ed-rule);
+  stroke-width: 1;
+}
+
+.article-post .diagram .arrow {
+  stroke: var(--ed-ink-muted);
+  stroke-width: 1.25;
+  fill: none;
+}
+
+.article-post .diagram .arrow-head {
+  fill: var(--ed-ink-muted);
+}
+
+.article-post .diagram .lane-title {
+  fill: var(--ed-ink-muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.article-post .diagram .label {
+  fill: var(--ed-ink);
+  font-size: 13px;
+}
+
+.article-post .diagram .label-strong {
+  fill: var(--ed-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.article-post .diagram .label-small {
+  fill: var(--ed-ink-muted);
+  font-size: 11px;
+}
+
+.article-post .diagram .label-muted {
+  fill: var(--ed-ink-muted);
+  font-size: 11px;
+  font-style: italic;
+}
+
+.article-post .diagram .label-accent {
+  fill: var(--ed-accent);
+  font-size: 11px;
+  font-weight: 500;
+}
