@@ -19,7 +19,7 @@
 </div>
 	<div class="col-md-3 pr-0 text-right">
 	<a href="{{site.baseurl}}{{post.url}}">
-	{% if post.image %}<img class="w-100 rounded" src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ post.image }}{% endif %}" alt="{{ post.title }}">{% else %}<img class="w-100 rounded" src="https://picsum.photos/seed/{{ post.url | slugify }}/400/200" alt="{{ post.title }}">{% endif %}
+	{% if post.image %}<img class="w-100 rounded" src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/assets/img/{{ post.image }}{% endif %}" alt="{{ post.title }}">{% else %}<img class="w-100 rounded" src="https://picsum.photos/seed/{{ post.url | slugify }}/400/200" alt="{{ post.title }}" onerror="this.style.display='none'">{% endif %}
 	</a>
 	</div>
 </div>

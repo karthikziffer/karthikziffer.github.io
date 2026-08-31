@@ -18,7 +18,7 @@ layout: default
 			<span class="post-meta-date">{{ page.date | date: '%b %d, %Y' }} · {% include meta-read-time.html %}</span>
 		</div>
 	</div>
-	{% if page.image %}<img class="post-hero-img" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/assets/img/{{ page.image }}{% endif %}" alt="{{ page.title }}">{% else %}<img class="post-hero-img" src="https://picsum.photos/seed/{{ page.url | slugify }}/1600/700" alt="{{ page.title }}">{% endif %}
+	{% if page.image %}<img class="post-hero-img" src="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/assets/img/{{ page.image }}{% endif %}" alt="{{ page.title }}">{% else %}<img class="post-hero-img" src="https://picsum.photos/seed/{{ page.url | slugify }}/1600/700" alt="{{ page.title }}" onerror="this.style.display='none'">{% endif %}
 </div>
 </div>
 

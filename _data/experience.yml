@@ -1,7 +1,8 @@
 # Experience timeline rendered on the About page (_pages/about.md).
 # Newest first. `logo: true` means assets/images/companies/<slug>.png exists;
-# otherwise a coloured initial badge is shown. Drop a <slug>.png in that folder
-# to replace any badge with a real logo.
+# `logo: "<url>"` uses that URL directly (external logo); `logo: false` shows
+# a coloured initial badge. Drop a <slug>.png in that folder to replace any
+# badge with a real logo.
 
 - company: "TURNS (Wagner+Thummerer GmbH)"
   slug: "turns"
@@ -11,12 +12,19 @@
   location: "Germany"
   logo: true
   highlights:
-    - "Designing and developing scalable agentic workflows and RAG knowledge base for the Turns Digital Platform."
-    - "Building AI for textile-to-textile recycling — automated sorting of garments by fibre, colour and quality."
+    - "Built a RAG-based chatbot over PDFs and database sources to answer user queries, cutting response time by ~40%."
+    - "Developed an agentic auditing workflow with a fine-tuned LayoutLM document-intelligence model to validate documents against external data sources."
+    - "Built an MLOps pipeline in Azure ML to classify textile material features, enabling efficient sorting and improved fibre quality output."
+    - "Productionized WhisperX speech-to-text with CTranslate2 in a Docker container on Azure ML, achieving sub-millisecond per-word inference latency."
+    - "Trained a time-series model to classify textile material composition (cotton, polyester blends), with support for remote OTA model updates on an edge device."
+    - "Engineered an image-processing pipeline for camera calibration, cloud-based processing, lighting correction and standardisation for ML training data."
+    - "Designed a Medallion Architecture data pipeline in Databricks for textile supply-chain traceability, inventory management and visualisation."
+    - "Developed REST and GraphQL APIs with JWT-based multi-tenant authentication and rate limiting."
+    - "Collaborated with external teams on project delivery, bridging communication between technical teams and management."
 
 - company: "Balluff EMEA"
   slug: "balluff"
-  role: "AI Engineer — Detection of Hidden Objects"
+  role: "AI Engineer - Detection of Hidden Objects"
   start: "Mar 2023"
   end: "Nov 2023"
   location: "Baden-Württemberg, Germany"
@@ -29,7 +37,7 @@
 
 - company: "German Aerospace Center (DLR)"
   slug: "dlr"
-  role: "Data Science Intern — Future Lab for Additive Manufacturing & Engineering"
+  role: "Data Science Intern - Future Lab for Additive Manufacturing & Engineering"
   start: "Nov 2022"
   end: "Feb 2023"
   location: ""
@@ -42,7 +50,7 @@
 
 - company: "Schwarz Dienstleistungen"
   slug: "schwarz"
-  role: "AI Engineer — Research & Development"
+  role: "AI Engineer - Research & Development"
   start: "Oct 2021"
   end: "Oct 2022"
   location: "Neckarsulm"
@@ -52,6 +60,18 @@
     - "Built an image-similarity model (Siamese network with triplet loss) to track retail products from warehouse to shelf without retraining for new products."
     - "Built an anomaly-detection system for defects in printed text and deployed a containerised PaddleOCR pipeline on an NVIDIA Jetson Nano."
     - "Created Debian packages enabling GPU access on the Jetson Nano from within Docker containers, and benchmarked edge inference latency."
+
+- company: "Heidelberger Akademie der Wissenschaften"
+  slug: "heidelberg-akademie"
+  role: "Wissenschaftliche Hilfskraft (Student Research Assistant)"
+  start: "Jun 2021"
+  end: "Sep 2021"
+  location: "Stuttgart, Baden-Württemberg, Germany"
+  url: "https://www.hadw-bw.de/"
+  logo: "https://www.hadw-bw.de/themes/custom/b5nova/logo.svg"
+  highlights:
+    - "Conducted a bibliometric coupling analysis of research publications, using co-citation matrices to identify similarity patterns and track technological change."
+    - "Used Gephi for network analysis and graph visualisation, and VOSviewer to build co-authorship and keyword co-occurrence maps."
 
 - company: "CoffeeBeans Consulting"
   slug: "coffeebeans"
@@ -84,7 +104,8 @@
   start: "Jan 2019"
   end: "Mar 2019"
   location: ""
-  logo: false
+  url: "https://krishihub.vercel.app/"
+  logo: "https://krishihub.vercel.app/images/cropped-favicon-min-192x192.png"
   highlights:
     - "Built a Seq2Seq demand-forecasting model using market trends and weather, reaching 90% accuracy for two major commodities."
     - "Built a lightweight LSTM price-forecasting model exposed as a REST API for a mobile app."

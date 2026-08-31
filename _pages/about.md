@@ -38,6 +38,20 @@ permalink: "/about.html"
   padding:.32rem .8rem; border-radius:999px; font-size:.84rem;
 }
 
+/* Subjects disclosure (Education timeline) */
+.subjects-toggle { margin-top:1.4rem; padding-top:1rem; border-top:1px dashed #e7eaf1; }
+.subjects-toggle summary {
+  cursor:pointer; list-style:none; display:inline-flex; align-items:center; gap:.4rem;
+  font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:#0077b6; font-weight:700;
+  user-select:none;
+}
+.subjects-toggle summary::-webkit-details-marker { display:none; }
+.subjects-toggle summary::before { content:'▸'; font-size:.65rem; transition:transform .15s ease; color:#0077b6; }
+.subjects-toggle[open] summary::before { transform:rotate(90deg); }
+.subjects-toggle .chip-label { margin:.85rem 0 .5rem; }
+.subjects-toggle .about-chips { margin-top:.6rem; }
+.subjects-toggle .about-chips:first-of-type { margin-top:.6rem; }
+
 /* Info cards */
 .about-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:1rem; }
 .about-card {
@@ -49,7 +63,7 @@ permalink: "/about.html"
 .about-card li { padding:.22rem 0; font-size:.94rem; line-height:1.4; }
 .about-card li .lvl { color:#aab; font-size:.8rem; }
 
-/* Skills — brand-icon pills */
+/* Skills - brand-icon pills */
 .skill-pills { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:.5rem; }
 .skill-pill { display:inline-flex; align-items:center; gap:.45rem; background:#fff; border:1px solid #e7eaf1; border-radius:999px; padding:.4rem .85rem; font-size:.9rem; color:#333; box-shadow:0 1px 2px rgba(0,0,0,.04); transition:transform .15s ease, box-shadow .15s ease; }
 .skill-pill:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.08); }
@@ -66,6 +80,29 @@ permalink: "/about.html"
 .cert-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:1rem; margin-top:.5rem; }
 .cert-card { display:flex; gap:.8rem; align-items:center; border:1px solid #ececf1; border-radius:14px; padding:.9rem 1.05rem; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.04); transition:transform .15s ease, box-shadow .15s ease; }
 .cert-card:hover { transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.08); }
+.cert-card--linked { cursor:pointer; }
+.cert-card--linked:focus-visible { outline:2px solid #0077b6; outline-offset:2px; }
+
+.cert-modal { display:none; position:fixed; inset:0; background:rgba(15,17,26,.72); z-index:1000; align-items:center; justify-content:center; padding:2rem; }
+.cert-modal.open { display:flex; }
+.cert-modal-inner { position:relative; width:min(920px,100%); height:min(88vh,1100px); background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 24px 70px rgba(0,0,0,.4); }
+.cert-modal-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 1rem; border-bottom:1px solid #ececf1; }
+.cert-modal-title { font-weight:700; font-size:.95rem; color:#222; }
+.cert-modal-close { flex:0 0 auto; width:32px; height:32px; border-radius:50%; border:none; background:#f1f3f8; color:#333; font-size:1.2rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.cert-modal-close:hover { background:#e4e7f0; }
+.cert-modal iframe { display:block; width:100%; height:calc(100% - 49px); border:0; }
+@media (max-width:575px){ .cert-modal { padding:.6rem; } }
+
+.img-modal { display:none; position:fixed; inset:0; background:rgba(15,17,26,.8); z-index:1000; align-items:center; justify-content:center; padding:2rem; }
+.img-modal.open { display:flex; }
+.img-modal-inner { position:relative; max-width:min(1100px,100%); max-height:90vh; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 24px 70px rgba(0,0,0,.4); display:flex; flex-direction:column; }
+.img-modal-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.75rem 1rem; border-bottom:1px solid #ececf1; }
+.img-modal-title { font-weight:700; font-size:.95rem; color:#222; }
+.img-modal-close { flex:0 0 auto; width:32px; height:32px; border-radius:50%; border:none; background:#f1f3f8; color:#333; font-size:1.2rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+.img-modal-close:hover { background:#e4e7f0; }
+.img-modal-body { overflow:auto; padding:1rem; display:flex; align-items:center; justify-content:center; }
+.img-modal-body img { display:block; max-width:100%; max-height:calc(90vh - 90px); height:auto; }
+@media (max-width:575px){ .img-modal { padding:.6rem; } }
 .cert-icon { flex:0 0 38px; width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.05rem; background:linear-gradient(135deg,#0096c7,#00b4d8); }
 .cert-name { font-size:.92rem; font-weight:600; line-height:1.3; color:#333; }
 
@@ -94,6 +131,30 @@ permalink: "/about.html"
 .tl-points { margin:.3rem 0 0; padding-left:1.15rem; }
 .tl-points li { margin:.28rem 0; line-height:1.55; color:#454545; font-size:.94rem; }
 .thesis-card { margin-top:.7rem; border:1px solid #e7eaf1; border-left:4px solid #0077b6; border-radius:12px; padding:.95rem 1.1rem; background:linear-gradient(180deg,#fafbff,#fff); }
+.thesis-card + .thesis-card, .thesis-card + .subjects-toggle { margin-top:1.4rem; }
+.thesis-card--project { border-left-color:#0ca678; background:linear-gradient(180deg,#f8fffc,#fff); }
+.thesis-card--project .thesis-label { color:#0ca678; }
+.thesis-card--project .thesis-title a { color:#222; }
+.thesis-card--project .thesis-title a:hover { color:#0ca678; }
+.thesis-card--project .thesis-sup a { color:#0ca678; }
+.thesis-figures { margin-top:1rem; }
+.thesis-figure-group { margin-top:1rem; }
+.thesis-figure-group:first-child { margin-top:0; }
+.thesis-figure-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:#0077b6; font-weight:700; margin-bottom:.5rem; }
+.thesis-card--project .thesis-figure-label { color:#0ca678; }
+.thesis-figure-row { display:flex; flex-wrap:wrap; gap:1rem; }
+.thesis-figure { flex:1 1 220px; max-width:280px; }
+.thesis-figure a { display:block; }
+.thesis-figure img {
+  display:block; width:100%; height:150px; object-fit:contain; object-position:center; padding:.4rem;
+  border:1px solid #e7eaf1; border-radius:10px; background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.05); transition:transform .15s ease, box-shadow .15s ease;
+}
+.thesis-figure a:hover img { transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.1); }
+.thesis-figure-caption { margin-top:.7rem; font-size:.9rem; line-height:1.55; color:#333; }
+.thesis-figure-caption .num-good { color:#1a7f37; font-weight:700; }
+.thesis-figure-caption .num-bad { color:#c0392b; font-weight:700; }
+.thesis-figure-caption .highlight { color:#0077b6; text-decoration:underline; font-weight:700; }
 .thesis-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:#0077b6; font-weight:700; display:flex; align-items:center; gap:.4rem; margin-bottom:.35rem; }
 .thesis-title { font-weight:700; font-size:1rem; line-height:1.35; margin:0 0 .25rem; }
 .thesis-title a { color:#222; text-decoration:none; }
@@ -171,7 +232,6 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
         <div class="about-links">
           <a href="https://www.linkedin.com/in/karthikrks/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <a href="https://github.com/karthikziffer" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://twitter.com/karthikziffer" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a>
           <a href="mailto:karthik.bengaluru95@gmail.com"><i class="fas fa-envelope"></i> Email</a>
         </div>
       </div>
@@ -219,11 +279,13 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
 
   <h4 class="font-weight-bold spanborder"><span>Certifications</span></h4>
   <div class="cert-grid">
-    <div class="cert-card"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Neural Networks &amp; Deep Learning</span></div>
-    <div class="cert-card"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">LLM apps with LangChain &amp; OpenAI</span></div>
-    <div class="cert-card"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Azure Machine Learning Fundamentals</span></div>
-    <div class="cert-card"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Azure Data Factory</span></div>
-    <div class="cert-card"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">GDPR for Businesses &amp; Individuals</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/neural-networks-and-deep-learning.pdf', 'Neural Networks &amp; Deep Learning')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/neural-networks-and-deep-learning.pdf', 'Neural Networks &amp; Deep Learning')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Neural Networks &amp; Deep Learning</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/llm-apps-with-langchain-and-openai.pdf', 'LLM apps with LangChain &amp; OpenAI')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/llm-apps-with-langchain-and-openai.pdf', 'LLM apps with LangChain &amp; OpenAI')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">LLM apps with LangChain &amp; OpenAI</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/azure-machine-learning-fundamentals.pdf', 'Azure Machine Learning Fundamentals')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/azure-machine-learning-fundamentals.pdf', 'Azure Machine Learning Fundamentals')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Azure Machine Learning Fundamentals</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/azure-data-factory.pdf', 'Azure Data Factory')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/azure-data-factory.pdf', 'Azure Data Factory')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Azure Data Factory</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/gdpr-for-businesses-and-individuals.pdf', 'GDPR for Businesses &amp; Individuals')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/gdpr-for-businesses-and-individuals.pdf', 'GDPR for Businesses &amp; Individuals')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">GDPR for Businesses &amp; Individuals</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/azure-spark-databricks-essential-training.pdf', 'Azure Spark &amp; Databricks Essential Training')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/azure-spark-databricks-essential-training.pdf', 'Azure Spark &amp; Databricks Essential Training')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">Azure Spark &amp; Databricks Essential Training</span></div>
+    <div class="cert-card cert-card--linked" role="button" tabindex="0" onclick="openCertModal('{{ site.baseurl }}/assets/files/certificates/eu-ai-act.pdf', 'EU AI Act')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCertModal('{{ site.baseurl }}/assets/files/certificates/eu-ai-act.pdf', 'EU AI Act')}"><span class="cert-icon"><i class="fas fa-certificate"></i></span><span class="cert-name">EU AI Act</span></div>
   </div>
 
   <h4 class="font-weight-bold spanborder"><span>Experience</span></h4>
@@ -232,7 +294,11 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
     <div class="tl-item">
       <div class="tl-logo">
         {% if job.logo %}
+        {% if job.logo contains '://' %}
+        <img src="{{ job.logo }}" alt="{{ job.company }} logo" loading="lazy" onerror="this.onerror=null;this.parentNode.innerHTML='<span class=tl-badge>{{ job.company | slice: 0,1 }}</span>'">
+        {% else %}
         <img src="{{ site.baseurl }}/assets/images/companies/{{ job.slug }}.png" alt="{{ job.company }} logo" loading="lazy" onerror="this.onerror=null;this.parentNode.innerHTML='<span class=tl-badge>{{ job.company | slice: 0,1 }}</span>'">
+        {% endif %}
         {% else %}
         <span class="tl-badge">{{ job.company | slice: 0,1 }}</span>
         {% endif %}
@@ -331,7 +397,7 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
       <div class="tl-logo"><span class="tl-badge"><i class="fas fa-graduation-cap" style="font-size:1.1rem"></i></span></div>
       <div class="tl-body">
         <div class="tl-head">
-          <h5>M.Sc, Electrical Engineering — Smart Information Processing</h5>
+          <h5>M.Sc, Electrical Engineering - Smart Information Processing</h5>
           <span class="tl-company">University of Stuttgart</span>
           <span class="tl-meta">Apr 2021 – Oct 2023</span>
         </div>
@@ -341,15 +407,113 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
           <p class="thesis-obj"><strong>Objective:</strong> Distributed training and privacy.</p>
           <p class="thesis-sup"><strong>Supervisors:</strong> <a href="https://www.uni-stuttgart.de/en/press/experts/Prof.-Michael-Weyrich/" target="_blank" rel="noopener">Prof. Michael Weyrich</a>, <a href="https://scholar.google.com/citations?user=pcCoDN4AAAAJ&amp;hl=en" target="_blank" rel="noopener">Baran Can Gül</a></p>
           <ul class="thesis-points">
-            <li>Federated Learning decentralises deep-learning training across client devices — only local model weights are sent to a central server for aggregation into a global model, avoiding central data storage and easing server load.</li>
+            <li>Federated Learning decentralises deep-learning training across client devices - only local model weights are sent to a central server for aggregation into a global model, avoiding central data storage and easing server load.</li>
             <li>Exposed model weights are a security risk: an adversary can reconstruct a client's original data using generative models.</li>
-            <li>Introduced Differential Privacy at training time via <strong>DP-SGD</strong>, which clips and adds noise to constrain each example's influence — trading some accuracy and convergence time for privacy.</li>
-            <li>Used <strong>privacy accounting</strong> (epochs, noise, clipping bound) to quantify privacy, and searched for the optimal noise level that maximises privacy without degrading accuracy — evaluated on driver-profile identification across three client devices.</li>
+            <li>Introduced Differential Privacy at training time via <strong>DP-SGD</strong>, which clips and adds noise to constrain each example's influence - trading some accuracy and convergence time for privacy.</li>
+            <li>Used <strong>privacy accounting</strong> (epochs, noise, clipping bound) to quantify privacy, and searched for the optimal noise level that maximises privacy without degrading accuracy - evaluated on driver-profile identification across three client devices.</li>
           </ul>
           <div class="thesis-tags">
             <span>Federated Learning</span><span>Differential Privacy</span><span>DP-SGD</span><span>Privacy Accounting</span><span>Distributed Training</span><span>Noise–Accuracy Trade-off</span><span>Driver Profile Identification</span>
           </div>
+          <div class="thesis-figures">
+            <div class="thesis-figure-group">
+              <div class="thesis-figure-label">Dataset</div>
+              <div class="thesis-figure-row">
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-dataset-features.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-dataset-features.png', 'Driver behaviour sensor features used as model input: fuel consumption, friction torque, engine torque, engine coolant temperature, wheel velocity, accelerator pedal value, transmission oil temperature, air compressor and intake air pressure')"><img src="{{ site.baseurl }}/assets/images/education/thesis-dataset-features.png" alt="Driver behaviour sensor features used as model input: fuel consumption, friction torque, engine torque, engine coolant temperature, wheel velocity, accelerator pedal value, transmission oil temperature, air compressor and intake air pressure" loading="lazy"></a>
+              </div>
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-dataset-split.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-dataset-split.png', 'Dataset preparation: each driver's recorded sequences are split into training and testing sets, then divided into fixed-length samples')"><img src="{{ site.baseurl }}/assets/images/education/thesis-dataset-split.png" alt="Dataset preparation: each driver's recorded sequences are split into training and testing sets, then divided into fixed-length samples" loading="lazy"></a>
+              </div>
+              </div>
+            </div>
+            <div class="thesis-figure-group">
+              <div class="thesis-figure-label">Block Diagram</div>
+              <div class="thesis-figure-row">
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-block-diagram.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-block-diagram.png', 'Federated learning system architecture: client devices train locally and exchange weights with a central server via Fed Average')"><img src="{{ site.baseurl }}/assets/images/education/thesis-block-diagram.png" alt="Federated learning system architecture: client devices train locally and exchange weights with a central server via Fed Average" loading="lazy"></a>
+              </div>
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-system-architecture.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-system-architecture.png', 'System architecture: sensor and driver data flows through client-side model training and data protection before local and global weights are exchanged with the server')"><img src="{{ site.baseurl }}/assets/images/education/thesis-system-architecture.png" alt="System architecture: sensor and driver data flows through client-side model training and data protection before local and global weights are exchanged with the server" loading="lazy"></a>
+              </div>
+              </div>
+            </div>
+            <div class="thesis-figure-group">
+              <div class="thesis-figure-label">Results</div>
+              <div class="thesis-figure-row">
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-results-privacy.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-results-privacy.png', 'Accuracy and total privacy across noise multiplier values from 0.1 to 10.0')"><img src="{{ site.baseurl }}/assets/images/education/thesis-results-privacy.png" alt="Accuracy and total privacy across noise multiplier values from 0.1 to 10.0" loading="lazy"></a>
+              </div>
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-results-table.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-results-table.png', 'Client-averaged train accuracy and privacy accountant at noise levels 0.8 and 1.0')"><img src="{{ site.baseurl }}/assets/images/education/thesis-results-table.png" alt="Client-averaged train accuracy and privacy accountant at noise levels 0.8 and 1.0" loading="lazy"></a>
+              </div>
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/thesis-results-correlation.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/thesis-results-correlation.png', 'Correlation matrix of model accuracy across noise levels')"><img src="{{ site.baseurl }}/assets/images/education/thesis-results-correlation.png" alt="Correlation matrix of model accuracy across noise levels" loading="lazy"></a>
+              </div>
+              </div>
+              <p class="thesis-figure-caption">Selecting a noise level of <span class="num-good">1.0</span> over <span class="num-bad">0.8</span> ensures a <span class="highlight">32% increase</span> in model privacy with minimal impact on accuracy.</p>
+            </div>
+          </div>
         </div>
+        <div class="thesis-card thesis-card--project">
+            <div class="thesis-label">Research Project</div>
+            <p class="thesis-title">Development of Lightweight Deep Learning based Fault Detector for Exoskeleton</p>
+            <p class="thesis-obj"><strong>Objective:</strong> Classify faults injected into exoskeleton sensor signals on a hardware device, using data generated from a MATLAB Simulink FIBlock model.</p>
+            <p class="thesis-sup"><strong>Examiner:</strong> <a href="https://www.f05.uni-stuttgart.de/fakultaet/personen/Morozov-00001/" target="_blank" rel="noopener">Jun. Prof. Dr.-Ing. Andrey Morozov</a> &nbsp;·&nbsp; <strong>Supervisor:</strong> <a href="https://scholar.google.com/citations?user=Ldmk7kIAAAAJ&amp;hl=en" target="_blank" rel="noopener">Tagir Fabarisov</a></p>
+            <ul class="thesis-points">
+              <li>Refactored a MATLAB Simulink FIBlock model to inject four fault types (bias/offset, noise, stuck-at, packet drop) into exoskeleton sensor signals and generated the training dataset.</li>
+              <li>Built a custom LSTM-based sequence model to classify the injected fault type from the simulated signal.</li>
+              <li>Converted the trained model from PyTorch → ONNX → TensorFlow → TensorFlow Lite for lightweight edge deployment.</li>
+              <li>Deployed the TensorFlow Lite model on a Raspberry Pi, streaming real-time signal data from the Simulink model over UDP, achieving 0.08 ms inference time per prediction.</li>
+            </ul>
+            <div class="thesis-tags">
+              <span>Fault Injection</span><span>MATLAB Simulink</span><span>LSTM</span><span>PyTorch</span><span>TensorFlow Lite</span><span>Raspberry Pi</span><span>Edge Inference</span><span>Cyber-Physical Systems</span>
+            </div>
+            <div class="thesis-figures">
+              <div class="thesis-figure-group">
+                <div class="thesis-figure-label">Dataset</div>
+                <div class="thesis-figure-row">
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/research-project-dataset.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/research-project-dataset.png', 'Simulated sensor signal for each class: No Fault, Bias Offset, Noise, Stuck At, and Package Drop')"><img src="{{ site.baseurl }}/assets/images/education/research-project-dataset.png" alt="Simulated sensor signal for each class: No Fault, Bias Offset, Noise, Stuck At, and Package Drop" loading="lazy"></a>
+              </div>
+                </div>
+              </div>
+              <div class="thesis-figure-group">
+                <div class="thesis-figure-label">Block Diagram</div>
+                <div class="thesis-figure-row">
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/research-project-block-diagram.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/research-project-block-diagram.png', 'LSTM sequence model architecture: input signal fed through LSTM cells to an output, linear and classification layer producing fault-class probabilities')"><img src="{{ site.baseurl }}/assets/images/education/research-project-block-diagram.png" alt="LSTM sequence model architecture: input signal fed through LSTM cells to an output, linear and classification layer producing fault-class probabilities" loading="lazy"></a>
+              </div>
+                </div>
+              </div>
+              <div class="thesis-figure-group">
+                <div class="thesis-figure-label">Results</div>
+                <div class="thesis-figure-row">
+              <div class="thesis-figure">
+                <a href="{{ site.baseurl }}/assets/images/education/research-project-results.png" onclick="event.preventDefault(); openImageModal('{{ site.baseurl }}/assets/images/education/research-project-results.png', 'Per-class accuracy on train and test data across the five fault classes')"><img src="{{ site.baseurl }}/assets/images/education/research-project-results.png" alt="Per-class accuracy on train and test data across the five fault classes" loading="lazy"></a>
+              </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <details class="subjects-toggle">
+            <summary>Master's Subjects</summary>
+            <div class="about-chips">
+              <span>Communication Networks Architecture and Design</span>
+              <span>Detection and Pattern Recognition</span>
+              <span>Information Theory</span>
+              <span>Deep Learning</span>
+              <span>Advanced Mathematics for Signal and Information Processing</span>
+              <span>Semiconductor Engineering IV – Intelligent Sensors and Actors (SE IV)</span>
+              <span>Service Management and Cloud Computing, and Evaluation</span>
+              <span>Data Warehousing, Data Mining, and OLAP</span>
+              <span>Software Engineering for Real-Time Systems</span>
+              <span>Industrial Automation Systems</span>
+              <span>Modeling and Analysis of Automation Systems</span>
+              <span>Master Lab Course</span>
+              <span>Academic Writing for Master's Students (Thesis Writing, C1 Level)</span>
+            </div>
+          </details>
       </div>
     </div>
     <div class="tl-item">
@@ -360,11 +524,159 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
           <span class="tl-company">AMC Engineering College</span>
           <span class="tl-meta">2013 – 2017</span>
         </div>
+          <details class="subjects-toggle">
+            <summary>Subjects</summary>
+            <div class="chip-label">Semester I</div>
+            <div class="about-chips">
+              <span>Engineering Mathematics I</span>
+              <span>Engineering Chemistry</span>
+              <span>Computer Concepts & C Programming</span>
+              <span>Computer Aided Engineering Drawing</span>
+              <span>Basic Electronics</span>
+              <span>Computer Programming Lab</span>
+              <span>Engineering Chemistry Lab</span>
+              <span>Environmental Studies</span>
+            </div>
+            <div class="chip-label">Semester II</div>
+            <div class="about-chips">
+              <span>Engineering Mathematics II</span>
+              <span>Engineering Physics</span>
+              <span>Elements of Civil Engineering & Engineering Mechanics</span>
+              <span>Elements of Mechanical Engineering</span>
+              <span>Basic Electrical Engineering</span>
+              <span>Workshop Practice</span>
+              <span>Engineering Physics Lab</span>
+              <span>Constitution of India & Professional Ethics</span>
+            </div>
+            <div class="chip-label">Semester III</div>
+            <div class="about-chips">
+              <span>Engineering Mathematics III</span>
+              <span>Analog Electronic Circuits</span>
+              <span>Logic Design</span>
+              <span>Network Analysis</span>
+              <span>Electronic Instrumentation</span>
+              <span>Field Theory</span>
+              <span>Analog Electronics Lab</span>
+              <span>Logic Design Lab</span>
+            </div>
+            <div class="chip-label">Semester IV</div>
+            <div class="about-chips">
+              <span>Engineering Mathematics IV</span>
+              <span>Microcontrollers</span>
+              <span>Control Systems</span>
+              <span>Signals & Systems</span>
+              <span>Fundamentals of HDL</span>
+              <span>Linear ICs & Applications</span>
+              <span>Microcontrollers Lab</span>
+              <span>HDL Lab</span>
+            </div>
+            <div class="chip-label">Semester V</div>
+            <div class="about-chips">
+              <span>Management & Entrepreneurship</span>
+              <span>Digital Signal Processing</span>
+              <span>Analog Communication</span>
+              <span>Microwaves & Radar</span>
+              <span>Information Theory & Coding</span>
+              <span>Fundamentals of CMOS VLSI</span>
+              <span>DSP Lab</span>
+              <span>Analog Communication & LIC Lab</span>
+            </div>
+            <div class="chip-label">Semester VI</div>
+            <div class="about-chips">
+              <span>Digital Communication</span>
+              <span>Microprocessors</span>
+              <span>Microelectronics Circuits</span>
+              <span>Antennas & Propagation</span>
+              <span>Operating Systems</span>
+              <span>Satellite Communications</span>
+              <span>Advanced Communication Lab</span>
+              <span>Microprocessor Lab</span>
+            </div>
+            <div class="chip-label">Semester VII</div>
+            <div class="about-chips">
+              <span>Computer Communication Networks</span>
+              <span>Optical Fiber Communication</span>
+              <span>Power Electronics</span>
+              <span>Embedded System Design</span>
+              <span>DSP Algorithms & Architecture</span>
+              <span>Image Processing</span>
+              <span>VLSI Lab</span>
+              <span>Power Electronics Lab</span>
+            </div>
+            <div class="chip-label">Semester VIII</div>
+            <div class="about-chips">
+              <span>Wireless Communication</span>
+              <span>Digital Switching Systems</span>
+              <span>Network Security</span>
+              <span>Ad-hoc Wireless Networks</span>
+              <span>Project Work</span>
+              <span>Seminar</span>
+            </div>
+          </details>
+      </div>
+    </div>
+  </div>
+
+  <div id="cert-modal" class="cert-modal" onclick="if(event.target===this) closeCertModal()">
+    <div class="cert-modal-inner">
+      <div class="cert-modal-head">
+        <span class="cert-modal-title" id="cert-modal-title">Certificate</span>
+        <button type="button" class="cert-modal-close" onclick="closeCertModal()" aria-label="Close">&times;</button>
+      </div>
+      <iframe id="cert-modal-frame" src="" title="Certificate preview"></iframe>
+    </div>
+  </div>
+
+  <div id="img-modal" class="img-modal" onclick="if(event.target===this) closeImageModal()">
+    <div class="img-modal-inner">
+      <div class="img-modal-head">
+        <span class="img-modal-title" id="img-modal-title">Figure</span>
+        <button type="button" class="img-modal-close" onclick="closeImageModal()" aria-label="Close">&times;</button>
+      </div>
+      <div class="img-modal-body">
+        <img id="img-modal-image" src="" alt="">
       </div>
     </div>
   </div>
 
 </div>
+
+<script>
+  function openCertModal(url, title) {
+    var modal = document.getElementById('cert-modal');
+    var frame = document.getElementById('cert-modal-frame');
+    document.getElementById('cert-modal-title').textContent = title || 'Certificate';
+    frame.src = url;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCertModal() {
+    var modal = document.getElementById('cert-modal');
+    var frame = document.getElementById('cert-modal-frame');
+    modal.classList.remove('open');
+    frame.src = '';
+    document.body.style.overflow = '';
+  }
+  function openImageModal(url, title) {
+    var modal = document.getElementById('img-modal');
+    var img = document.getElementById('img-modal-image');
+    document.getElementById('img-modal-title').textContent = title || 'Figure';
+    img.src = url;
+    img.alt = title || 'Figure';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeImageModal() {
+    var modal = document.getElementById('img-modal');
+    var img = document.getElementById('img-modal-image');
+    modal.classList.remove('open');
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeCertModal(); closeImageModal(); }
+  });
+</script>
 
 <script>
   (function () {
