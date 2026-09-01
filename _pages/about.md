@@ -21,13 +21,6 @@ permalink: "/about.html"
 .about-role { font-size:1.18rem; margin:.25rem 0 .35rem; opacity:.96; }
 .about-loc { margin:0 0 .85rem; font-size:.92rem; opacity:.85; }
 .about-loc i { margin-right:.35rem; }
-.about-links a {
-  display:inline-flex; align-items:center; gap:.4rem; color:#fff;
-  background:rgba(255,255,255,.16); padding:.34rem .8rem; border-radius:999px;
-  margin:.22rem .45rem .22rem 0; font-size:.85rem; text-decoration:none;
-  transition:background .18s ease, transform .18s ease;
-}
-.about-links a:hover { background:rgba(255,255,255,.34); transform:translateY(-1px); }
 
 /* Summary + chips */
 .about-summary { font-size:1.06rem; line-height:1.75; color:#333; margin-bottom:.6rem; text-align:justify; text-justify:inter-word; }
@@ -229,11 +222,6 @@ ul.thesis-points li { font-size:.9rem; line-height:1.5; color:#454545; margin:.2
         <h1>Karthik Rajendran</h1>
         <p class="about-role">AI / Machine Learning Engineer</p>
         <p class="about-loc"><i class="fas fa-map-marker-alt"></i>Erlangen, Bavaria, Germany &nbsp;·&nbsp; M.Sc, Universität Stuttgart</p>
-        <div class="about-links">
-          <a href="https://www.linkedin.com/in/karthikrks/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/karthikziffer" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          <a href="mailto:karthik.bengaluru95@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-        </div>
       </div>
     </div>
   </div>
