@@ -134,10 +134,48 @@
   line-height: 1.3;
 }
 
-.article-post h1 { font-size: 2rem; }
-.article-post h2 { font-size: 1.75rem; }
-.article-post h3 { font-size: 1.3rem; }
-.article-post h4 { font-size: 1.1rem; }
+/*
+  Heading scale: h1/h2 are serif section titles; h3/h4 switch to the sans
+  face so subsections read clearly as a step down, not a smaller section.
+*/
+.article-post h1 { font-size: 2.3rem; }
+
+.article-post h2 {
+  font-size: 2.1rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 3.75rem;
+}
+
+.article-post h3 {
+  font-family: var(--ed-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-post h4 {
+  font-family: var(--ed-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ed-ink-muted);
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.article-post h2 + h3,
+.article-post h3 + h4 {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  .article-post h2 { font-size: 1.75rem; }
+  .article-post h3 { font-size: 1.15rem; }
+}
 
 /* Opening lede paragraph: small drop cap, a quiet editorial signature */
 .article-post > p:first-of-type::first-letter {
@@ -187,10 +225,15 @@
   color: var(--ed-ink);
 }
 
+/* Section break: generous space on both sides so a new section reads as a fresh start */
 .article-post hr {
-  margin: 3.25rem 0 2.5rem;
+  margin: 5.5rem 0 4rem;
   border: none;
   border-top: 1px solid var(--ed-rule);
+}
+
+@media (max-width: 576px) {
+  .article-post hr { margin: 4rem 0 2.75rem; }
 }
 
 .article-post hr + h1,
@@ -417,4 +460,249 @@
   fill: var(--ed-accent);
   font-size: 11px;
   font-weight: 500;
+}
+
+/* ---------- Media frames (GIFs / screenshots) ---------- */
+
+.article-post figure.media-frame {
+  margin: 2.75rem 0;
+}
+
+.article-post .media-frame-window {
+  overflow: hidden;
+  border: 1px solid var(--ed-code-border);
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow:
+    0 1px 2px rgba(26, 26, 26, 0.04),
+    0 14px 36px -14px rgba(26, 26, 26, 0.22);
+}
+
+.article-post .media-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.6rem 0.5rem 0.85rem;
+  border-bottom: 1px solid var(--ed-code-border);
+  background-color: var(--ed-code-bg);
+  font-family: var(--ed-sans);
+}
+
+.article-post .media-frame-dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.article-post .media-frame-dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--ed-code-border);
+}
+
+.article-post .media-frame-title {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ed-ink-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article-post .media-frame-window img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
+.article-post .media-frame-window img.is-expandable {
+  cursor: zoom-in;
+}
+
+.article-post .media-expand {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--ed-code-border);
+  border-radius: 999px;
+  background-color: var(--ed-paper);
+  font-family: var(--ed-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ed-ink);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.article-post .media-expand:hover,
+.article-post .media-expand:focus-visible {
+  border-color: var(--ed-accent);
+  color: var(--ed-accent);
+  outline: none;
+}
+
+.article-post .media-expand svg {
+  width: 12px;
+  height: 12px;
+}
+
+.article-post figure.media-frame figcaption {
+  margin-top: 0.85rem;
+  font-family: var(--ed-sans);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ed-ink-muted);
+  text-align: center;
+}
+
+/* Full-screen viewer opened by the Expand button */
+
+dialog.media-lightbox {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 3.5rem 1.25rem 1.5rem;
+  border: 0;
+  background-color: rgba(18, 18, 18, 0.94);
+}
+
+dialog.media-lightbox[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+dialog.media-lightbox::backdrop {
+  background: transparent;
+}
+
+dialog.media-lightbox img {
+  /* Scale up to fill the screen, keeping the image's aspect ratio (--ar is set by media-lightbox.js). */
+  width: min(100%, calc((100vh - 9rem) * var(--ar, 1.6)));
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.media-lightbox-caption {
+  max-width: 60rem;
+  margin: 0;
+  font-family: var(--ed-sans);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.media-lightbox-close {
+  position: fixed;
+  top: 0.9rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.media-lightbox-close:hover,
+.media-lightbox-close:focus-visible {
+  border-color: #fff;
+  outline: none;
+}
+
+html:has(dialog.media-lightbox[open]) {
+  overflow: hidden;
+}
+
+/* ---------- Vertical rhythm ----------
+   Two spacing steps keep the page even:
+   --ed-flow   between text blocks (paragraphs, lists)
+   --ed-block  around "objects" (code, diagrams, GIFs, tables)
+   Placed last so it overrides the per-component margins above. */
+
+.article-post {
+  --ed-flow: 1.5rem;
+  --ed-block: 2.5rem;
+}
+
+.article-post p,
+.article-post ul,
+.article-post ol {
+  margin-top: 0;
+  margin-bottom: var(--ed-flow);
+}
+
+.article-post li {
+  margin-bottom: 0.4rem;
+}
+
+/* A lead-in line ("A hook can:") stays attached to the list it introduces */
+.article-post p + ul,
+.article-post p + ol {
+  margin-top: calc(var(--ed-flow) * -0.5);
+}
+
+.article-post .highlighter-rouge,
+.article-post figure.diagram,
+.article-post figure.media-frame,
+.article-post table {
+  margin-top: var(--ed-block);
+  margin-bottom: var(--ed-block);
+}
+
+/* Subsections get clear air above, and sit close to their own text */
+.article-post h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.article-post h2 + h3 {
+  margin-top: 1.75rem;
+}
+
+.article-post h2 {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 576px) {
+  .article-post {
+    --ed-flow: 1.25rem;
+    --ed-block: 2rem;
+  }
+
+  .article-post h3 { margin-top: 2.5rem; }
+}
+
+/* Layer headings ("### Layer 1: …" tagged {: .layer-heading}): extra air and a short accent bar */
+.article-post h3.layer-heading {
+  margin-top: 4.5rem;
+}
+
+.article-post h3.layer-heading::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-bottom: 1.1rem;
+  background-color: var(--ed-accent);
+}
+
+@media (max-width: 576px) {
+  .article-post h3.layer-heading { margin-top: 3.5rem; }
 }
