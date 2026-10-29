@@ -455,7 +455,7 @@ The table shows how often each evaluator picked the correct candidate answer. Gr
   <tbody>
     <tr><td>Nimble verifier</td><td>21</td><td>6</td><td>0</td><td class="is-better">77.8%<span class="cell-note">21 / 27</span></td></tr>
     <tr><td>Llama 3.1 verifier</td><td>14</td><td>13</td><td>0</td><td>51.9%<span class="cell-note">14 / 27</span></td></tr>
-    <tr><td>Llama 3.1 judge</td><td>9</td><td>0</td><td>18</td><td>66.7%<span class="cell-note">(9 + 18 / 2) / 27</span></td></tr>
+    <tr><td>Llama 3.1 judge</td><td>9</td><td>0</td><td>18</td><td>33.3%<span class="cell-note">9 / 27</span></td></tr>
   </tbody>
 </table>
 
@@ -463,7 +463,7 @@ The columns mean:
 
 - **Right:** the evaluator scored the correct candidate answer higher.
 - **Wrong:** the evaluator scored the wrong candidate answer higher, so it picked the answer model that made the mistake.
-- **Tie:** the evaluator gave both candidate answers the same score, so it could not choose. A tie counts as half a correct pick, the same as a coin flip.
+- **Tie:** the evaluator gave both candidate answers the same score, so it could not choose. A tie does not count as a correct pick.
 
 The Nimble verifier picks the correct candidate answer most often: 21 times out of 27. The Llama 3.1 judge never picks the wrong candidate answer, but it ties on 18 of the 27 questions. The Llama 3.1 verifier breaks every tie, but it is right only 14 times, close to a coin flip.
 
