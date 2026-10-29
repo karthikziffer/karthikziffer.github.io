@@ -12,6 +12,8 @@
   --ed-ink-muted: #5b5f66;
   --ed-rule: #e4e0d7;
   --ed-accent: #7a2e2e;
+  --ed-good-bg: #e3f1e4;
+  --ed-good-ink: #1f5f2a;
   --ed-code-bg: #f3f1ec;
   --ed-code-border: #ddd8cd;
   --ed-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
@@ -637,8 +639,8 @@ html:has(dialog.media-lightbox[open]) {
    Placed last so it overrides the per-component margins above. */
 
 .article-post {
-  --ed-flow: 1.5rem;
-  --ed-block: 2.5rem;
+  --ed-flow: 1.9rem;
+  --ed-block: 2.75rem;
 }
 
 .article-post p,
@@ -649,7 +651,7 @@ html:has(dialog.media-lightbox[open]) {
 }
 
 .article-post li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
 /* A lead-in line ("A hook can:") stays attached to the list it introduces */
@@ -664,6 +666,114 @@ html:has(dialog.media-lightbox[open]) {
 .article-post table {
   margin-top: var(--ed-block);
   margin-bottom: var(--ed-block);
+}
+
+/* Tables: a quiet card with horizontal rules only, overriding theme.css's grid */
+.article-post table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--ed-rule);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  font-family: var(--ed-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.article-post table th,
+.article-post table td {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-bottom: 1px solid var(--ed-rule);
+  vertical-align: middle;
+}
+
+.article-post table th {
+  background: var(--ed-paper);
+  color: var(--ed-ink-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom-color: var(--ed-code-border);
+}
+
+.article-post table tr:nth-child(even) {
+  background: transparent;
+}
+
+.article-post table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.article-post table tbody tr:hover td {
+  background: var(--ed-paper);
+}
+
+.article-post table td:first-child {
+  color: var(--ed-ink);
+  font-weight: 500;
+}
+
+/* Data tables: numbers centered, group headers over sub-columns */
+.article-post table.data-table th,
+.article-post table.data-table td {
+  text-align: center;
+}
+
+.article-post table.data-table thead tr:first-child th:first-child,
+.article-post table.data-table td:first-child {
+  text-align: left;
+}
+
+.article-post table.data-table th[rowspan] {
+  vertical-align: bottom;
+}
+
+.article-post table.data-table th.group {
+  color: var(--ed-ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  border-bottom-color: var(--ed-rule);
+}
+
+.article-post table.data-table th.group + th.group,
+.article-post table.data-table .group-start {
+  border-left: 1px solid var(--ed-rule);
+}
+
+.article-post table .cell-note {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--ed-ink-muted);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* Table cell that marks a better result (e.g. verifier beats judge) */
+.article-post table td.is-better,
+.article-post table tbody tr:hover td.is-better {
+  background: var(--ed-good-bg);
+  color: var(--ed-good-ink);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--ed-good-ink);
+}
+
+.article-post table td.is-better .cell-note {
+  color: var(--ed-good-ink);
+  opacity: 0.8;
+}
+
+@media (max-width: 576px) {
+  .article-post table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
 
 /* Subsections get clear air above, and sit close to their own text */
@@ -682,8 +792,8 @@ html:has(dialog.media-lightbox[open]) {
 
 @media (max-width: 576px) {
   .article-post {
-    --ed-flow: 1.25rem;
-    --ed-block: 2rem;
+    --ed-flow: 1.6rem;
+    --ed-block: 2.25rem;
   }
 
   .article-post h3 { margin-top: 2.5rem; }

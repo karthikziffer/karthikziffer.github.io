@@ -52,4 +52,4 @@ highlighter: rouge
 paginate: 9
 
 # Exclude metadata and development time dependencies
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+exclude: [README.markdown, instruction.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
