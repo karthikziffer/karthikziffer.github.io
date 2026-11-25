@@ -565,6 +565,31 @@
   text-align: center;
 }
 
+/* Plots: no frame or shadow; edges line up with the text column */
+
+/* flex stops the image margin collapsing into the figure and caption margins */
+.article-post figure.plot {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-post figure.plot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+  border-radius: 0;
+}
+
+.article-post figure.plot figcaption {
+  margin-top: 0.85rem;
+  font-family: var(--ed-sans);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ed-ink-muted);
+  text-align: center;
+}
+
 /* Full-screen viewer opened by the Expand button */
 
 dialog.media-lightbox {
@@ -663,6 +688,7 @@ html:has(dialog.media-lightbox[open]) {
 .article-post .highlighter-rouge,
 .article-post figure.diagram,
 .article-post figure.media-frame,
+.article-post figure.plot,
 .article-post table {
   margin-top: var(--ed-block);
   margin-bottom: var(--ed-block);
@@ -815,4 +841,19 @@ html:has(dialog.media-lightbox[open]) {
 
 @media (max-width: 576px) {
   .article-post h3.layer-heading { margin-top: 3.5rem; }
+}
+
+/* Experiment headings ("### Experiment 1: …" tagged {: .experiment-heading}): larger, with extra air */
+.article-post h3.experiment-heading {
+  margin-top: 4.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+@media (max-width: 576px) {
+  .article-post h3.experiment-heading {
+    margin-top: 3.5rem;
+    font-size: 1.4rem;
+  }
 }
