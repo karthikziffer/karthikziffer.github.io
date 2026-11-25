@@ -173,7 +173,9 @@ ORDER BY quarter
 
 ## Evaluation Results
 
-An answer passes when its rows match those returned by the gold query.
+Each answer is evaluated by comparing the agent's SQL query and its output with the gold SQL query and output. The pass rates below are based on this comparison.
+
+Later experiments test whether an LLM judge can reach the same verdict when given different context, such as sample rows, the gold answer, or the agent's trace. The judge assigns each answer a score from 0 to 1, which is converted to pass or fail using a threshold.
 
 <figure class="plot">
   <img src="/assets/images/evaluating-sql-agent/pass_fail.png" alt="Bar chart of the share of evals passed and failed by difficulty. All 127 evals: 74% passed, 26% failed. Easy (11): 64% passed, 36% failed. Medium (45): 73% passed, 27% failed. Hard (71): 76% passed, 24% failed.">
